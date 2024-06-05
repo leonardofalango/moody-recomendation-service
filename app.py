@@ -1,21 +1,21 @@
 import pickle
-from fastapi import FastAPI
+from fastapi import FastAPI  # type: ignore
+from model.types import PredictionModel
 
 app = FastAPI()
 
 try:
-    model = pickle.load('model.pkl')
-except:
-    print('Error loading the model.')
+    model: PredictionModel = pickle.load("model.pkl")
+except Exception as e:
+    print("Error loading the model.")
+    print(e)
+
 
 @app.get("/status")
 async def read_root():
     return {"message": "running"}
 
+
 @app.get("/user/{user_id}")
 async def get_user(user_id: str):
     return model.predict(user_id)
-
-# @app.post("/items/")
-# async def create_item(item_id: int, item: Item):
-#     return {"item_name": item.name, "item_id": item_id}
