@@ -1,21 +1,18 @@
-import pickle
-from fastapi import FastAPI  # type: ignore
-from model.types import PredictionModel
+import uvicorn
+from fastapi import FastAPI
+from model.dev_database_controller import DevDatabaseController
+from custom_recommendation_model import CustomRecommendationModel
 
 app = FastAPI()
-
-try:
-    model: PredictionModel = pickle.load("model.pkl")
-except Exception as e:
-    print("Error loading the model.")
-    print(e)
+db_controller = DevDatabaseController()
+recommendation_model = CustomRecommendationModel(db_controller)
 
 
-@app.get("/status")
+@app.get("/v1/status")
 async def read_root():
     return {"message": "running"}
 
 
-@app.get("/user/{user_id}")
+@app.get("/v1/recommend/{user_id}")
 async def get_user(user_id: str):
-    return model.predict(user_id)
+    return recommendation_model.recommend(user_id=user_id)

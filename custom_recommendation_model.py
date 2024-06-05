@@ -52,7 +52,6 @@ class CustomRecommendationModel:
         return sorted_recommendations[:5]
 
 
-# Exemplo de uso:
 if __name__ == "__main__":
     import sys
 
