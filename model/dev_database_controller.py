@@ -45,6 +45,12 @@ class DevDatabaseController:
                 "music_gente": "Rock",
                 "metrics": [],
             },
+            "5": {
+                "user_id": "5",
+                "age": 20,
+                "music_gente": "Funk",
+                "metrics": [],
+            },
         }
 
     def get_all(self) -> Iterable[UserData]:
