@@ -1,6 +1,6 @@
-import uvicorn
 from fastapi import FastAPI
-from model.dev_database_controller import DevDatabaseController
+from fastapi.responses import HTMLResponse
+from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
 
 app = FastAPI()
@@ -11,6 +11,11 @@ recommendation_model = CustomRecommendationModel(db_controller)
 @app.get("/v1/status")
 async def read_root():
     return {"message": "running"}
+
+
+@app.get("/v1/get_all")
+async def read_root():
+    return {"data": db_controller.get_all()}
 
 
 @app.get("/v1/recommend/{user_id}")

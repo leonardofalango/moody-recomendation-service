@@ -13,11 +13,9 @@ class CustomRecommendationModel:
             return []
 
         user_interactions = [metric["label"] for metric in user_info["metrics"]]
-
         similar_users = self.find_similar_users(user_info)
 
         recommendations = self.aggregate_recommendations(similar_users)
-
         recommendations = [
             item for item in recommendations if item not in user_interactions
         ]
@@ -30,7 +28,7 @@ class CustomRecommendationModel:
             if user_id != user_info["user_id"]:
                 if (
                     data["age"] == user_info["age"]
-                    and data["music_gente"] == user_info["music_gente"]
+                    and data["music_genre"] == user_info["music_genre"]
                 ):
                     similar_users.append(data)
         return similar_users
