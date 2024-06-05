@@ -16,12 +16,6 @@ class User:
     email: str
 
 
-# @dataclasses.dataclass
-# class Place:
-#     mood_id: str
-#     label: str
-
-
 @dataclasses.dataclass
 class Metrics:
     user_id: str
@@ -32,7 +26,6 @@ class Metrics:
 @dataclasses.dataclass
 class UserData:
     user_id: str
-    name: str
     age: int
     music_gente: str
     metrics: Iterable[Metrics]

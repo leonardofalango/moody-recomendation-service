@@ -1,45 +1,51 @@
 from typing import Iterable
-from model.types import User, UserData, Metrics
+from model.types import UserData
 
 
 class DevDatabaseController:
     def __init__(self) -> None:
-        self._users = {
-            "1": User("1", "henrique", "henrique@email.com"),
-            "2": User("2", "jorge", "jorge@email.com"),
-            "3": User("3", "maria", "maria@email.com"),
-            "4": User("4", "madalena", "madalena@email.com"),
-            "5": User("5", "jubileu", "jubileu@email.com"),
+        self.user_data = {
+            "1": {
+                "user_id": "1",
+                "age": 20,
+                "music_gente": "Rock",
+                "metrics": [
+                    {"user_id": "1", "label": "Bar de Rock", "interactions": 8},
+                    {"user_id": "1", "label": "Sambô", "interactions": 2},
+                    {"user_id": "1", "label": "Rjota", "interactions": 1},
+                    {"user_id": "1", "label": "Rock Pizza Roll", "interactions": 5},
+                    {"user_id": "1", "label": "Hard Rock Café", "interactions": 5},
+                ],
+            },
+            "2": {
+                "user_id": "2",
+                "age": 20,
+                "music_gente": "Pagode",
+                "metrics": [
+                    {"user_id": "2", "label": "Sambô", "interactions": 14},
+                    {"user_id": "2", "label": "Rjota", "interactions": 15},
+                    {"user_id": "2", "label": "Bar de Rock", "interactions": 2},
+                ],
+            },
+            "3": {
+                "user_id": "3",
+                "age": 20,
+                "music_gente": "Funk",
+                "metrics": [
+                    {"user_id": "3", "label": "Bar de Rock", "interactions": 1},
+                    {"user_id": "3", "label": "Sambô", "interactions": 2},
+                    {"user_id": "3", "label": "Rjota", "interactions": 1},
+                    {"user_id": "3", "label": "+55", "interactions": 20},
+                    {"user_id": "3", "label": "Lvl Clube", "interactions": 8},
+                ],
+            },
+            "4": {
+                "user_id": "4",
+                "age": 20,
+                "music_gente": "Rock",
+                "metrics": [],
+            },
         }
 
-        self.userData = {
-            "1": UserData("1", "henrique", 30, "Bar de Rock and Roll", []),
-            "2": UserData("2", "jorge", 30, "Bar de Pop", []),
-            "3": UserData("3", "maria", 30, "Bar de Samba", []),
-            "4": UserData("4", "madalena", 30, "Bar de Samba", []),
-            "5": UserData("5", "jubileu", 30, "Bar de Samba", []),
-        }
-
-        self.metrics = [
-            Metrics("1", "Bar de Rock and Roll", 8),
-            Metrics("1", "Bar de Samba", 2),
-            Metrics("1", "Bar de Pop", 1),
-            Metrics("2", "Bar de Rock and Roll", 1),
-            Metrics("2", "Bar de Samba", 2),
-            Metrics("2", "Bar de Pop", 6),
-            Metrics("3", "Bar de Rock and Roll", 3),
-            Metrics("3", "Bar de Samba", 10),
-            Metrics("3", "Bar de Pop", 2),
-            Metrics("4", "Bar de Rock and Roll", 1),
-            Metrics("4", "Bar de Samba", 4),
-            Metrics("4", "Bar de Pop", 1),
-            Metrics("5", "Bar de Rock and Roll", 1),
-            Metrics("5", "Bar de Samba", 2),
-            Metrics("5", "Bar de Pop", 3),
-        ]
-
-    def _get_userdata(self, user_id: str) -> UserData:
-        self.userData.get(user_id)["metrics"] = self.metrics.get(user_id)
-
-    def get_all(self) -> {Iterable[User], Iterable[UserData]}:
-        return self.users, self.userData
+    def get_all(self) -> Iterable[UserData]:
+        return self.user_data
