@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
 
