@@ -21,6 +21,9 @@ async def read_root():
 async def get_user(user_id: str):
     return recommendation_model.recommend(user_id=user_id)
 
+@app.get("/")
+async def read_root():
+    return {"message": "Hello World"}
 
 if __name__ == '__main__':
     import uvicorn
