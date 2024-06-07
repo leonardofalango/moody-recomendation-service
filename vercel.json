@@ -13,14 +13,6 @@
       },
       {
         "handle": "filesystem"
-      },
-        {
-            "src": "/v1/status",
-            "status": 200,
-            "headers": {
-            "content-type": "application/json"
-            },
-            "body": "{\"status\": \"ok\"}"
-        }
+      }
     ]
   }
