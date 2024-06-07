@@ -15,7 +15,7 @@ class CustomRecommendationModel:
         self.user_data = db_controller.get_all()
         self.user_cache = {}
 
-        self.similarity_min = os.environ.get(float("SIMILARITY"), 0.8)
+        self.similarity_min = float(os.environ.get("SIMILARITY", 0.8))
 
     def recommend(
         self, user_id: str, n_recommendations: int = 20, k_neighboors: int = 5
