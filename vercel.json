@@ -10,9 +10,6 @@
       {
         "src": "/(.*)",
         "dest": "app.py"
-      },
-      {
-        "handle": "filesystem"
       }
     ]
   }
