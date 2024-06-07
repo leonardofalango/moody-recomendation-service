@@ -1,12 +1,17 @@
 import json
 import random
+import logging
 import pathlib
 from typing import Iterable
 from model.types import UserData
 
+logger = logging.getLogger("app_logger")
+
 
 class DevDatabaseController:
     def __init__(self, population: int = 100) -> None:
+        logger.info("Database initiating")
+
         self.user_data = {}
         self.genres = [
             "Rock",
@@ -41,6 +46,8 @@ class DevDatabaseController:
         for i in range(population):
             self.user_data[str(i)] = self.__generate_fake_data(i)
 
+        logger.info("Loaded database with %s data", population)
+
     def __generate_fake_data(self, user_id):
         age = random.randint(18, 19)
         music_genre = random.choice(self.genres)
@@ -58,7 +65,9 @@ class DevDatabaseController:
         }
 
     def get_all(self) -> Iterable[UserData]:
+        logger.info("Getting all users")
         return self.user_data
 
     def get_by_id(self, user_id: str) -> UserData:
+        logger.info("Getting user from database")
         return self.user_data[user_id]

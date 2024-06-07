@@ -1,18 +1,26 @@
-from model.dev_random_database import DevDatabaseController
+import os
+import logging
+import numpy as np
 from typing import List, Dict
 from collections import defaultdict
-import numpy as np
+from model.dev_random_database import DevDatabaseController
+
+logger = logging.getLogger("app_logger")
 
 
 class CustomRecommendationModel:
     def __init__(self, db_controller: DevDatabaseController):
+        logger.info("Initializing recomendation model")
         self.db_controller = db_controller
         self.user_data = db_controller.get_all()
         self.user_cache = {}
 
+        self.similarity_min = os.environ.get(float("SIMILARITY"), 0.8)
+
     def recommend(
         self, user_id: str, n_recommendations: int = 20, k_neighboors: int = 5
     ) -> List[str]:
+        logger.info("Recommending to user")
         user_info = self.user_data.get(user_id)
         if not user_info:
             return []
@@ -35,11 +43,13 @@ class CustomRecommendationModel:
         return recommendations
 
     def find_similar_users(self, user_info: Dict, k: int = 10) -> List[Dict]:
+        logger.info("Finding similar users")
+
         similar_users = []
         for user_id, data in self.user_data.items():
             if user_id != user_info["user_id"]:
                 similarity = self.calculate_similarity(user_info, data)
-                if similarity > 0.8:
+                if similarity > self.similarity_min:
                     similar_users.append((data, similarity))
 
         similar_users.sort(key=lambda x: x[1], reverse=True)
@@ -73,6 +83,7 @@ class CustomRecommendationModel:
     def aggregate_recommendations(
         self, similar_users: List[Dict], n: int = 5
     ) -> List[str]:
+        logger.info("Aggregating recommendations")
         recommendations = defaultdict(int)
         for user in similar_users:
             for metric in user["metrics"]:
@@ -83,11 +94,15 @@ class CustomRecommendationModel:
         sorted_recommendations = sorted(
             recommendations, key=recommendations.get, reverse=True
         )
+        logger.info("Found %s", len(sorted_recommendations))
         return sorted_recommendations[:n]
 
 
 if __name__ == "__main__":
     import sys
+    from dotenv import load_dotenv
+
+    load_dotenv()
 
     db_controller = DevDatabaseController()
     recommendation_model = CustomRecommendationModel(db_controller)

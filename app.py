@@ -1,51 +1,71 @@
-from fastapi import FastAPI
+import os
+import logging
+from dotenv import load_dotenv
+from fastapi import FastAPI, Path, Query
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
 
-population = 15_000
+load_dotenv()
+logging.getLogger("app_logger")
+logging.basicConfig(
+    filename=os.environ.get("LOGGER_PATH", ""),
+    datefmt="%Y-%m-%d | %H:%M:%S |",
+    level=logging.INFO,
+)
+
+population = os.environ.get(int("POPULATION_DEV"), 15_000)
 app = FastAPI()
 db_controller = DevDatabaseController(population=population)
 recommendation_model = CustomRecommendationModel(db_controller)
 
 
 @app.get("/v1/status")
-async def read_root():
+async def status():
+    """
+    Get the status of the API.
+    """
     return {"message": "running"}
 
 
-@app.get("/v1/get_all")
-async def read_root():
-    return {"data": db_controller.get_all()}
-
-
-@app.get("v1/user/{user_id}")
-async def get_by_id(user_id: str):
+@app.get("/v1/user/{user_id}")
+async def get_by_id(user_id: str = Path(..., description="The ID of the user")):
+    """
+    Get user data by ID.
+    """
     return {"data": db_controller.get_by_id(user_id=user_id)}
 
 
 @app.get("/v1/recommend/{user_id}")
-async def get_user(user_id: str):
+async def get_recommendation(
+    user_id: str = Path(..., description="The ID of the user")
+):
+    """
+    Get recommendations for a user.
+    """
     return {
         "recommendation": recommendation_model.recommend(user_id=user_id),
     }
 
 
-@app.get("/v1/recommend/{user_id}/{n_recommendations}/{k_neighboors}")
-async def get_user(user_id: str, n_recommendations: int, k_neighboors: int):
+@app.get("/v1/recommend/{user_id}/params")
+async def get_recommendation_params(
+    user_id: str = Path(..., description="The ID of the user"),
+    n_recommendations: int = Query(..., description="Number of recommendations to get"),
+    k_neighboors: int = Query(..., description="Number of neighbors to consider"),
+):
+    """
+    Get recommendations for a user with specified parameters.
+    """
     return recommendation_model.recommend(
         user_id=user_id, n_recommendations=n_recommendations, k_neighboors=k_neighboors
     )
 
 
-@app.get("/v1/recommend/{user_id}/places={n_recommendations}")
-async def get_user(user_id: str, n_recommendations: int):
-    return recommendation_model.recommend(
-        user_id=user_id, n_recommendations=n_recommendations, k_neighboors=3
-    )
-
-
 @app.get("/")
 async def read_root():
+    """
+    Root endpoint.
+    """
     return {"message": "Hello World"}
 
 
