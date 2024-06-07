@@ -1,19 +1,27 @@
-from model.dev_database_controller import DevDatabaseController
+from model.dev_random_database import DevDatabaseController
 from typing import List, Dict
+from collections import defaultdict
+import numpy as np
 
 
 class CustomRecommendationModel:
     def __init__(self, db_controller: DevDatabaseController):
         self.db_controller = db_controller
         self.user_data = db_controller.get_all()
+        self.user_cache = {}
 
     def recommend(self, user_id: str) -> List[str]:
         user_info = self.user_data.get(user_id)
         if not user_info:
             return []
 
-        user_interactions = [metric["label"] for metric in user_info["metrics"]]
-        similar_users = self.find_similar_users(user_info)
+        user_interactions = set(metric["label"] for metric in user_info["metrics"])
+
+        if user_id not in self.user_cache:
+            similar_users = self.find_similar_users(user_info)
+            self.user_cache[user_id] = similar_users
+        else:
+            similar_users = self.user_cache[user_id]
 
         recommendations = self.aggregate_recommendations(similar_users)
         recommendations = [
@@ -22,32 +30,54 @@ class CustomRecommendationModel:
 
         return recommendations
 
-    def find_similar_users(self, user_info: Dict) -> List[Dict]:
+    def find_similar_users(self, user_info: Dict, n: int = 10) -> List[Dict]:
         similar_users = []
         for user_id, data in self.user_data.items():
             if user_id != user_info["user_id"]:
-                if (
-                    data["age"] == user_info["age"]
-                    and data["music_genre"] == user_info["music_genre"]
-                ):
-                    similar_users.append(data)
-        return similar_users
+                similarity = self.calculate_similarity(user_info, data)
+                if similarity > 0.8:
+                    similar_users.append((data, similarity))
+
+        similar_users.sort(key=lambda x: x[1], reverse=True)
+        return [user for user, _ in similar_users[:n]]
+
+    def calculate_similarity(self, user1: Dict, user2: Dict) -> float:
+        features1 = [user1["age"], user1["music_genre"], user1.get("location", "")]
+        features2 = [user2["age"], user2["music_genre"], user2.get("location", "")]
+
+        metrics1 = {
+            metric["label"]: metric["interactions"] for metric in user1["metrics"]
+        }
+        metrics2 = {
+            metric["label"]: metric["interactions"] for metric in user2["metrics"]
+        }
+
+        common_metrics = set(metrics1.keys()).intersection(set(metrics2.keys()))
+
+        if not common_metrics:
+            return 0.0
+
+        vec1 = np.array([metrics1[metric] for metric in common_metrics])
+        vec2 = np.array([metrics2[metric] for metric in common_metrics])
+
+        cos_sim = np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+
+        return cos_sim
 
     def aggregate_recommendations(
         self, similar_users: List[Dict], k: int = 5
     ) -> List[str]:
-        recommendations = {}
+        recommendations = defaultdict(int)
         for user in similar_users:
             for metric in user["metrics"]:
                 label = metric["label"]
                 interactions = metric["interactions"]
-                if label not in recommendations:
-                    recommendations[label] = 0
                 recommendations[label] += interactions
+
         sorted_recommendations = sorted(
             recommendations, key=recommendations.get, reverse=True
         )
-        return sorted_recommendations[:5]
+        return sorted_recommendations[:k]
 
 
 if __name__ == "__main__":

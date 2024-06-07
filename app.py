@@ -20,3 +20,8 @@ async def read_root():
 @app.get("/v1/recommend/{user_id}")
 async def get_user(user_id: str):
     return recommendation_model.recommend(user_id=user_id)
+
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app)
