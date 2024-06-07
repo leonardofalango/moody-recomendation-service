@@ -10,10 +10,10 @@ logging.getLogger("app_logger")
 logging.basicConfig(
     filename=os.environ.get("LOGGER_PATH", ""),
     datefmt="%Y-%m-%d | %H:%M:%S |",
-    level=logging.INFO,
+    level=logging.DEBUG,
 )
 
-population = os.environ.get(int("POPULATION_DEV"), 15_000)
+population = int(os.environ.get("POPULATION_DEV", 15_000))
 app = FastAPI()
 db_controller = DevDatabaseController(population=population)
 recommendation_model = CustomRecommendationModel(db_controller)
