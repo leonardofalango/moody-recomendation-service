@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, Path, Query
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 logging.getLogger("app_logger")
@@ -14,6 +15,15 @@ logging.basicConfig(
 )
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://moody-prot.vercel.app"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 POPULATION = int(os.environ.get("POPULATION", 100))
 db_controller = DevDatabaseController(population=POPULATION)
 recommendation_model = CustomRecommendationModel(db_controller)
