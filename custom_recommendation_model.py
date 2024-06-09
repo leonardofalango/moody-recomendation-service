@@ -52,13 +52,12 @@ class CustomRecommendationModel:
                 if similarity > self.similarity_min:
                     similar_users.append((data, similarity))
 
+        logger.debug("Found %s similar users", len(similar_users))
+
         similar_users.sort(key=lambda x: x[1], reverse=True)
         return [user for user, _ in similar_users[:k]]
 
     def calculate_similarity(self, user1: Dict, user2: Dict) -> float:
-        features1 = [user1["age"], user1["music_genre"], user1.get("location", "")]
-        features2 = [user2["age"], user2["music_genre"], user2.get("location", "")]
-
         metrics1 = {
             metric["label"]: metric["interactions"] for metric in user1["metrics"]
         }
@@ -69,16 +68,30 @@ class CustomRecommendationModel:
         common_metrics = set(metrics1.keys()).intersection(set(metrics2.keys()))
 
         if not common_metrics:
-            return 0.0
+            metrics_similarity = 0.0
+        else:
+            vec1 = np.array([metrics1[metric] for metric in common_metrics])
+            vec2 = np.array([metrics2[metric] for metric in common_metrics])
+            norm_vec = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+            metrics_similarity = np.dot(vec1, vec2) / norm_vec if norm_vec > 0 else 0.0
 
-        vec1 = np.array([metrics1[metric] for metric in common_metrics])
-        vec2 = np.array([metrics2[metric] for metric in common_metrics])
+        max_age_difference = 100
+        age_difference = abs(user1["age"] - user2["age"])
+        age_similarity = 1 - (age_difference / max_age_difference)
 
-        norm_vec = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+        genre_similarity = 1.0 if user1["music_genre"] == user2["music_genre"] else 0.0
 
-        cos_sim = np.dot(vec1, vec2) / (norm_vec) if norm_vec > 0 else np.nan
+        weight_metrics = 0.8
+        weight_age = 0.1
+        weight_genre = 0.1
 
-        return cos_sim
+        overall_similarity = (
+            weight_metrics * metrics_similarity
+            + weight_age * age_similarity
+            + weight_genre * genre_similarity
+        )
+
+        return overall_similarity
 
     def aggregate_recommendations(
         self, similar_users: List[Dict], n: int = 5
@@ -94,8 +107,11 @@ class CustomRecommendationModel:
         sorted_recommendations = sorted(
             recommendations, key=recommendations.get, reverse=True
         )
-        logger.info("Found %s", len(sorted_recommendations))
+        logger.info("Found %s recommendations", len(sorted_recommendations))
         return sorted_recommendations[:n]
+
+    def _clear_cache(self):
+        self.user_cache = {}
 
 
 if __name__ == "__main__":

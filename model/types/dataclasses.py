@@ -18,7 +18,6 @@ class User:
 
 @dataclasses.dataclass
 class Metrics:
-    user_id: str
     label: str
     interactions: int
 
@@ -27,7 +26,7 @@ class Metrics:
 class UserData:
     user_id: str
     age: int
-    music_gente: str
+    music_genre: str
     metrics: Iterable[Metrics]
 
 

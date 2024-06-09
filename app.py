@@ -13,9 +13,9 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
-population = int(os.environ.get("POPULATION_DEV", 15_000))
 app = FastAPI()
-db_controller = DevDatabaseController(population=population)
+POPULATION = int(os.environ.get("POPULATION", 100))
+db_controller = DevDatabaseController(population=POPULATION)
 recommendation_model = CustomRecommendationModel(db_controller)
 
 
@@ -27,12 +27,36 @@ async def status():
     return {"message": "running"}
 
 
+@app.post("/v1/user")
+async def create_user(user: dict):
+    """
+    Create a new user.
+    """
+    db_controller.create(user)
+
+
 @app.get("/v1/user/{user_id}")
 async def get_by_id(user_id: str = Path(..., description="The ID of the user")):
     """
     Get user data by ID.
     """
     return {"data": db_controller.get_by_id(user_id=user_id)}
+
+
+@app.patch("/v1/user/{user_id}")
+async def update_user(user_id: str, user: dict):
+    """
+    Update a user.
+    """
+    db_controller.update(user_id=user_id, data=user)
+
+
+@app.delete("/v1/user/{user_id}")
+async def delete_user(user_id: str = Path(..., description="The ID of the user")):
+    """
+    Delete a user.
+    """
+    db_controller.delete(user_id=user_id)
 
 
 @app.get("/v1/recommend/{user_id}")
@@ -45,6 +69,15 @@ async def get_recommendation(
     return {
         "recommendation": recommendation_model.recommend(user_id=user_id),
     }
+
+
+@app.post("/v1/rate/")
+async def rate_place(user_id: str, place_id: str, rate: int):
+    """
+    Rate a place.
+    """
+    db_controller.rate_place(user_id=user_id, place_id=place_id, rate=rate)
+    return {"message": "success"}
 
 
 @app.get("/v1/recommend/{user_id}/params")
