@@ -2,6 +2,7 @@ import os
 import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, Path, Query
+from model.types.dataclasses import User, RatePlace
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
 
@@ -14,8 +15,7 @@ logging.basicConfig(
 )
 
 app = FastAPI()
-POPULATION = int(os.environ.get("POPULATION", 100))
-db_controller = DevDatabaseController(population=POPULATION)
+db_controller = DevDatabaseController()
 recommendation_model = CustomRecommendationModel(db_controller)
 
 
@@ -28,7 +28,7 @@ async def status():
 
 
 @app.post("/v1/user")
-async def create_user(user: dict):
+async def create_user(user: User):
     """
     Create a new user.
     """
@@ -44,7 +44,7 @@ async def get_by_id(user_id: str = Path(..., description="The ID of the user")):
 
 
 @app.patch("/v1/user/{user_id}")
-async def update_user(user_id: str, user: dict):
+async def update_user(user_id: str, user: User):
     """
     Update a user.
     """
@@ -71,12 +71,22 @@ async def get_recommendation(
     }
 
 
+@app.delete("/v1/clear_cache/")
+async def clear_cache(user_id: str = None):
+    """
+    Clear the cache.
+    """
+    recommendation_model.clear_cache(user_id=user_id)
+    return {"message": "success"}
+
+
 @app.post("/v1/rate/")
-async def rate_place(user_id: str, place_id: str, rate: int):
+async def rate_place(rate_place: RatePlace):
     """
     Rate a place.
     """
-    db_controller.rate_place(user_id=user_id, place_id=place_id, rate=rate)
+    db_controller.rate_place(rate_place)
+    await clear_cache(user_id=rate_place.user_id)
     return {"message": "success"}
 
 

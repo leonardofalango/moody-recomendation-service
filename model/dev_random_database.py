@@ -1,76 +1,87 @@
+import os
 import json
 import random
 import logging
 import pathlib
 from typing import Iterable
-from model.types.dataclasses import UserData
+from dotenv import load_dotenv
 from model.types.repository import Repository
+from model.types.dataclasses import User, RatePlace, Metrics
 
 logger = logging.getLogger("app_logger")
+load_dotenv()
 
 
 class DevDatabaseController(Repository):
-    def __init__(self, population: int = 100) -> None:
+    def __init__(self) -> None:
         logger.info("Database initiating")
 
-        self.user_data = {}
+        population = int(os.environ.get("POPULATION", 5))
+
+        self.user_data = []
         path = pathlib.Path("./")
 
         with open(path / "model" / "data" / "genres.json") as f:
             self.genres = json.load(f)["genres"]
         with open(path / "model" / "data" / "metrics.json") as f:
-            self.metrics = json.load(f)["metrics"]
+            self.labels = json.load(f)["metrics"]
 
-        self.max_places = int(len(self.metrics) / 2)
+        self.max_places = int(len(self.labels) / 2)
         self.max_interactions = int(self.max_places / 4)
 
         for i in range(population):
-            self.user_data[str(i)] = self.__generate_fake_data(i)
+            self.user_data.append(self.__generate_fake_data(i))
 
         logger.info("Loaded database with %s data", population)
 
     def __generate_fake_data(self, user_id):
         age = random.randint(18, 19)
         music_genre = random.choice(self.genres)
-        return {
-            "user_id": str(user_id),
-            "age": age,
-            "music_genre": music_genre,
-            "metrics": [
-                dict(
-                    random.choice(self.metrics),
+        return User(
+            user_id=str(user_id),
+            age=age,
+            music_genre=music_genre,
+            metrics=[
+                Metrics(
+                    label=random.choice(self.labels),
                     interactions=random.randint(0, self.max_interactions),
                 )
-                for x in range(random.randint(0, self.max_places))
+                for _ in range(random.randint(0, self.max_places))
             ],
-        }
+        )
 
-    def get_all(self) -> Iterable[UserData]:
+    def get_all(self) -> Iterable[User]:
         logger.info("Getting all users")
         return self.user_data
 
-    def get_by_id(self, user_id: str) -> UserData:
+    def get_by_id(self, user_id: str) -> User:
         logger.info("Getting user from database")
-        return self.user_data[user_id]
+        for user in self.user_data:
+            if user.user_id == user_id:
+                return user
 
-    def update(self, user_id: str, data: UserData) -> None:
+    def update(self, user_id: str, data: User) -> None:
         logger.info("Updating user data")
-        self.user_data[user_id] = data
+        for user in self.user_data:
+            if user.user_id == user_id:
+                return user
 
-    def create(self, data: UserData) -> None:
+    def create(self, data: User) -> None:
         logger.info("Creating user data")
-        self.user_data[data["user_id"]] = data
+        self.user_data.append(data)
 
     def delete(self, user_id: str) -> None:
         logger.info("Deleting user data")
         del self.user_data[user_id]
 
-    def rate_place(self, user_id: str, place_id: str, rate: int = 1) -> None:
+    def rate_place(self, rate_place: RatePlace) -> None:
         logger.info("Interaction with a place")
-        user_data = self.user_data[user_id]
-        for metric in user_data["metrics"]:
-            if metric["label"] == place_id:
-                metric["interactions"] += rate
+        user_data = self.get_by_id(rate_place.user_id)
+        for metric in user_data.metrics:
+            if metric.label == rate_place.label:
+                metric.interactions += rate_place.interactions
                 return
 
-        user_data["metrics"].append({"label": place_id, "interactions": rate})
+        user_data.metrics.append(
+            Metrics(label=rate_place.label, interactions=rate_place.interactions)
+        )
