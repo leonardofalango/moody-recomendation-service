@@ -16,7 +16,7 @@ class DevDatabaseController(Repository):
     def __init__(self) -> None:
         logger.info("Database initiating")
 
-        population = int(os.environ.get("POPULATION", 5))
+        population = int(os.environ.get("POPULATION", 15_000))
 
         self.user_data = []
         path = pathlib.Path("./")
