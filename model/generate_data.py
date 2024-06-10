@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 import json
 import random
 import requests
@@ -146,6 +147,21 @@ names = [
     "The Roaring Guitar",
     "Screaming Stage",
     "Headbanger Haven",
+    "Igreja da Graça Divina",
+    "Igreja da Esperança Renovada",
+    "Igreja do Sagrado Coração",
+    "Igreja da Comunhão Fraternal",
+    "Igreja da Nova Aliança",
+    "Igreja da Renovação Espiritual",
+    "Igreja do Evangelho Eterno",
+    "Igreja do Amor Infinito",
+    "Igreja do Caminho Verdadeiro",
+    "Igreja do Divino Salvador",
+    "Igreja do Amor Fraternal",
+    "Igreja do Perdão Divino",
+    "Igreja da Fé Inabalável",
+    "Igreja da Salvação Eterna",
+    "Igreja da Luz Celestial",
 ]
 
 locations = [
@@ -252,20 +268,6 @@ locations = [
     "Cachoeiro de Itapemirim",
 ]
 
-descriptions = [
-    {"Galeria": "Culto"},
-    {"Festa": "Festeiro"},
-    {"Academias": "Fit"},
-    {"Parque": "Amante da Natureza"},
-    {"Rock": "Rockeiro"},
-    {"Headbang": "Rocker"},
-    {"Shopping": "Comprador"},
-    {"Café": "Amante de café"},
-    {"Observatório": "Observador"},
-    {"Zoo": "Amante de animais"},
-    {"Museu": "Apreciador da arte"},
-]
-
 
 def get_image_url(place_name):
     search_url = "https://www.bing.com/images/search"
@@ -281,22 +283,32 @@ def get_image_url(place_name):
     return None
 
 
-ratings = [round(random.uniform(3.0, 5.0), 1) for _ in range(100)]
-likes = [random.randint(50, 1000) for _ in range(100)]
-
-for i in tqdm(range(1, 101)):
-    name = random.choice(names)
-    place = {
+def generate(i):
+    name = names[i]
+    return {
         "place_id": str(i),
         "name": name,
         "location": random.choice(locations),
-        "rating": str(ratings[i - 1]),
-        "likes": str(likes[i - 1]),
+        "rating": round(random.uniform(3.0, 5.0), 1),
+        "likes": random.randint(50, 1000),
         "image": get_image_url(name)
         or "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw_HeSzHfBorKS4muw4IIeVvvRgnhyO8Gn8w&s",
     }
-    places_data["places"].append(place)
 
-json_data = json.dumps(places_data, indent=2, ensure_ascii=False)
-with open("model/data/places.json", "w", encoding="utf-8") as file:
-    file.write(json_data)
+
+import concurrent.futures
+
+with ThreadPoolExecutor(max_workers=16) as executor:
+    f = {executor.submit(generate, i): i for i in tqdm(range(len(names)))}
+
+    for future in concurrent.futures.as_completed(f):
+        data = f[future]
+        try:
+            data = future.result()
+            places_data["places"].append(data)
+        except Exception as exc:
+            print("%r generated an exception: %s" % (data, exc))
+
+        with open("model/data/places.json", "w", encoding="utf-8") as file:
+            json_data = json.dumps(places_data, indent=2, ensure_ascii=False)
+            file.write(json_data)

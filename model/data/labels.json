@@ -10,6 +10,7 @@
         {"Café": "Amante de café"},
         {"Observatório": "Observador"},
         {"Zoo": "Amante de animais"},
-        {"Museu": "Apreciador da arte"}
+        {"Museu": "Apreciador da arte"},
+        {"Igreja" : "Católico/Evangélico"}
     ]
 }

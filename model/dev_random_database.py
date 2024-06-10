@@ -19,7 +19,7 @@ class DevDatabaseController(Repository):
 
         population = int(os.environ.get("POPULATION", 100))
 
-        self.user_data = []
+        self.user_data: list[User] = []
         path = pathlib.Path("./")
 
         with open(path / "model" / "data" / "genres.json") as f:
@@ -35,6 +35,17 @@ class DevDatabaseController(Repository):
 
         for i in range(population):
             self.user_data.append(self.__generate_fake_data(i))
+
+        logger.debug(self.user_data[0])
+        with open("l.txt", "w") as f:
+            f.write(
+                str(
+                    [
+                        self.get_place_by_id(place.place_id)
+                        for place in self.user_data[0].metrics
+                    ]
+                )
+            )
 
         logger.info("Loaded database with %s data", population)
 
@@ -67,22 +78,37 @@ class DevDatabaseController(Repository):
     def __generate_metrics(self, user_id: str) -> list[Metrics]:
         first_place = random.choice(self.places)
         k = first_place.name.split(" ")[0]
-        ms = []
+        ms = [
+            Metrics(
+                place_id=first_place.place_id,
+                user_id=str(user_id),
+                interactions=random.randint(0, self.max_interactions),
+            )
+        ]
 
+        similiar_places = [place for place in self.places if k in place.name]
         for _ in range(self.n_places + random.randint(-2, 2)):
+            place = random.choice(similiar_places)
+            for similar in similiar_places:
+                if similar.place_id == place.place_id:
+                    continue
+
             ms.append(
                 Metrics(
-                    place_id=random.choice(
-                        [place for place in self.places if k in place.name]
-                    ).place_id,
+                    place_id=place.place_id,
                     user_id=str(user_id),
                     interactions=random.randint(0, self.max_interactions),
                 )
             )
         for _ in range(self.n_places + random.randint(-3, 3)):
+            place_id = random.choice(self.places).place_id
+
+            if place_id == any(ms):
+                continue
+
             ms.append(
                 Metrics(
-                    place_id=random.choice(self.places).place_id,
+                    place_id=place_id,
                     user_id=str(user_id),
                     interactions=random.randint(0, self.max_interactions),
                 )
