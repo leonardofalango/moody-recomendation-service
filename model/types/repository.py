@@ -1,5 +1,5 @@
 from typing import Iterable
-from model.types.dataclasses import User
+from model.types.basic_types import User
 
 
 class Repository:
@@ -14,3 +14,5 @@ class Repository:
     def create(self, data: User) -> None: ...
 
     def delete(self, user_id: str) -> None: ...
+
+    def get_place_by_id(self, place_id: str) -> dict | None: ...

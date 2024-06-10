@@ -1,10 +1,19 @@
-import dataclasses
 from pydantic import BaseModel
 from typing import Protocol, Iterable
 
 
+class Place(BaseModel):
+    place_id: str
+    name: str
+    location: str
+    rating: float
+    likes: int
+    image: str
+
+
 class Metrics(BaseModel):
-    label: str
+    place_id: str
+    user_id: str
     interactions: int
 
 
@@ -17,7 +26,7 @@ class User(BaseModel):
 
 class RatePlace(BaseModel):
     user_id: str
-    label: str
+    place_id: str
     interactions: int
 
 

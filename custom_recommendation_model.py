@@ -3,7 +3,7 @@ import logging
 import numpy as np
 from typing import List
 from collections import defaultdict
-from model.types.dataclasses import User
+from model.types.basic_types import User
 from model.types.repository import Repository
 
 logger = logging.getLogger("app_logger")
@@ -32,7 +32,7 @@ class CustomRecommendationModel:
             logger.info("User not found")
             return []
 
-        user_interactions = set(metric.label for metric in user_info.metrics)
+        user_interactions = set(metric.place_id for metric in user_info.metrics)
 
         if user_id not in self.user_cache:
             similar_users = self.find_similar_users(user_info, k=k_neighboors)
@@ -44,7 +44,9 @@ class CustomRecommendationModel:
             similar_users, n=n_recommendations + 1
         )
         recommendations = [
-            item for item in recommendations if item not in user_interactions
+            self.db_controller.get_place_by_id(item)
+            for item in recommendations
+            if item not in user_interactions
         ]
 
         return recommendations
@@ -65,8 +67,8 @@ class CustomRecommendationModel:
         return [user for user, _ in similar_users[:k]]
 
     def calculate_similarity(self, user1: User, user2: User) -> float:
-        metrics1 = {metric.label: metric.interactions for metric in user1.metrics}
-        metrics2 = {metric.label: metric.interactions for metric in user2.metrics}
+        metrics1 = {metric.place_id: metric.interactions for metric in user1.metrics}
+        metrics2 = {metric.place_id: metric.interactions for metric in user2.metrics}
 
         common_metrics = set(metrics1.keys()).intersection(set(metrics2.keys()))
 
@@ -103,9 +105,9 @@ class CustomRecommendationModel:
         recommendations = defaultdict(int)
         for user in similar_users:
             for metric in user.metrics:
-                label = metric.label
+                place_id = metric.place_id
                 interactions = metric.interactions
-                recommendations[label] += interactions
+                recommendations[place_id] += interactions
 
         sorted_recommendations = sorted(
             recommendations, key=recommendations.get, reverse=True

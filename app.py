@@ -2,7 +2,8 @@ import os
 import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, Path, Query
-from model.types.dataclasses import User, RatePlace
+from fastapi.middleware.cors import CORSMiddleware
+from model.types.basic_types import User, RatePlace
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
 
@@ -18,6 +19,20 @@ app = FastAPI()
 db_controller = DevDatabaseController()
 recommendation_model = CustomRecommendationModel(db_controller)
 
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "https://moody-prot.vercel.app/",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/v1/status")
 async def status():
@@ -25,6 +40,15 @@ async def status():
     Get the status of the API.
     """
     return {"message": "running"}
+
+
+@app.post("/v1/local/{place_id}/like")
+async def like_place(place_id: str = Path(..., description="The ID of the place")):
+    """
+    Like a place.
+    """
+    db_controller.like_place(place_id=place_id)
+    return {"message": "success"}
 
 
 @app.post("/v1/user")
@@ -86,7 +110,9 @@ async def rate_place(rate_place: RatePlace):
     Rate a place.
     """
     db_controller.rate_place(rate_place)
+
     await clear_cache(user_id=rate_place.user_id)
+
     return {"message": "success"}
 
 

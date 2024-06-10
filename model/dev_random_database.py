@@ -6,7 +6,7 @@ import pathlib
 from typing import Iterable
 from dotenv import load_dotenv
 from model.types.repository import Repository
-from model.types.dataclasses import User, RatePlace, Metrics
+from model.types.basic_types import User, RatePlace, Metrics
 
 logger = logging.getLogger("app_logger")
 load_dotenv()
@@ -23,10 +23,10 @@ class DevDatabaseController(Repository):
 
         with open(path / "model" / "data" / "genres.json") as f:
             self.genres = json.load(f)["genres"]
-        with open(path / "model" / "data" / "metrics.json") as f:
-            self.labels = json.load(f)["metrics"]
+        with open(path / "model" / "data" / "places.json", encoding="utf-8") as f:
+            self.places = json.load(f)["places"]
 
-        self.max_places = int(len(self.labels) / 2)
+        self.max_places = int(len(self.places) / 2)
         self.max_interactions = int(self.max_places / 4)
 
         for i in range(population):
@@ -43,7 +43,8 @@ class DevDatabaseController(Repository):
             music_genre=music_genre,
             metrics=[
                 Metrics(
-                    label=random.choice(self.labels),
+                    place_id=random.choice(self.places)["place_id"],
+                    user_id=str(user_id),
                     interactions=random.randint(0, self.max_interactions),
                 )
                 for _ in range(random.randint(0, self.max_places))
@@ -78,10 +79,28 @@ class DevDatabaseController(Repository):
         logger.info("Interaction with a place")
         user_data = self.get_by_id(rate_place.user_id)
         for metric in user_data.metrics:
-            if metric.label == rate_place.label:
+            if metric.place_id == rate_place.place_id:
                 metric.interactions += rate_place.interactions
                 return
 
         user_data.metrics.append(
-            Metrics(label=rate_place.label, interactions=rate_place.interactions)
+            Metrics(
+                user_id=rate_place.user_id,
+                place_id=rate_place.place_id,
+                interactions=rate_place.interactions,
+            )
         )
+
+    def get_all_places(self):
+        return self.places
+
+    def get_place_by_id(self, place_id):
+        for place in self.places:
+            if place["place_id"] == place_id:
+                return place
+        return None
+
+    def like_place(self, place_id):
+        place = self.get_place_by_id(place_id)
+        place["likes"] += 1
+        return place
