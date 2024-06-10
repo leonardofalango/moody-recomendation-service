@@ -1,0 +1,337 @@
+
+
+User :0-19
+	Igreja do Evangelho Eterno, 2
+	Igreja do Amor Fraternal, 1
+	Igreja do Sagrado Coração, 1
+	Igreja da Renovação Espiritual, 1
+	Igreja do Amor Infinito, 1
+	Igreja do Perdão Divino, 1
+	Igreja do Amor Fraternal, 1
+	Igreja do Divino Salvador, 1
+	Igreja da Graça Divina, 1
+	Shopping The Dubai, 0
+	Museu do Carro, 1
+	Galeria Urbana, 1
+	Igreja do Sagrado Coração, 1
+	Festa da Primavera, 0
+	Festa do Pijama, 1
+	Zoológico ZooQuest, 1
+	Academia MuscleMax, 0
+	Rock Hard Rock Haven, 1
+	Rock Punk Paradise, 0
+	Zoológico FaunaValley, 1
+	Shopping of the Emirates, 0
+	Festa da Alegria, 0
+	Galeria dos Sentidos, 0
+	ABC Shopping Achrafieh, 0
+	Galeria Expressão, 1
+	Museu do Futebol Brasileiro, 1
+	Igreja da Comunhão Fraternal, 1
+	Igreja do Amor Infinito, 0
+	Café do Dia, 0
+
+User :1-18
+	Parque da Harmonia, 2
+	Parque das Maravilhas, 1
+	Parque da Seriedade, 1
+	Parque da Seriedade, 1
+	Parque da Harmonia, 1
+	Parque da Harmonia, 1
+	Parque da Vida, 1
+	Parque da Beleza, 1
+	Parque da Liberdade, 1
+	Parque das Crianças, 1
+	Parque da Imaginação, 1
+	Parque das Águas, 1
+	Parque da Vida, 1
+	Parque das Cores, 1
+	Parque da Seriedade, 1
+	Parque da Amizade, 1
+	Parque da Beleza, 1
+	Parque das Cores, 1
+	Parque da Beleza, 1
+	Parque da Beleza, 1
+	Rock Riff Rendezvous, 0
+	Academia PowerFlex, 1
+	Café Expresso, 0
+	Zoológico NatureReserve, 0
+	Galeria dos Mestres, 0
+	Academia ShapeUp, 0
+	Festa Tropical, 1
+	Academia BodyStrong, 1
+	Galeria dos Ventos, 0
+	Galeria das Cores, 1
+	Zoológico JungleLand, 1
+	King of Shopping Prussia, 1
+	Metallica Haven, 1
+	Museu da Memória, 1
+	Igreja do Divino Salvador, 0
+	Parque da Liberdade, 1
+	Shopping Westfield, 1
+	Parque da Harmonia, 1
+	Museu da Vida, 0
+	Rock Alternative Alley, 1
+
+User :2-18
+	Shopping SM of Asia, 2
+	South Coast Shopping Plaza, 1
+	ABC Shopping Achrafieh, 1
+	Shopping Paragon, 1
+	Grand Shopping Indonesia, 1
+	Shopping VivoCity, 1
+	Berjaya Times Shopping Square, 1
+	Shopping of America, 1
+	Parque das Cores, 1
+	Parque da Vida, 0
+	Academia MuscleFactory, 0
+	Festa dos Sonhos, 1
+	Museu de Antropologia, 1
+	Museu de Antropologia, 1
+	Café Tentador, 0
+	Galeria dos Momentos, 0
+	Parque das Crianças, 1
+	Academia IronClad, 0
+	Museu do Homem do Nordeste, 0
+	Rock Rockabilly Joint, 0
+	Academia BodyBlast, 0
+	Canal Walk Shopping Shopping Centre, 0
+	Shopping SM of Asia, 1
+	Café Saboroso, 0
+	Festa do Luau, 1
+	Museu do Futebol Brasileiro, 0
+	The Shopping Galleria, 1
+	The Shopping Galleria, 1
+
+User :3-19
+	Academia BodyPump, 2
+	Academia BodyPump, 1
+	Academia BodyBlast, 1
+	Academia BodyStrong, 1
+	Academia BodyFit, 1
+	Academia MuscleMax, 1
+	Academia IronClad, 1
+	Academia IronWorks, 1
+	Academia FitForce, 1
+	Academia Fitness Plus, 1
+	Academia FitPro, 1
+	Academia EliteFit, 1
+	Academia FlexFit, 1
+	Galeria do Rock, 1
+	Galeria da Inspiração, 0
+	Galeria das Cores, 1
+	Zoológico ZooVista, 0
+	Rock Punk Paradise, 1
+	Academia StrengthCamp, 1
+	Café Viver, 0
+	ABC Shopping Achrafieh, 0
+	Bella Café, 1
+	Café Simpatia, 1
+	Zoológico ZooQuest, 1
+	Café do Bairro, 1
+	Festa das Cores, 1
+	Westfield Stratford Shopping City, 1
+	Galeria da Vanguarda, 1
+	Festa do Pijama, 0
+	Parque da Amizade, 0
+	Galeria Contemporânea, 1
+	Galeria da Criatividade, 0
+	Metallica Haven, 1
+
+User :4-18
+	Shopping CentralWorld, 2
+	Shopping SM of Asia, 1
+	Westfield Stratford Shopping City, 1
+	Shopping Paragon, 1
+	Westfield Stratford Shopping City, 1
+	Canal Walk Shopping Shopping Centre, 1
+	The Shopping Galleria, 1
+	Canal Walk Shopping Shopping Centre, 1
+	Shopping Paragon, 1
+	Chadstone Shopping Shopping Centre, 1
+	ABC Shopping Achrafieh, 1
+	Tokyo Shopping Midtown, 1
+	Galeria Urbana, 0
+	Rock Metal Mayhem, 0
+	Parque da Liberdade, 1
+	Café do Bairro, 1
+	Parque da Amizade, 1
+	Museu de Paleontologia, 0
+	Festa dos Sonhos, 0
+	Festa da Primavera, 1
+	Tokyo Shopping Midtown, 0
+	Galeria dos Sentidos, 1
+	Museu do Patrimônio Histórico, 0
+	Festa do Ano Novo, 0
+	Parque da Felicidade, 0
+	Festa do Brilho, 1
+	Parque das Águas, 1
+	Museu da Revolução, 1
+	Zoológico ZooVista, 0
+	Rock Rock Riot, 0
+	Metal Madness, 1
+	Festa da Lua Cheia, 1
+
+User :5-19
+	Festa no Céu, 2
+	Festa da Dança, 1
+	Festa da Alegria, 1
+	Festa do Sorriso, 1
+	Festa Tropical, 1
+	Festa da Música, 1
+	Festa da Música, 1
+	Festa da Música, 1
+	Festa das Cores, 1
+	Festa no Céu, 1
+	Festa das Flores, 1
+	Festa das Estrelas, 1
+	Festa da Amizade, 1
+	Festa da Amizade, 1
+	Festa Tropical, 1
+	Festa da Música, 1
+	Festa Tropical, 1
+	Festa da Fantasia, 1
+	Shopping of the Emirates, 0
+	ABC Shopping Achrafieh, 1
+	Igreja do Perdão Divino, 1
+	Grand Shopping Indonesia, 1
+	Galeria do Olhar, 1
+	Zoológico NatureReserve, 0
+	Galeria dos Sonhos, 1
+	Galeria das Ideias, 1
+	Café com Prosa, 0
+	Museu do Patrimônio Cultural, 0
+	Museu do Carro, 0
+	Academia Fitness Plus, 0
+	Festa das Flores, 1
+	Museu do Café, 0
+	Café da Esquina, 1
+	Museu da Memória, 0
+	Igreja do Caminho Verdadeiro, 0
+	Museu do Café, 1
+	Museu Histórico e Artístico, 0
+	Museu do Futebol Brasileiro, 0
+
+User :6-18
+	Academia MuscleFactory, 2
+	Academia MuscleMax, 1
+	Academia PowerHouse, 1
+	Academia EliteFit, 1
+	Academia FlexGym, 1
+	Academia MuscleFactory, 1
+	Academia FitZone, 1
+	Academia IronWorks, 1
+	Academia MuscleMania, 1
+	Parque da Beleza, 0
+	Galeria da Inovação, 0
+	Academia FitForce, 1
+	Rock Alternative Alley, 0
+	Rock Riff Rendezvous, 1
+	Galeria dos Momentos, 1
+	Museu de Zoologia, 1
+	Rock Jamming Junction, 0
+	Academia ShapeUp, 0
+	Parque da Vida, 1
+	Museu de Arte Sacra, 1
+	Igreja da Renovação Espiritual, 1
+	Observatório, 1
+	Metal Works, 1
+	Metal Kingdom, 0
+	Café Saboroso, 1
+	Chadstone Shopping Shopping Centre, 1
+	Rock Guitar Gods' Den, 1
+	Academia Fitness Plus, 0
+	Museu do Imigrante, 1
+
+User :7-18
+	Academia CoreZone, 2
+	Academia PowerFlex, 1
+	Academia FitZone, 1
+	Academia BodyTech, 1
+	Academia ShapeUp, 1
+	Academia EliteFit, 1
+	Academia BodyFit, 1
+	Academia MuscleMax, 1
+	Academia PowerHouse, 1
+	Academia IronClad, 1
+	Academia FlexFit, 1
+	Academia IronGym, 1
+	Academia BodyFit, 1
+	Academia StrengthCamp, 1
+	Academia Fitness Plus, 1
+	Rock Hard Rock Haven, 1
+	Museu do Imigrante, 0
+	Festa do Sorriso, 1
+	Museu do Trem, 0
+	Parque da Aventura, 1
+	Parque da Seriedade, 0
+	Academia FlexFit, 0
+	Rock Rockabilly Joint, 0
+	Rock The Blues Basement Rock Band, 0
+	Parque da Diversidade, 1
+	Galeria da Harmonia, 1
+	Academia BodyPump, 1
+	Museu de História, 1
+	Parque da Harmonia, 1
+	Café Saboroso, 1
+	Galeria do Rock, 0
+	Academia MuscleFactory, 0
+	Museu da Aviação, 0
+	Academia BodyStrong, 1
+	Café Sonhador, 1
+
+User :8-18
+	South Coast Shopping Plaza, 2
+	South Coast Shopping Plaza, 1
+	Museu de Ciências e Tecnologia, 0
+	Academia EliteFit, 1
+	Zoológico SafariScape, 1
+	Parque das Águas, 0
+	Galeria Urbana, 1
+	Metallica Frontier, 1
+	Parque da Felicidade, 0
+	Zoológico NaturePark, 0
+	Zoológico SafariZone, 1
+	Festa das Flores, 1
+	Igreja do Caminho Verdadeiro, 0
+	Festa da Dança, 0
+	South Coast Shopping Plaza, 0
+	Academia PowerFlex, 1
+	Zoológico Animalia, 0
+	Metal Works, 1
+	Festa das Flores, 0
+	Academia BodyTech, 0
+	Parque da Aventura, 0
+	Metal Madness, 1
+
+User :9-18
+	Café Saudade, 2
+	Café Viver, 1
+	Café Sonhador, 1
+	Café Especial, 1
+	Café e Cia, 1
+	Café do Dia, 1
+	Café Especial, 1
+	Café do Bairro, 1
+	Café dos Amigos, 1
+	Café da Esquina, 1
+	Rock Arena, 0
+	Parque das Cores, 0
+	Museu Ferroviário, 1
+	Café Expresso, 1
+	Zoológico WildlifeReserve, 1
+	Festa das Cores, 0
+	Rock Metal Mayhem, 1
+	Galeria Vanguarda, 0
+	Café do Dia, 0
+	Museu do Folclore, 1
+	Museu do Café, 1
+	Museu de Zoologia, 1
+	Zoológico FaunaValley, 0
+	Museu do Folclore, 0
+	Tokyo Shopping Midtown, 0
+	Parque das Maravilhas, 0
+	Shopping of the Emirates, 1
+	Rock Bluesy Boulevard, 1
+	Igreja do Caminho Verdadeiro, 1
+	Academia FitnessFusion, 0

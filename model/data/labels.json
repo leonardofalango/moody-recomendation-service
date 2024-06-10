@@ -9,8 +9,8 @@
         {"Shopping": "Comprador"},
         {"Café": "Amante de café"},
         {"Observatório": "Observador"},
-        {"Zoo": "Amante de animais"},
+        {"Zoologico": "Amante de animais"},
         {"Museu": "Apreciador da arte"},
-        {"Igreja" : "Católico/Evangélico"}
+        {"Igreja" : "Crente"}
     ]
 }

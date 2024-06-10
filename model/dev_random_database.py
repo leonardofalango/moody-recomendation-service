@@ -30,11 +30,18 @@ class DevDatabaseController(Repository):
             self.labels: list[object] = json.load(f)["labels"]
 
         self.places = self.__populate_places(places)
-        self.n_places = 25
-        self.max_interactions = 5
+        self.n_places = 20
+        self.max_interactions = 2
 
         for i in range(population):
             self.user_data.append(self.__generate_fake_data(i))
+
+        with open("f.txt", "w") as f:
+            for user in self.user_data[:10]:
+                f.write(f"\n\nUser :{user.user_id}-{user.age}")
+                for m in user.metrics:
+                    p = self.get_place_by_id(m.place_id)
+                    f.write(f"\n\t{p.name}, {m.interactions}")
 
         logger.info("Loaded database with %s data", population)
 
@@ -71,25 +78,27 @@ class DevDatabaseController(Repository):
             Metrics(
                 place_id=first_place.place_id,
                 user_id=str(user_id),
-                interactions=random.randint(0, self.max_interactions),
+                interactions=2,
             )
         ]
 
         similiar_places = [place for place in self.places if k in place.name]
-        for _ in range(self.n_places + random.randint(-2, 2)):
-            place = random.choice(similiar_places)
-            for similar in similiar_places:
-                if similar.place_id == place.place_id:
-                    continue
+        for _ in range(
+            random.randint(int(len(similiar_places) / 3), len(similiar_places))
+        ):
+            place_id = random.choice(similiar_places).place_id
+
+            if place_id == any(similiar_places):
+                continue
 
             ms.append(
                 Metrics(
-                    place_id=place.place_id,
+                    place_id=place_id,
                     user_id=str(user_id),
-                    interactions=random.randint(0, self.max_interactions),
+                    interactions=1,
                 )
             )
-        for _ in range(self.n_places + random.randint(-3, 3)):
+        for _ in range(self.n_places):
             place_id = random.choice(self.places).place_id
 
             if place_id == any(ms):
@@ -99,7 +108,7 @@ class DevDatabaseController(Repository):
                 Metrics(
                     place_id=place_id,
                     user_id=str(user_id),
-                    interactions=random.randint(0, self.max_interactions),
+                    interactions=random.randint(0, 1),
                 )
             )
 

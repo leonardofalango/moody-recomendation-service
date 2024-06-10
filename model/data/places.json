@@ -1,1236 +1,1876 @@
 {
   "places": [
     {
+      "place_id": "12",
+      "name": "Café Expresso",
+      "location": "Indaiatuba",
+      "rating": 4.9,
+      "likes": 498,
+      "image": "https://2.bp.blogspot.com/_dWmlS0IdLTI/TQ8_xeS7nzI/AAAAAAAABlw/5-JzK7w5Qag/s1600/caf%25C3%25A9+expresso1.jpg"
+    },
+    {
+      "place_id": "5",
+      "name": "Café das Artes",
+      "location": "Divinópolis",
+      "rating": 4.1,
+      "likes": 833,
+      "image": "https://img.elo7.com.br/product/zoom/3A11A6C/caneca-lilo-e-stitch-sem-cafe-com-cafe-personalizada-xicara-personalizada-para-presente.jpg"
+    },
+    {
+      "place_id": "11",
+      "name": "Café Especial",
+      "location": "Franca",
+      "rating": 3.7,
+      "likes": 898,
+      "image": "http://blog.coffeeandjoy.com.br/wp-content/uploads/2022/11/coffeeandjoy_diferenca_cafe_especial_cafe_tradicional.jpg"
+    },
+    {
+      "place_id": "1",
+      "name": "Bella Café",
+      "location": "Ribeirão Preto",
+      "rating": 4.8,
+      "likes": 292,
+      "image": "https://portjolio.net/wp-content/uploads/2020/03/200303-La-Bella-Cafe-cover.jpg"
+    },
+    {
+      "place_id": "3",
+      "name": "Café Charmoso",
+      "location": "Vitória da Conquista",
+      "rating": 4.4,
+      "likes": 938,
+      "image": "https://todososcaminhos.com/wp-content/uploads/2021/12/pe-de-cafe-sao-sebastiao-todos-os-caminhos-6-scaled.jpg"
+    },
+    {
+      "place_id": "2",
+      "name": "Café Aconchego",
+      "location": "Manaus",
+      "rating": 4.0,
+      "likes": 579,
+      "image": "https://www.lojastrevisan.com/img/produtos/2540_0403758001664301309.jpg"
+    },
+    {
+      "place_id": "9",
+      "name": "Café do Dia",
+      "location": "Jaboatão dos Guararapes",
+      "rating": 4.8,
+      "likes": 321,
+      "image": "https://cncafe.com.br/wp-content/uploads/1-5.jpg"
+    },
+    {
+      "place_id": "0",
+      "name": "Café do Bairro",
+      "location": "Guarulhos",
+      "rating": 3.7,
+      "likes": 52,
+      "image": "https://www.melnick.com.br/wp-content/uploads/2022/04/Alameda-Republica-4000px-17-3.jpg"
+    },
+    {
+      "place_id": "13",
+      "name": "Café Saboroso",
+      "location": "Jundiaí",
+      "rating": 3.7,
+      "likes": 341,
+      "image": "https://www.comidaereceitas.com.br/wp-content/uploads/2020/02/bolo_cafe-780x529.jpg"
+    },
+    {
+      "place_id": "10",
+      "name": "Café e Cia",
+      "location": "Itabuna",
+      "rating": 3.0,
+      "likes": 665,
+      "image": "https://img.restaurantguru.com/c7de-Restaurant-Cafe-e-Cia-meals.jpg"
+    },
+    {
+      "place_id": "8",
+      "name": "Café dos Amigos",
+      "location": "Porto Alegre",
+      "rating": 4.0,
+      "likes": 422,
+      "image": "https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1.jpg"
+    },
+    {
+      "place_id": "6",
+      "name": "Café com Carinho",
+      "location": "Marília",
+      "rating": 3.1,
+      "likes": 661,
+      "image": "https://floriculturariobranco.com.br/82-thickbox_default/cafe-com-carinho.jpg"
+    },
+    {
       "place_id": "14",
       "name": "Café Saudade",
-      "location": "Várzea Grande",
-      "rating": 4.4,
-      "likes": 966,
+      "location": "Aparecida de Goiânia",
+      "rating": 4.0,
+      "likes": 253,
       "image": "https://i.pinimg.com/originals/b8/3e/4d/b83e4d7a53a5ff170fb8fd97f5992897.jpg"
+    },
+    {
+      "place_id": "7",
+      "name": "Café com Prosa",
+      "location": "Sinop",
+      "rating": 3.9,
+      "likes": 50,
+      "image": "http://1.bp.blogspot.com/_0svxWKBlU98/TL8PG9CoKzI/AAAAAAAAAi8/Zs0k7KUmW2w/s1600/CAFÉ+E+PROSA+logo+cor+1.jpg"
     },
     {
       "place_id": "15",
       "name": "Café Simpatia",
-      "location": "Campina Grande",
-      "rating": 4.4,
-      "likes": 406,
+      "location": "Governador Valadares",
+      "rating": 3.8,
+      "likes": 494,
       "image": "https://www.maismistika.com/wp-content/uploads/2022/11/po-de-cafe-para-ritual-.jpg"
     },
     {
       "place_id": "4",
       "name": "Café da Esquina",
-      "location": "Montes Claros",
-      "rating": 4.6,
-      "likes": 517,
+      "location": "Maringá",
+      "rating": 3.3,
+      "likes": 607,
       "image": "https://lh5.googleusercontent.com/p/AF1QipP2kko_Waz5redUBk3HCSPRz8Oob7WfeVchFhVF"
-    },
-    {
-      "place_id": "8",
-      "name": "Café dos Amigos",
-      "location": "Barueri",
-      "rating": 3.0,
-      "likes": 697,
-      "image": "https://sebraemg.com.br/wp-content/uploads/2018/10/terceira-onda-1.jpg"
-    },
-    {
-      "place_id": "10",
-      "name": "Café e Cia",
-      "location": "Taboão da Serra",
-      "rating": 3.2,
-      "likes": 851,
-      "image": "https://img.restaurantguru.com/c7de-Restaurant-Cafe-e-Cia-meals.jpg"
-    },
-    {
-      "place_id": "3",
-      "name": "Café Charmoso",
-      "location": "Canoas",
-      "rating": 4.4,
-      "likes": 747,
-      "image": "https://todososcaminhos.com/wp-content/uploads/2021/12/pe-de-cafe-sao-sebastiao-todos-os-caminhos-6-scaled.jpg"
-    },
-    {
-      "place_id": "6",
-      "name": "Café com Carinho",
-      "location": "Caruaru",
-      "rating": 3.1,
-      "likes": 131,
-      "image": "https://floriculturariobranco.com.br/82-thickbox_default/cafe-com-carinho.jpg"
-    },
-    {
-      "place_id": "0",
-      "name": "Café do Bairro",
-      "location": "Itaquaquecetuba",
-      "rating": 4.3,
-      "likes": 563,
-      "image": "https://www.melnick.com.br/wp-content/uploads/2022/04/Alameda-Republica-4000px-17-3.jpg"
-    },
-    {
-      "place_id": "2",
-      "name": "Café Aconchego",
-      "location": "Caxias do Sul",
-      "rating": 4.2,
-      "likes": 659,
-      "image": "https://www.lojastrevisan.com/img/produtos/2540_0403758001664301309.jpg"
-    },
-    {
-      "place_id": "11",
-      "name": "Café Especial",
-      "location": "Várzea Grande",
-      "rating": 3.5,
-      "likes": 165,
-      "image": "http://blog.coffeeandjoy.com.br/wp-content/uploads/2022/11/coffeeandjoy_diferenca_cafe_especial_cafe_tradicional.jpg"
-    },
-    {
-      "place_id": "12",
-      "name": "Café Expresso",
-      "location": "Pelotas",
-      "rating": 4.1,
-      "likes": 629,
-      "image": "https://2.bp.blogspot.com/_dWmlS0IdLTI/TQ8_xeS7nzI/AAAAAAAABlw/5-JzK7w5Qag/s1600/caf%25C3%25A9+expresso1.jpg"
-    },
-    {
-      "place_id": "7",
-      "name": "Café com Prosa",
-      "location": "Florianópolis",
-      "rating": 4.8,
-      "likes": 283,
-      "image": "http://1.bp.blogspot.com/_0svxWKBlU98/TL8PG9CoKzI/AAAAAAAAAi8/Zs0k7KUmW2w/s1600/CAFÉ+E+PROSA+logo+cor+1.jpg"
-    },
-    {
-      "place_id": "5",
-      "name": "Café das Artes",
-      "location": "Cascavel",
-      "rating": 4.9,
-      "likes": 647,
-      "image": "https://img.elo7.com.br/product/zoom/3A11A6C/caneca-lilo-e-stitch-sem-cafe-com-cafe-personalizada-xicara-personalizada-para-presente.jpg"
-    },
-    {
-      "place_id": "9",
-      "name": "Café do Dia",
-      "location": "Volta Redonda",
-      "rating": 3.6,
-      "likes": 686,
-      "image": "https://cncafe.com.br/wp-content/uploads/1-5.jpg"
-    },
-    {
-      "place_id": "1",
-      "name": "Bella Café",
-      "location": "Blumenau",
-      "rating": 4.4,
-      "likes": 505,
-      "image": "https://portjolio.net/wp-content/uploads/2020/03/200303-La-Bella-Cafe-cover.jpg"
     },
     {
       "place_id": "16",
       "name": "Café Sonhador",
-      "location": "Barueri",
-      "rating": 3.9,
-      "likes": 132,
+      "location": "Betim",
+      "rating": 4.4,
+      "likes": 684,
       "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=3024547207600259"
     },
     {
       "place_id": "17",
       "name": "Café Tentador",
-      "location": "Franca",
-      "rating": 3.4,
-      "likes": 185,
+      "location": "Contagem",
+      "rating": 3.6,
+      "likes": 882,
       "image": "https://finde.latercera.com/wp-content/uploads/2021/09/La-Pichicha-19-ok.jpg"
-    },
-    {
-      "place_id": "20",
-      "name": "Museu de Arte",
-      "location": "Vitória da Conquista",
-      "rating": 3.5,
-      "likes": 290,
-      "image": "https://www.baladain.com.br/wp-content/uploads/2021/04/museu-masp-sao-paulo-18.jpg"
-    },
-    {
-      "place_id": "19",
-      "name": "Café do Brasil",
-      "location": "São Paulo",
-      "rating": 3.1,
-      "likes": 56,
-      "image": "https://cafesalomao.com.br/wp-content/uploads/2017/09/cafe-brasil-blog.jpg"
-    },
-    {
-      "place_id": "22",
-      "name": "Biblioteca Nacional",
-      "location": "Vila Velha",
-      "rating": 4.0,
-      "likes": 51,
-      "image": "https://www.kapatou.gr/wp-content/uploads/2021/10/Fundacao-Biblioteca-Nacional.jpg"
-    },
-    {
-      "place_id": "13",
-      "name": "Café Saboroso",
-      "location": "Campinas",
-      "rating": 4.2,
-      "likes": 233,
-      "image": "https://www.comidaereceitas.com.br/wp-content/uploads/2020/02/bolo_cafe-780x529.jpg"
-    },
-    {
-      "place_id": "26",
-      "name": "Galeria de Arte",
-      "location": "São Bernardo do Campo",
-      "rating": 4.5,
-      "likes": 534,
-      "image": "http://pinturaenoleo.com/wp-content/uploads/2015/05/galeria2.jpg"
-    },
-    {
-      "place_id": "21",
-      "name": "Parque Central",
-      "location": "João Pessoa",
-      "rating": 4.6,
-      "likes": 399,
-      "image": "http://guiaccs.com/wp-content/uploads/2017/08/Conjunto-Parque-Central_YPM-DESTACADA.jpg"
-    },
-    {
-      "place_id": "25",
-      "name": "Museu de História Natural",
-      "location": "Mauá",
-      "rating": 3.4,
-      "likes": 381,
-      "image": "https://catracalivre.com.br/wp-content/uploads/2020/12/museu-de-historia-natural.jpg"
-    },
-    {
-      "place_id": "28",
-      "name": "Zoológico",
-      "location": "Petrolina",
-      "rating": 4.0,
-      "likes": 116,
-      "image": "https://www.mundukos.com/wp-content/uploads/2023/04/zoologico-de-chapultepec.jpg"
-    },
-    {
-      "place_id": "24",
-      "name": "Aquário",
-      "location": "Santo André",
-      "rating": 4.5,
-      "likes": 537,
-      "image": "https://http2.mlstatic.com/D_NQ_NP_701001-MLB50232017128_062022-F.jpg"
     },
     {
       "place_id": "18",
       "name": "Café Viver",
-      "location": "Anápolis",
-      "rating": 3.2,
-      "likes": 588,
+      "location": "Salvador",
+      "rating": 4.3,
+      "likes": 468,
       "image": "https://emporiokaminski.com.br/wp-content/uploads/2022/09/cafe-colonial-3.jpg"
     },
     {
-      "place_id": "27",
-      "name": "Centro de Ciências",
-      "location": "Fortaleza",
-      "rating": 3.7,
-      "likes": 416,
-      "image": "https://images.adsttc.com/media/images/638f/e3a6/4a44/6001/71ca/0372/newsletter/zaha-hadid-architects-unveils-new-science-centre-design-in-singapore_6.jpg?1670374335"
-    },
-    {
-      "place_id": "23",
-      "name": "Jardim Botânico",
-      "location": "Sorocaba",
-      "rating": 4.8,
-      "likes": 529,
-      "image": "https://catracalivre.com.br/cdn-cgi/image/f=auto,q=60,w=1200,h=638,fit=cover,format=jpeg/wp-content/uploads/2018/08/cidades-mais-baratas-viajar-feriado-7-de-setembro.jpg"
-    },
-    {
-      "place_id": "30",
-      "name": "Teatro Municipal",
-      "location": "Piracicaba",
-      "rating": 4.2,
-      "likes": 386,
-      "image": "http://upload.wikimedia.org/wikipedia/commons/6/69/Teatro_Municipal_SP.jpg"
-    },
-    {
-      "place_id": "29",
-      "name": "Parque de Diversões",
-      "location": "Mogi das Cruzes",
-      "rating": 3.2,
-      "likes": 627,
-      "image": "https://reservecaldasturismo.com.br/reservecaldas/img/reserve-caldas-turismo-rede-social-parque-de-diversao-em-caldas-novas-629e6bd1037a3_0.jpg"
-    },
-    {
-      "place_id": "31",
-      "name": "Monumento Histórico",
-      "location": "Canoas",
-      "rating": 4.6,
-      "likes": 698,
-      "image": "https://descubreenmexico.com/wp-content/uploads/2022/10/monumento-a-la-revolucion-actualidad-scaled.jpeg"
-    },
-    {
-      "place_id": "32",
-      "name": "Museu de Ciência",
-      "location": "Vitória",
-      "rating": 3.1,
-      "likes": 933,
-      "image": "https://lisbonshopping.com/wp-content/uploads/2021/10/LS_Site__0004_Muhnac08_cred-bigmeblog-com.jpg"
-    },
-    {
-      "place_id": "35",
-      "name": "Praça Central",
-      "location": "Petrópolis",
-      "rating": 3.6,
-      "likes": 51,
-      "image": "https://www.lucasdrone.com.br/uploads/albums/2018/06/34-1-1528755493mtuyodc1ntq5mw.jpg"
-    },
-    {
-      "place_id": "36",
-      "name": "Mirante",
-      "location": "Santos",
-      "rating": 4.1,
-      "likes": 374,
-      "image": "https://parquenacionaldatijuca.rio/wp-content/uploads/2020/02/imagem141023-11_02_06.jpg"
-    },
-    {
-      "place_id": "37",
-      "name": "Catedral",
-      "location": "Porto Velho",
-      "rating": 4.7,
-      "likes": 153,
-      "image": "http://www.recordrentacar.com/blog/wp-content/uploads/2013/08/shutterstock_113861632_1.jpg"
-    },
-    {
-      "place_id": "33",
-      "name": "Centro Cultural",
-      "location": "Campos dos Goytacazes",
-      "rating": 3.6,
-      "likes": 697,
-      "image": "http://www.definicionabc.com/wp-content/uploads/2014/06/Centro-Cultural.jpg"
-    },
-    {
-      "place_id": "34",
-      "name": "Igreja Histórica",
-      "location": "Vitória da Conquista",
-      "rating": 3.3,
-      "likes": 180,
-      "image": "https://i.pinimg.com/originals/2f/4f/d4/2f4fd40c80591079cc30159250bfd306.jpg"
-    },
-    {
-      "place_id": "39",
-      "name": "Mercado Municipal",
-      "location": "Jundiaí",
-      "rating": 4.0,
-      "likes": 525,
-      "image": "http://marketingsimulator.net/femarcondes/wp-content/uploads/sites/155/2016/06/mercadao__6_.jpg"
-    },
-    {
-      "place_id": "40",
-      "name": "Centro Esportivo",
-      "location": "Diadema",
-      "rating": 4.7,
-      "likes": 990,
-      "image": "http://www.prodac.com.br/upload/img/centro2_1.jpg"
-    },
-    {
-      "place_id": "41",
-      "name": "Casa de Cultura",
-      "location": "Vitória da Conquista",
-      "rating": 4.8,
-      "likes": 536,
-      "image": "http://www.navarraconfidencial.com/wp-content/uploads/2009/02/casa_cultura-1.jpg"
-    },
-    {
-      "place_id": "45",
-      "name": "Estação Ferroviária",
-      "location": "Ponta Grossa",
-      "rating": 3.4,
-      "likes": 988,
-      "image": "https://circuitodasfrutasoficial.sp.gov.br/wp-content/uploads/2021/07/Estacao_jundiai_20.jpg"
-    },
-    {
-      "place_id": "38",
-      "name": "Estádio de Futebol",
-      "location": "Aracaju",
-      "rating": 3.9,
-      "likes": 210,
-      "image": "https://img.elo7.com.br/product/zoom/3FED740/painel-3d-sublimado-fundo-fotografico-futebol-estadio-bandeira-do-brasil.jpg"
-    },
-    {
-      "place_id": "43",
-      "name": "Fortaleza",
-      "location": "Aparecida de Goiânia",
-      "rating": 3.1,
-      "likes": 532,
-      "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/77000/77767-Fortaleza-And-Vicinity.jpg"
-    },
-    {
-      "place_id": "44",
-      "name": "Palácio de Governo",
-      "location": "Governador Valadares",
-      "rating": 4.6,
-      "likes": 632,
-      "image": "https://www.mirassolconectada.com.br/wp-content/uploads/2022/08/eertyujhfd.jpg"
-    },
-    {
-      "place_id": "42",
-      "name": "Espaço de Eventos",
-      "location": "Mossoró",
-      "rating": 3.8,
-      "likes": 552,
-      "image": "https://inesquecivelassessoria.com.br/wp-content/uploads/2020/09/3.-casa-noma-espaço-de-eventos-moema-casamentos-de-luxo-são-paulo-inesquecivel-assessoria-assessoria-orgaizacao-de-eventos.jpg"
-    },
-    {
-      "place_id": "46",
-      "name": "Museu do Automóvel",
-      "location": "Ananindeua",
-      "rating": 3.1,
-      "likes": 396,
-      "image": "https://static.wixstatic.com/media/4cc619_630db7b788a943aeae0deec24c1ea8fc~mv2.jpg/v1/fill/w_2500,h_1666,al_c/4cc619_630db7b788a943aeae0deec24c1ea8fc~mv2.jpg"
-    },
-    {
-      "place_id": "47",
-      "name": "Parque Aquático",
-      "location": "Jaboatão dos Guararapes",
-      "rating": 3.6,
-      "likes": 105,
-      "image": "https://www.fmetropolitana.com.br/wp-content/uploads/2022/03/c65fca4b-10f6-4325-a06a-51f539412641.jpg"
-    },
-    {
-      "place_id": "48",
-      "name": "Jardim Zoológico",
-      "location": "Sobral",
-      "rating": 3.7,
-      "likes": 440,
-      "image": "https://d1bvpoagx8hqbg.cloudfront.net/originals/arca-de-noe-lisboeta-jardim-zoologico-de-lisboa-ab390a8c7e1eaeb52a74e077437c283a.jpg"
-    },
-    {
-      "place_id": "49",
-      "name": "Planetário",
-      "location": "Porto Velho",
-      "rating": 3.2,
-      "likes": 296,
-      "image": "https://www.ceara.gov.br/wp-content/uploads/2023/05/230430_PlanetarioFoto-Luiz-Alves-scaled.jpg"
-    },
-    {
-      "place_id": "50",
+      "place_id": "20",
       "name": "Museu do Índio",
-      "location": "Petrolina",
-      "rating": 4.7,
-      "likes": 962,
+      "location": "São José dos Campos",
+      "rating": 3.2,
+      "likes": 416,
       "image": "http://4.bp.blogspot.com/-sx3-GyTihK0/VTBREqp5SjI/AAAAAAAAS1g/nRnjXFqG2N0/s1600/museu_do_indio%2B(12).JPG"
     },
     {
-      "place_id": "51",
-      "name": "Museu do Imigrante",
-      "location": "São Bernardo do Campo",
-      "rating": 3.3,
-      "likes": 942,
-      "image": "https://1.bp.blogspot.com/_B8XCoyzMFow/TJ_q3_xkQwI/AAAAAAAAABU/42tNbwX7Rn8/s1600/DSC00994.JPG"
-    },
-    {
-      "place_id": "52",
-      "name": "Observatório",
-      "location": "Petrolina",
-      "rating": 4.8,
-      "likes": 214,
-      "image": "https://www2.ufjf.br/centrodeciencias/wp-content/uploads/sites/98/2017/07/Observatório-2.jpg"
-    },
-    {
-      "place_id": "53",
-      "name": "Museu do Trem",
-      "location": "Betim",
-      "rating": 3.3,
-      "likes": 491,
-      "image": "https://brasilnordeste.com/wp-content/uploads/infocoweb/2021/01/18/4c2e1a7527c54aa024b70d04ba4e5944.jpg"
-    },
-    {
-      "place_id": "54",
-      "name": "Museu Naval",
-      "location": "São Bernardo do Campo",
-      "rating": 3.5,
-      "likes": 64,
-      "image": "http://1.bp.blogspot.com/-TIP8NYtJNao/VX2hQF3FTtI/AAAAAAAAToo/GPlBorGjr2s/s1600/Museu_naval_Rio_de_Janeiro%2B%252816%2529.JPG"
-    },
-    {
-      "place_id": "56",
-      "name": "Museu do Homem do Nordeste",
-      "location": "Criciúma",
-      "rating": 4.9,
-      "likes": 109,
-      "image": "http://3.bp.blogspot.com/-CVpkdg134VE/Va1gKeAHOrI/AAAAAAAAFWI/zi6Qgjaltdc/s1600/museu_do_homem_do_nordeste_1.jpg"
-    },
-    {
-      "place_id": "55",
-      "name": "Museu do Café",
-      "location": "Curitiba",
-      "rating": 3.5,
-      "likes": 87,
-      "image": "https://imagens-revista-pro.vivadecora.com.br/uploads/2021/02/O-Museu-do-Café-é-considerado-um-dos-principais-pontos-turísticos-de-Santos.-Fonte-Museu-do-Café.jpg"
-    },
-    {
-      "place_id": "57",
+      "place_id": "27",
       "name": "Museu de Antropologia",
-      "location": "Manaus",
-      "rating": 4.2,
-      "likes": 951,
+      "location": "Caxias do Sul",
+      "rating": 4.5,
+      "likes": 117,
       "image": "https://i.pinimg.com/originals/02/a7/99/02a7991f16f9d324b3f15d0ed71c7813.jpg"
     },
     {
-      "place_id": "58",
+      "place_id": "25",
+      "name": "Museu do Café",
+      "location": "Mogi das Cruzes",
+      "rating": 4.6,
+      "likes": 296,
+      "image": "https://imagens-revista-pro.vivadecora.com.br/uploads/2021/02/O-Museu-do-Café-é-considerado-um-dos-principais-pontos-turísticos-de-Santos.-Fonte-Museu-do-Café.jpg"
+    },
+    {
+      "place_id": "28",
       "name": "Museu de Geologia",
-      "location": "Sorocaba",
-      "rating": 5.0,
-      "likes": 114,
+      "location": "João Pessoa",
+      "rating": 3.5,
+      "likes": 547,
       "image": "https://1.bp.blogspot.com/-X5HQ0bZ5HBs/T1Jc3ReamGI/AAAAAAAAB-E/d3Y1ekVmBZ4/s1600/P1000632W.jpg"
     },
     {
-      "place_id": "59",
-      "name": "Museu de História",
-      "location": "Santarém",
-      "rating": 3.1,
-      "likes": 637,
-      "image": "https://catracalivre.com.br/wp-content/uploads/2020/12/museu-de-historia-natural.jpg"
+      "place_id": "19",
+      "name": "Café do Brasil",
+      "location": "Cachoeiro de Itapemirim",
+      "rating": 3.7,
+      "likes": 70,
+      "image": "https://cafesalomao.com.br/wp-content/uploads/2017/09/cafe-brasil-blog.jpg"
     },
     {
-      "place_id": "60",
+      "place_id": "22",
+      "name": "Observatório",
+      "location": "Feira de Santana",
+      "rating": 3.6,
+      "likes": 577,
+      "image": "https://www2.ufjf.br/centrodeciencias/wp-content/uploads/sites/98/2017/07/Observatório-2.jpg"
+    },
+    {
+      "place_id": "21",
+      "name": "Museu do Imigrante",
+      "location": "Franca",
+      "rating": 3.8,
+      "likes": 561,
+      "image": "https://1.bp.blogspot.com/_B8XCoyzMFow/TJ_q3_xkQwI/AAAAAAAAABU/42tNbwX7Rn8/s1600/DSC00994.JPG"
+    },
+    {
+      "place_id": "23",
+      "name": "Museu do Trem",
+      "location": "Maringá",
+      "rating": 4.9,
+      "likes": 945,
+      "image": "https://brasilnordeste.com/wp-content/uploads/infocoweb/2021/01/18/4c2e1a7527c54aa024b70d04ba4e5944.jpg"
+    },
+    {
+      "place_id": "26",
+      "name": "Museu do Homem do Nordeste",
+      "location": "Cascavel",
+      "rating": 4.5,
+      "likes": 757,
+      "image": "http://3.bp.blogspot.com/-CVpkdg134VE/Va1gKeAHOrI/AAAAAAAAFWI/zi6Qgjaltdc/s1600/museu_do_homem_do_nordeste_1.jpg"
+    },
+    {
+      "place_id": "30",
       "name": "Museu de Paleontologia",
-      "location": "João Pessoa",
-      "rating": 3.9,
-      "likes": 756,
+      "location": "Londrina",
+      "rating": 3.5,
+      "likes": 765,
       "image": "https://www.gazetainterior.com.br/img/noticias/84cf4a711a5339130b78148a9fba3163.jpeg"
     },
     {
-      "place_id": "62",
-      "name": "Museu da República",
-      "location": "Rio de Janeiro",
+      "place_id": "29",
+      "name": "Museu de História",
+      "location": "Aparecida de Goiânia",
       "rating": 3.3,
-      "likes": 617,
+      "likes": 365,
+      "image": "https://catracalivre.com.br/wp-content/uploads/2020/12/museu-de-historia-natural.jpg"
+    },
+    {
+      "place_id": "24",
+      "name": "Museu Naval",
+      "location": "Fortaleza",
+      "rating": 4.4,
+      "likes": 322,
+      "image": "http://1.bp.blogspot.com/-TIP8NYtJNao/VX2hQF3FTtI/AAAAAAAAToo/GPlBorGjr2s/s1600/Museu_naval_Rio_de_Janeiro%2B%252816%2529.JPG"
+    },
+    {
+      "place_id": "32",
+      "name": "Museu da República",
+      "location": "Goiânia",
+      "rating": 4.0,
+      "likes": 524,
       "image": "https://museudarepublica.museus.gov.br/wp-content/uploads/2018/11/66-SALÃO-NOBRE.jpg"
     },
     {
-      "place_id": "63",
-      "name": "Museu do Mar",
-      "location": "Hortolândia",
-      "rating": 3.7,
-      "likes": 269,
-      "image": "https://www.salvadordabahia.com/wp-content/uploads/2021/11/museu-do-mar-scaled.jpg"
-    },
-    {
-      "place_id": "61",
+      "place_id": "31",
       "name": "Museu da Vida",
-      "location": "Marabá",
+      "location": "São Vicente",
       "rating": 4.7,
-      "likes": 769,
+      "likes": 424,
       "image": "https://soumaiscarioca.com.br/wp-content/uploads/2020/08/castelo_fiocruz.jpg"
     },
     {
-      "place_id": "64",
+      "place_id": "34",
       "name": "Museu Ferroviário",
-      "location": "Caruaru",
-      "rating": 3.8,
-      "likes": 738,
+      "location": "Ipatinga",
+      "rating": 4.0,
+      "likes": 577,
       "image": "https://cms.infoportugal.info/media/pois/final/19/MU.687.jpg"
     },
     {
-      "place_id": "65",
+      "place_id": "33",
+      "name": "Museu do Mar",
+      "location": "Marília",
+      "rating": 4.1,
+      "likes": 271,
+      "image": "https://www.salvadordabahia.com/wp-content/uploads/2021/11/museu-do-mar-scaled.jpg"
+    },
+    {
+      "place_id": "35",
       "name": "Museu Histórico e Artístico",
-      "location": "São Paulo",
-      "rating": 4.7,
-      "likes": 374,
+      "location": "Mauá",
+      "rating": 3.1,
+      "likes": 381,
       "image": "https://www3.ma.gov.br/agenciadenoticias/wp-content/uploads/2019/03/15127_museu_historico_e_artistico_9158487427557160169.jpg"
     },
     {
-      "place_id": "67",
-      "name": "Museu de Arte Sacra",
-      "location": "Barueri",
-      "rating": 4.9,
-      "likes": 926,
-      "image": "http://myblog.solucoesnet.com/wp-content/uploads/sites/97/2018/01/museu-de-arte-sacra-do-funchal.jpg"
-    },
-    {
-      "place_id": "68",
-      "name": "Museu da Memória",
-      "location": "Vila Velha",
-      "rating": 4.4,
-      "likes": 304,
-      "image": "https://1.bp.blogspot.com/-dQqYuaxerkg/Xtf7X07dDjI/AAAAAAAAUbs/qJ6N6WY20wspxJ35JvFOsFC0O_5KaBRCgCEwYBhgLKs4DAL1OcqyHbtw0PDKYVQI7SkcHeDjU6vdsGOoqW5GV1aSZaovK8umUkx599y0rJXI3xUQ7yolLp5vIbwl-lpgq39gBjmssNAIBHjECDod85UVFrB17fYLqJfnZo5jZH4ElOrcyqtGi8GewbhESSPmr2Y6iIz61cRtx5FuD01QmrZlem4IFNnKGznWCjOPzrLP5Ox_gqprwAjjxG-Iv22HWJvysEHJhjuWeuw_by7hkjXr_sutTCfO7Fk4hdTq5k8zZk48jz3uy_5865wL87Uy0uKPzQ_zhSESEU7y3Q-LO-q95SRfXyYlNOvr_O6RiajvnWIEzqbWoBt9Ms29mto5e3Vs1nsQoH0oDFA4dMegaQ5DKkZgX0uCQsxEyFRt5e4iXhou8L56JdSp9rM8WQiModKbMzs49oWKmU6mCkiSu5ICW9UAPcW8wVfl5HXynD7BkjRNARvcdy3-fcTuw8NetwwMuTcrAU4n6K2IWJbVGCNZHBCXZdn_j6MyObQXxpyYGkHWkSxIh9GqUYKx00NzZBqHmJbBfV_x1hJHcgSs0TsykGLnPK-fHMAwKKJZVxEjK8QcwJpGOy1t6-8T4EkLC78UhsNFIuBFyU-FGVCMxMK6E4PYF/s1600/Museu%2BMem%25C3%25B3ria%2Bdo%2BBixiga.jpg"
-    },
-    {
-      "place_id": "69",
-      "name": "Museu da Revolução",
-      "location": "Maceió",
-      "rating": 4.4,
-      "likes": 378,
-      "image": "https://thumbs.dreamstime.com/b/museu-da-revolução-havana-cuba-está-abrigado-no-palácio-presidencial-de-todos-os-presidentes-cubanos-do-menocal-mario-garcia-188349520.jpg"
-    },
-    {
-      "place_id": "66",
+      "place_id": "36",
       "name": "Museu de Ciências e Tecnologia",
-      "location": "Belo Horizonte",
-      "rating": 3.6,
-      "likes": 900,
+      "location": "Ananindeua",
+      "rating": 3.8,
+      "likes": 183,
       "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/a6/d9/a1/museu-de-ciencias-e-tecnologia.jpg?w=1200&h=1200&s=1"
     },
     {
-      "place_id": "70",
-      "name": "Museu de Zoologia",
-      "location": "Ponta Grossa",
-      "rating": 5.0,
-      "likes": 212,
-      "image": "https://f.i.uol.com.br/fotografia/2022/01/19/164261167661e843dcbbc70_1642611676_3x2_rt.jpg"
+      "place_id": "37",
+      "name": "Museu de Arte Sacra",
+      "location": "Duque de Caxias",
+      "rating": 3.1,
+      "likes": 785,
+      "image": "http://myblog.solucoesnet.com/wp-content/uploads/sites/97/2018/01/museu-de-arte-sacra-do-funchal.jpg"
     },
     {
-      "place_id": "71",
+      "place_id": "38",
+      "name": "Museu da Memória",
+      "location": "Boa Vista",
+      "rating": 4.7,
+      "likes": 463,
+      "image": "https://1.bp.blogspot.com/-dQqYuaxerkg/Xtf7X07dDjI/AAAAAAAAUbs/qJ6N6WY20wspxJ35JvFOsFC0O_5KaBRCgCEwYBhgLKs4DAL1OcqyHbtw0PDKYVQI7SkcHeDjU6vdsGOoqW5GV1aSZaovK8umUkx599y0rJXI3xUQ7yolLp5vIbwl-lpgq39gBjmssNAIBHjECDod85UVFrB17fYLqJfnZo5jZH4ElOrcyqtGi8GewbhESSPmr2Y6iIz61cRtx5FuD01QmrZlem4IFNnKGznWCjOPzrLP5Ox_gqprwAjjxG-Iv22HWJvysEHJhjuWeuw_by7hkjXr_sutTCfO7Fk4hdTq5k8zZk48jz3uy_5865wL87Uy0uKPzQ_zhSESEU7y3Q-LO-q95SRfXyYlNOvr_O6RiajvnWIEzqbWoBt9Ms29mto5e3Vs1nsQoH0oDFA4dMegaQ5DKkZgX0uCQsxEyFRt5e4iXhou8L56JdSp9rM8WQiModKbMzs49oWKmU6mCkiSu5ICW9UAPcW8wVfl5HXynD7BkjRNARvcdy3-fcTuw8NetwwMuTcrAU4n6K2IWJbVGCNZHBCXZdn_j6MyObQXxpyYGkHWkSxIh9GqUYKx00NzZBqHmJbBfV_x1hJHcgSs0TsykGLnPK-fHMAwKKJZVxEjK8QcwJpGOy1t6-8T4EkLC78UhsNFIuBFyU-FGVCMxMK6E4PYF/s1600/Museu%2BMem%25C3%25B3ria%2Bdo%2BBixiga.jpg"
+    },
+    {
+      "place_id": "41",
       "name": "Museu do Folclore",
-      "location": "Recife",
-      "rating": 3.6,
-      "likes": 973,
+      "location": "Marília",
+      "rating": 4.1,
+      "likes": 341,
       "image": "https://ogimg.infoglobo.com.br/in/23001656-263-f03/FT1086A/652/FD-297-137.jpg"
     },
     {
-      "place_id": "72",
+      "place_id": "39",
+      "name": "Museu da Revolução",
+      "location": "Vitória",
+      "rating": 3.5,
+      "likes": 965,
+      "image": "https://thumbs.dreamstime.com/b/museu-da-revolução-havana-cuba-está-abrigado-no-palácio-presidencial-de-todos-os-presidentes-cubanos-do-menocal-mario-garcia-188349520.jpg"
+    },
+    {
+      "place_id": "42",
       "name": "Museu do Boi",
-      "location": "Curitiba",
-      "rating": 3.3,
-      "likes": 902,
+      "location": "Cuiabá",
+      "rating": 4.8,
+      "likes": 789,
       "image": "https://3.bp.blogspot.com/-g7iL4pYYIIE/WAis2919aTI/AAAAAAAAX2U/mY_BEqO5f6EPJhoWcGloU0nDySODk12dwCLcB/s1600/Museu%2Bdo%2Bcarro%2Bde%2Bboi.jpg"
     },
     {
-      "place_id": "73",
-      "name": "Museu do Carro",
-      "location": "Pelotas",
-      "rating": 4.0,
-      "likes": 393,
-      "image": "https://www.motor24.pt/files/2020/05/museu-do-carro-elétrico.jpg"
-    },
-    {
-      "place_id": "74",
-      "name": "Museu da Aviação",
-      "location": "Vila Velha",
-      "rating": 4.8,
-      "likes": 142,
-      "image": "https://www.cnnbrasil.com.br/wp-content/uploads/2021/06/36243_3A439BDF40C87C4B.jpg"
-    },
-    {
-      "place_id": "76",
-      "name": "Museu do Patrimônio Histórico",
-      "location": "São José dos Campos",
-      "rating": 3.9,
-      "likes": 372,
-      "image": "https://secult.sobral.ce.gov.br/images/site/Casa_da_Cultura_e_Museu_Dom_Jos_-_pag_47.jpg"
-    },
-    {
-      "place_id": "75",
+      "place_id": "45",
       "name": "Museu do Futebol Brasileiro",
-      "location": "Teresina",
-      "rating": 4.7,
-      "likes": 368,
+      "location": "Fortaleza",
+      "rating": 3.6,
+      "likes": 330,
       "image": "https://direcaocultura.com.br/wp-content/uploads/2018/05/Museu-do-Futebol-Proac.jpg"
     },
     {
-      "place_id": "78",
-      "name": "Museu da Herança",
-      "location": "Volta Redonda",
-      "rating": 3.9,
-      "likes": 183,
-      "image": "https://imgv2-1-f.scribdassets.com/img/document/610260433/original/f9a75a5d9a/1707708232?v=1"
-    },
-    {
-      "place_id": "77",
+      "place_id": "47",
       "name": "Museu do Patrimônio Cultural",
-      "location": "Ananindeua",
-      "rating": 4.8,
-      "likes": 991,
+      "location": "Itaquaquecetuba",
+      "rating": 3.4,
+      "likes": 834,
       "image": "https://secult.sobral.ce.gov.br/images/site/Casa_da_Cultura_e_Museu_Dom_Jos_-_pag_47.jpg"
     },
     {
-      "place_id": "80",
-      "name": "Shopping of America",
-      "location": "São José do Rio Preto",
-      "rating": 4.7,
-      "likes": 548,
-      "image": "http://ww3.hdnux.com/photos/16/53/30/3847722/3/rawImage.jpg"
+      "place_id": "46",
+      "name": "Museu do Patrimônio Histórico",
+      "location": "Santos",
+      "rating": 4.2,
+      "likes": 292,
+      "image": "https://secult.sobral.ce.gov.br/images/site/Casa_da_Cultura_e_Museu_Dom_Jos_-_pag_47.jpg"
     },
     {
-      "place_id": "79",
-      "name": "Shopping Westfield",
-      "location": "Natal",
+      "place_id": "43",
+      "name": "Museu do Carro",
+      "location": "Betim",
+      "rating": 4.1,
+      "likes": 761,
+      "image": "https://www.motor24.pt/files/2020/05/museu-do-carro-elétrico.jpg"
+    },
+    {
+      "place_id": "44",
+      "name": "Museu da Aviação",
+      "location": "Teófilo Otoni",
       "rating": 4.4,
-      "likes": 353,
+      "likes": 133,
+      "image": "https://www.cnnbrasil.com.br/wp-content/uploads/2021/06/36243_3A439BDF40C87C4B.jpg"
+    },
+    {
+      "place_id": "40",
+      "name": "Museu de Zoologia",
+      "location": "Blumenau",
+      "rating": 3.6,
+      "likes": 430,
+      "image": "https://f.i.uol.com.br/fotografia/2022/01/19/164261167661e843dcbbc70_1642611676_3x2_rt.jpg"
+    },
+    {
+      "place_id": "48",
+      "name": "Museu da Herança",
+      "location": "Volta Redonda",
+      "rating": 3.7,
+      "likes": 85,
+      "image": "https://imgv2-1-f.scribdassets.com/img/document/610260433/original/f9a75a5d9a/1707708232?v=1"
+    },
+    {
+      "place_id": "49",
+      "name": "Shopping Westfield",
+      "location": "Criciúma",
+      "rating": 3.3,
+      "likes": 951,
       "image": "https://i.pinimg.com/originals/a4/94/02/a49402cd29f07194038d8228ca0f184d.jpg"
     },
     {
-      "place_id": "81",
+      "place_id": "50",
+      "name": "Shopping of America",
+      "location": "São Gonçalo",
+      "rating": 3.1,
+      "likes": 297,
+      "image": "http://ww3.hdnux.com/photos/16/53/30/3847722/3/rawImage.jpg"
+    },
+    {
+      "place_id": "51",
       "name": "Shopping The Dubai",
-      "location": "Macapá",
-      "rating": 3.6,
-      "likes": 635,
+      "location": "Barueri",
+      "rating": 4.7,
+      "likes": 612,
       "image": "https://a.cdn-hotels.com/gdcs/production86/d1619/5dfcd0fa-db2f-45b5-8790-48a7ada61081.jpg"
     },
     {
-      "place_id": "83",
-      "name": "Shopping of the Emirates",
-      "location": "São Gonçalo",
-      "rating": 4.3,
-      "likes": 176,
-      "image": "https://www.vexcolteurope.com/wp-content/uploads/2018/04/ref_Mall_01.jpg"
-    },
-    {
-      "place_id": "82",
-      "name": "Shopping West Edmonton",
-      "location": "Franca",
-      "rating": 3.9,
-      "likes": 445,
-      "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/33000/33924-West-Edmonton-Mall.jpg?impolicy=fcrop&w=1040&h=580&q=mediumHigh"
-    },
-    {
-      "place_id": "84",
+      "place_id": "54",
       "name": "Shopping Paragon",
-      "location": "São Luís",
-      "rating": 4.5,
-      "likes": 299,
+      "location": "Londrina",
+      "rating": 4.4,
+      "likes": 651,
       "image": "https://image-tc.galaxy.tf/wijpeg-bydb1o6j66616s1bqxu2yb9c4/08-siam-paragon-micha-schulte-photography-standard_standard.jpg?crop=0%2C0%2C1780%2C1335"
     },
     {
-      "place_id": "85",
+      "place_id": "53",
+      "name": "Shopping of the Emirates",
+      "location": "Manaus",
+      "rating": 4.0,
+      "likes": 352,
+      "image": "https://www.vexcolteurope.com/wp-content/uploads/2018/04/ref_Mall_01.jpg"
+    },
+    {
+      "place_id": "52",
+      "name": "Shopping West Edmonton",
+      "location": "Teófilo Otoni",
+      "rating": 4.2,
+      "likes": 497,
+      "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/33000/33924-West-Edmonton-Mall.jpg?impolicy=fcrop&w=1040&h=580&q=mediumHigh"
+    },
+    {
+      "place_id": "55",
       "name": "Shopping SM of Asia",
-      "location": "Limeira",
-      "rating": 3.0,
-      "likes": 406,
+      "location": "Duque de Caxias",
+      "rating": 4.2,
+      "likes": 870,
       "image": "https://d2v9kn8vtn478j.cloudfront.net/production/collection/images/attachments/000/019/412/big/Photo_1.jpg?1610093934"
     },
     {
-      "place_id": "88",
-      "name": "The Shopping Galleria",
-      "location": "Rio Branco",
-      "rating": 3.4,
-      "likes": 864,
-      "image": "https://www.guiadasemana.com.br/contentFiles/system/pictures/2011/10/28492/original/galleria-shopping.jpg"
-    },
-    {
-      "place_id": "86",
+      "place_id": "56",
       "name": "Berjaya Times Shopping Square",
-      "location": "Rio Branco",
-      "rating": 3.5,
-      "likes": 261,
+      "location": "Caruaru",
+      "rating": 3.0,
+      "likes": 253,
       "image": "https://www.meetthecities.com/wp-content/uploads/kuala-lumpur-shopping-mall-berjaya-times-square-a1.jpg"
     },
     {
-      "place_id": "90",
-      "name": "Tokyo Shopping Midtown",
-      "location": "Vila Velha",
-      "rating": 3.9,
-      "likes": 338,
-      "image": "https://i.pinimg.com/originals/98/1b/0f/981b0fc7ea52742999856ad2cedd2f30.jpg"
-    },
-    {
-      "place_id": "92",
-      "name": "ABC Shopping Achrafieh",
-      "location": "Mauá",
-      "rating": 4.4,
-      "likes": 325,
-      "image": "https://hayekgroup.com/issue/report-3/Images/18.png"
-    },
-    {
-      "place_id": "87",
+      "place_id": "57",
       "name": "Shopping CentralWorld",
-      "location": "Teresina",
-      "rating": 3.9,
-      "likes": 331,
-      "image": "https://c8.alamy.com/compde/fbbfh1/central-world-shopping-mall-in-bangkok-thailand-fbbfh1.jpg"
+      "location": "Recife",
+      "rating": 5.0,
+      "likes": 330,
+      "image": "https://media.komchadluek.net/uploads/images/contents/w1024/2023/04/bh5D7FeOm3ivvRB6PAOM.webp"
     },
     {
-      "place_id": "89",
-      "name": "Chadstone Shopping Shopping Centre",
-      "location": "Campinas",
-      "rating": 3.5,
-      "likes": 977,
-      "image": "https://www.arch2o.com/wp-content/uploads/2017/11/Arch2O-chadstone-shopping-centre-rtkl-and-buchan-group-7.jpg"
+      "place_id": "58",
+      "name": "The Shopping Galleria",
+      "location": "Vitória",
+      "rating": 3.4,
+      "likes": 823,
+      "image": "https://www.guiadasemana.com.br/contentFiles/system/pictures/2011/10/28492/original/galleria-shopping.jpg"
     },
     {
-      "place_id": "94",
-      "name": "South Coast Shopping Plaza",
-      "location": "Ibirité",
-      "rating": 4.4,
-      "likes": 747,
-      "image": "https://www.ocregister.com/wp-content/uploads/2020/08/OCR-L-MALLS-0830-01-PB.jpg?w=620"
-    },
-    {
-      "place_id": "91",
+      "place_id": "61",
       "name": "Grand Shopping Indonesia",
-      "location": "Anápolis",
-      "rating": 4.1,
-      "likes": 241,
+      "location": "Volta Redonda",
+      "rating": 4.2,
+      "likes": 888,
       "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/210000/210129-Jakarta.jpg?impolicy=fcrop&w=1040&h=580&q=mediumHigh"
     },
     {
-      "place_id": "95",
-      "name": "Shopping Malha",
-      "location": "Campo Grande",
-      "rating": 4.7,
-      "likes": 63,
-      "image": "https://down-br.img.susercontent.com/file/br-11134207-7qukw-liywh8b3ipf974"
+      "place_id": "60",
+      "name": "Tokyo Shopping Midtown",
+      "location": "Diadema",
+      "rating": 3.3,
+      "likes": 458,
+      "image": "https://i.pinimg.com/originals/98/1b/0f/981b0fc7ea52742999856ad2cedd2f30.jpg"
     },
     {
-      "place_id": "93",
+      "place_id": "62",
+      "name": "ABC Shopping Achrafieh",
+      "location": "Cachoeiro de Itapemirim",
+      "rating": 4.8,
+      "likes": 298,
+      "image": "https://hayekgroup.com/issue/report-3/Images/18.png"
+    },
+    {
+      "place_id": "59",
+      "name": "Chadstone Shopping Shopping Centre",
+      "location": "Maringá",
+      "rating": 3.4,
+      "likes": 703,
+      "image": "https://www.arch2o.com/wp-content/uploads/2017/11/Arch2O-chadstone-shopping-centre-rtkl-and-buchan-group-7.jpg"
+    },
+    {
+      "place_id": "63",
       "name": "King of Shopping Prussia",
-      "location": "Curitiba",
-      "rating": 4.6,
-      "likes": 524,
+      "location": "Vitória",
+      "rating": 4.9,
+      "likes": 267,
       "image": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/vfcvb/KOP_mall_pic_71a649fc-ea3a-4bd3-9087-bccff02b33f7.jpg"
     },
     {
-      "place_id": "96",
+      "place_id": "64",
+      "name": "South Coast Shopping Plaza",
+      "location": "Sorocaba",
+      "rating": 3.1,
+      "likes": 79,
+      "image": "https://www.ocregister.com/wp-content/uploads/2020/08/OCR-L-MALLS-0830-01-PB.jpg?w=620"
+    },
+    {
+      "place_id": "66",
       "name": "Canal Walk Shopping Shopping Centre",
-      "location": "Jundiaí",
-      "rating": 4.6,
-      "likes": 523,
+      "location": "Manaus",
+      "rating": 3.9,
+      "likes": 687,
       "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/80/f4/26/canal-walk-shopping-centre.jpg?w=1200&h=1200&s=1"
     },
     {
-      "place_id": "97",
+      "place_id": "65",
+      "name": "Shopping Malha",
+      "location": "Santa Maria",
+      "rating": 4.7,
+      "likes": 471,
+      "image": "https://down-br.img.susercontent.com/file/br-11134207-7qukw-liywh8b3ipf974"
+    },
+    {
+      "place_id": "67",
       "name": "Shopping VivoCity",
-      "location": "Limeira",
-      "rating": 3.0,
-      "likes": 693,
+      "location": "Caruaru",
+      "rating": 3.2,
+      "likes": 315,
       "image": "https://www.shutterstock.com/shutterstock/photos/2210610195/display_1500/stock-photo-singapore-oct-vivocity-shopping-mall-near-sentosa-island-singapore-2210610195.jpg"
     },
     {
-      "place_id": "100",
+      "place_id": "70",
       "name": "Festa da Alegria",
-      "location": "Rio de Janeiro",
-      "rating": 3.4,
-      "likes": 160,
+      "location": "Cachoeiro de Itapemirim",
+      "rating": 4.1,
+      "likes": 922,
       "image": "https://static.wixstatic.com/media/5aedc7_a8507dbba1854ef98ad1ff8c8ac330f8.png"
     },
     {
-      "place_id": "99",
+      "place_id": "69",
       "name": "Festa das Cores",
-      "location": "Belém",
-      "rating": 4.6,
-      "likes": 270,
+      "location": "Rio de Janeiro",
+      "rating": 4.1,
+      "likes": 627,
       "image": "https://comofazerartesanatos.com.br/wp-content/uploads/2022/06/Festa-das-Cores-onde-comprar.jpg"
     },
     {
-      "place_id": "98",
+      "place_id": "68",
       "name": "Westfield Stratford Shopping City",
-      "location": "Sete Lagoas",
-      "rating": 4.8,
-      "likes": 812,
-      "image": "http://static1.squarespace.com/static/5f62ca122898ef3cd68d58fa/628df4ad1a07da6e44194864/62bd4f7efe36c0762d847eec/1656577409263/resize.jpeg?format=1500w"
+      "location": "Joinville",
+      "rating": 3.7,
+      "likes": 511,
+      "image": "https://thelionandkeyhotel.co.uk/wp-content/uploads/2017/01/stratford-shopping-centre.jpg"
     },
     {
-      "place_id": "102",
+      "place_id": "72",
       "name": "Festa no Céu",
-      "location": "Vitória",
-      "rating": 3.7,
-      "likes": 441,
+      "location": "Mossoró",
+      "rating": 3.4,
+      "likes": 737,
       "image": "https://3.bp.blogspot.com/-sJPM_FdvgOc/WBf2TxtDK7I/AAAAAAAATwg/8lObdCOBlmUhhnX3sLJ1Za1EHmRFuEpjgCLcB/s1600/festa-no-ceu.jpg"
     },
     {
-      "place_id": "101",
-      "name": "Festa Tropical",
-      "location": "Jundiaí",
-      "rating": 4.1,
-      "likes": 123,
-      "image": "https://www.artesanatopassoapassoja.com.br/wp-content/uploads/2020/01/plantas-819x1024.jpg"
-    },
-    {
-      "place_id": "104",
-      "name": "Festa dos Sonhos",
-      "location": "Marília",
-      "rating": 4.7,
-      "likes": 245,
-      "image": "https://i.pinimg.com/originals/5a/37/ed/5a37ed5f9d91b828fae092bd02bd6659.jpg"
-    },
-    {
-      "place_id": "103",
+      "place_id": "73",
       "name": "Festa do Luau",
-      "location": "Mogi das Cruzes",
-      "rating": 3.0,
-      "likes": 554,
+      "location": "Indaiatuba",
+      "rating": 3.2,
+      "likes": 423,
       "image": "http://3.bp.blogspot.com/-6Xc-FP8V41Y/UP6cVeVKIBI/AAAAAAAAAiA/F63pPPvhvms/s1600/Luau-Dancers-Low.jpg"
     },
     {
-      "place_id": "105",
+      "place_id": "74",
+      "name": "Festa dos Sonhos",
+      "location": "Criciúma",
+      "rating": 4.2,
+      "likes": 480,
+      "image": "https://i.pinimg.com/originals/5a/37/ed/5a37ed5f9d91b828fae092bd02bd6659.jpg"
+    },
+    {
+      "place_id": "75",
       "name": "Festa da Fantasia",
-      "location": "Várzea Grande",
-      "rating": 3.4,
-      "likes": 763,
+      "location": "Vitória",
+      "rating": 3.0,
+      "likes": 374,
       "image": "https://cdn6.campograndenews.com.br/uploads/noticias/2022/08/12/1bebb3aec3f531409057fa2d0423af954fd2db1f.jpeg"
     },
     {
-      "place_id": "107",
-      "name": "Festa da Amizade",
-      "location": "Feira de Santana",
-      "rating": 3.5,
-      "likes": 841,
-      "image": "https://4.bp.blogspot.com/-2sNEsCXGNTI/UE5ugbM0XII/AAAAAAAAA8E/KqCksd9IiS8/s1600/108_2498.JPG"
-    },
-    {
-      "place_id": "109",
-      "name": "Festa das Estrelas",
-      "location": "Teresina",
-      "rating": 3.1,
-      "likes": 907,
-      "image": "http://2.bp.blogspot.com/-Y80VDYeHC-s/TfllKXPVEXI/AAAAAAAAACM/uxqMJH5r9mQ/s1600/4.1.jpg"
-    },
-    {
-      "place_id": "108",
-      "name": "Festa do Brilho",
-      "location": "Campos dos Goytacazes",
-      "rating": 3.6,
-      "likes": 414,
-      "image": "https://i.pinimg.com/736x/c1/a3/71/c1a3719e8d7acc9d2fa0fbdc4d18197e.jpg"
-    },
-    {
-      "place_id": "106",
+      "place_id": "76",
       "name": "Festa do Pijama",
-      "location": "Campina Grande",
-      "rating": 4.7,
-      "likes": 774,
+      "location": "Aparecida de Goiânia",
+      "rating": 3.4,
+      "likes": 989,
       "image": "http://www.aminhafestinha.com/wp-content/uploads/2016/05/Imagem32-2.jpg"
     },
     {
-      "place_id": "110",
-      "name": "Festa das Flores",
-      "location": "Niterói",
-      "rating": 3.3,
-      "likes": 997,
-      "image": "https://i.pinimg.com/originals/ba/23/f9/ba23f9994e6505ab869e53ba86d3ff88.jpg"
+      "place_id": "71",
+      "name": "Festa Tropical",
+      "location": "Caruaru",
+      "rating": 4.9,
+      "likes": 654,
+      "image": "https://www.artesanatopassoapassoja.com.br/wp-content/uploads/2020/01/plantas-819x1024.jpg"
     },
     {
-      "place_id": "112",
-      "name": "Festa da Música",
-      "location": "Betim",
-      "rating": 4.7,
-      "likes": 745,
-      "image": "https://pragentemiudacriacoes.com.br/wp-content/uploads/2020/01/001-1.jpg"
+      "place_id": "78",
+      "name": "Festa do Brilho",
+      "location": "Belo Horizonte",
+      "rating": 4.5,
+      "likes": 990,
+      "image": "https://i.pinimg.com/736x/c1/a3/71/c1a3719e8d7acc9d2fa0fbdc4d18197e.jpg"
     },
     {
-      "place_id": "111",
-      "name": "Festa do Sorriso",
+      "place_id": "77",
+      "name": "Festa da Amizade",
       "location": "Itaquaquecetuba",
       "rating": 4.0,
-      "likes": 679,
+      "likes": 139,
+      "image": "https://4.bp.blogspot.com/-2sNEsCXGNTI/UE5ugbM0XII/AAAAAAAAA8E/KqCksd9IiS8/s1600/108_2498.JPG"
+    },
+    {
+      "place_id": "79",
+      "name": "Festa das Estrelas",
+      "location": "São Bernardo do Campo",
+      "rating": 3.8,
+      "likes": 229,
+      "image": "http://2.bp.blogspot.com/-Y80VDYeHC-s/TfllKXPVEXI/AAAAAAAAACM/uxqMJH5r9mQ/s1600/4.1.jpg"
+    },
+    {
+      "place_id": "81",
+      "name": "Festa do Sorriso",
+      "location": "Maceió",
+      "rating": 3.7,
+      "likes": 146,
       "image": "https://odontocompanypetropolis.com.br/wp-content/uploads/2020/08/304696-como-ter-um-sorriso-perfeito-veja-7-dicas-para-arrasar.jpg"
     },
     {
-      "place_id": "115",
-      "name": "Festa da Primavera",
-      "location": "Maringá",
-      "rating": 4.7,
-      "likes": 597,
-      "image": "http://www.grupponaturalisticobrianza.it/wp-content/uploads/2019/03/LOCANDINA-x-FESTA-PRIMAVERA-pdf.jpg"
+      "place_id": "80",
+      "name": "Festa das Flores",
+      "location": "Porto Velho",
+      "rating": 3.1,
+      "likes": 337,
+      "image": "https://i.pinimg.com/originals/ba/23/f9/ba23f9994e6505ab869e53ba86d3ff88.jpg"
     },
     {
-      "place_id": "113",
+      "place_id": "82",
+      "name": "Festa da Música",
+      "location": "Niterói",
+      "rating": 4.4,
+      "likes": 689,
+      "image": "https://pragentemiudacriacoes.com.br/wp-content/uploads/2020/01/001-1.jpg"
+    },
+    {
+      "place_id": "83",
       "name": "Festa da Dança",
-      "location": "Rio de Janeiro",
-      "rating": 3.4,
-      "likes": 128,
+      "location": "São Vicente",
+      "rating": 3.6,
+      "likes": 706,
       "image": "https://vejasp.abril.com.br/wp-content/uploads/2022/07/GettyImages-130899584.jpg.jpg?quality=70&strip=info&w=1280&h=720&crop=1"
     },
     {
-      "place_id": "116",
-      "name": "Festa do Verão",
-      "location": "Porto Velho",
-      "rating": 3.0,
-      "likes": 817,
-      "image": "https://tabela.precos.aquarelamagica.com/festas_aniversario/269-large_default/festa-do-verao.jpg"
-    },
-    {
-      "place_id": "114",
+      "place_id": "84",
       "name": "Festa da Lua Cheia",
-      "location": "Santa Maria",
+      "location": "Recife",
       "rating": 4.3,
-      "likes": 944,
+      "likes": 148,
       "image": "https://www.juliamaiorana.com.br/wp-content/uploads/2017/06/festa_da_lua_cheia_tailandia-julia-maiorana-3.jpg"
     },
     {
-      "place_id": "118",
-      "name": "Festa do Ano Novo",
-      "location": "Volta Redonda",
-      "rating": 3.6,
-      "likes": 346,
-      "image": "https://www.fuemreif.at/wp-content/uploads/2016/12/silive.jpg"
+      "place_id": "85",
+      "name": "Festa da Primavera",
+      "location": "São Luís",
+      "rating": 3.5,
+      "likes": 602,
+      "image": "http://www.grupponaturalisticobrianza.it/wp-content/uploads/2019/03/LOCANDINA-x-FESTA-PRIMAVERA-pdf.jpg"
     },
     {
-      "place_id": "117",
+      "place_id": "86",
+      "name": "Festa do Verão",
+      "location": "Canoas",
+      "rating": 3.3,
+      "likes": 589,
+      "image": "https://tabela.precos.aquarelamagica.com/festas_aniversario/269-large_default/festa-do-verao.jpg"
+    },
+    {
+      "place_id": "87",
       "name": "Festa do Carnaval",
-      "location": "Campo Grande",
-      "rating": 4.3,
-      "likes": 565,
+      "location": "Recife",
+      "rating": 3.6,
+      "likes": 605,
       "image": "https://www.jornalcidademg.com.br/wp-content/uploads/2020/02/carnaval-1.jpg"
     },
     {
-      "place_id": "119",
-      "name": "Rock Palace",
-      "location": "Suzano",
-      "rating": 3.9,
-      "likes": 761,
-      "image": "http://pre08.deviantart.net/ecc9/th/pre/i/2010/043/9/f/rock_palace__yemen_by_thetulipgirl.jpg"
-    },
-    {
-      "place_id": "120",
-      "name": "Hard Rock Cafe",
-      "location": "Santarém",
-      "rating": 3.7,
-      "likes": 621,
-      "image": "https://monparisjoli.com/wp-content/uploads/2015/11/Hard-Rock-Cafe-Paris-14.jpg"
-    },
-    {
-      "place_id": "121",
-      "name": "Rock'n'Roll Bar",
-      "location": "Governador Valadares",
-      "rating": 3.1,
-      "likes": 945,
-      "image": "http://365guidenyc.com/wp-content/uploads/2015/07/the-black-rose-bar-lo-by-michael-tulipan-1.jpg?w=300"
-    },
-    {
-      "place_id": "122",
-      "name": "The Rolling Stone",
-      "location": "Teresina",
+      "place_id": "88",
+      "name": "Festa do Ano Novo",
+      "location": "Aracaju",
       "rating": 4.3,
-      "likes": 774,
-      "image": "https://4.bp.blogspot.com/-gPMCCgW0Tl0/UCrnsTDMgUI/AAAAAAAABNU/efNkNsxmj80/s1600/The-Rolling-Stones_Wallpaper-2.jpg"
+      "likes": 682,
+      "image": "https://www.fuemreif.at/wp-content/uploads/2016/12/silive.jpg"
     },
     {
-      "place_id": "124",
+      "place_id": "89",
       "name": "Rock Arena",
-      "location": "Teresina",
-      "rating": 3.1,
-      "likes": 88,
+      "location": "Jaboatão dos Guararapes",
+      "rating": 4.5,
+      "likes": 908,
       "image": "https://i.pinimg.com/736x/10/88/53/108853e771d40b87778cdbc544c4d899--costa-blanca-festivals.jpg"
     },
     {
-      "place_id": "123",
-      "name": "Guitar Street",
-      "location": "Ipatinga",
-      "rating": 3.2,
-      "likes": 752,
-      "image": "https://live.staticflickr.com/2914/14066964029_d23f12b7ac_b.jpg"
+      "place_id": "91",
+      "name": "Rock Metalhead Tavern",
+      "location": "Governador Valadares",
+      "rating": 3.7,
+      "likes": 763,
+      "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100063575950501"
     },
     {
-      "place_id": "125",
+      "place_id": "90",
       "name": "Rock Star Lounge",
-      "location": "Londrina",
-      "rating": 4.8,
-      "likes": 226,
+      "location": "Recife",
+      "rating": 4.0,
+      "likes": 846,
       "image": "https://assets1.cbsnewsstatic.com/i/cbslocal/wp-content/uploads/sites/15909806/2011/01/rock-star-lounge.jpg"
     },
     {
-      "place_id": "126",
-      "name": "Metalhead Tavern",
-      "location": "Hortolândia",
-      "rating": 4.9,
-      "likes": 948,
-      "image": "https://yourfriendinreykjavik.com/wp-content/uploads/2022/08/Icelandic-movie-metalhead-malmhaus.jpg"
-    },
-    {
-      "place_id": "128",
-      "name": "Grungy Dive Bar",
-      "location": "Ananindeua",
-      "rating": 4.5,
-      "likes": 914,
-      "image": "https://i.pinimg.com/originals/bc/e3/ef/bce3ef765c9b1a5fc4d274350fd1dc0d.jpg"
-    },
-    {
-      "place_id": "127",
-      "name": "Electric Avenue Pub",
-      "location": "São José dos Campos",
-      "rating": 4.8,
-      "likes": 431,
-      "image": "https://media.cntraveler.com/photos/5e4307d0bd1fe9000896b3c3/16:9/w_2560,c_limit/AvenuePub-NewOrleans-Bars-2020-1.jpg?mbid=social_retweet"
-    },
-    {
-      "place_id": "129",
-      "name": "Punk Pit",
-      "location": "Sinop",
-      "rating": 3.1,
-      "likes": 56,
-      "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100069399313784"
-    },
-    {
-      "place_id": "132",
-      "name": "The Blues Basement",
-      "location": "Palmas",
-      "rating": 3.8,
-      "likes": 710,
-      "image": "https://shows.kudzukian.com/wp-content/uploads/2020/11/Blues-in-the-Basement-1-1024x1024.jpg"
-    },
-    {
-      "place_id": "130",
-      "name": "Heavy Metal Hangout",
-      "location": "Sinop",
-      "rating": 3.7,
-      "likes": 339,
-      "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/54e815d6-edd3-48af-8f7d-b7edc7d8e8ce/deur0ni-fe407e05-e5c7-487c-ba89-bc093b87648b.jpg/v1/fill/w_1280,h_1979,q_75,strp/heavy_metal_hangout_poster_acidreign_variant_by_greyariadesignstudio_deur0ni-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTk3OSIsInBhdGgiOiJcL2ZcLzU0ZTgxNWQ2LWVkZDMtNDhhZi04ZjdkLWI3ZWRjN2Q4ZThjZVwvZGV1cjBuaS1mZTQwN2UwNS1lNWM3LTQ4N2MtYmE4OS1iYzA5M2I4NzY0OGIuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.qkailbWLGMrvllDiUtOZ3pPE8mArit6b5SRhZSJhz0k"
-    },
-    {
-      "place_id": "131",
-      "name": "Rockabilly Joint",
-      "location": "Hortolândia",
-      "rating": 4.9,
-      "likes": 227,
-      "image": "https://pics.craiyon.com/2023-10-14/014ce9f711ca4459858a468c113f6399.webp"
-    },
-    {
-      "place_id": "133",
-      "name": "Psychedelic Saloon",
-      "location": "Indaiatuba",
-      "rating": 4.5,
-      "likes": 87,
-      "image": "https://www.disco-lemonade.com/wp-content/uploads/2022/06/chaps2Website_Template_1080x.jpg"
-    },
-    {
-      "place_id": "134",
-      "name": "Jam Session Joint",
-      "location": "Itabuna",
-      "rating": 3.9,
-      "likes": 256,
-      "image": "http://www.teambuilding-musical.com/photo/art/default/5293170-7898636.jpg?v=1362575540"
-    },
-    {
-      "place_id": "135",
-      "name": "Riff Raff's",
-      "location": "Jaboatão dos Guararapes",
-      "rating": 4.5,
-      "likes": 465,
-      "image": "https://static0.thethingsimages.com/wordpress/wp-content/uploads/2020/10/Riff-Raff-grills.jpg"
-    },
-    {
-      "place_id": "137",
-      "name": "Screaming Stage",
-      "location": "Sorocaba",
+      "place_id": "92",
+      "name": "Rock Heavy Metal Hangout",
+      "location": "Barueri",
       "rating": 4.0,
-      "likes": 89,
-      "image": "https://customderbycover.com/images/New 122 Derby.jpg"
+      "likes": 66,
+      "image": "https://cdn.wallpapersafari.com/12/69/G2ANtW.jpg"
     },
     {
-      "place_id": "136",
-      "name": "The Roaring Guitar",
-      "location": "Cuiabá",
+      "place_id": "98",
+      "name": "Rock Guitar Gods' Den",
+      "location": "Salvador",
+      "rating": 4.0,
+      "likes": 766,
+      "image": "https://i.pinimg.com/originals/b4/69/5a/b4695a24111f98dc4617546252c89fd4.jpg"
+    },
+    {
+      "place_id": "94",
+      "name": "Rock The Blues Basement Rock Band",
+      "location": "Canoas",
+      "rating": 4.0,
+      "likes": 207,
+      "image": "https://digitalgeology.aws.cose.isu.edu/Digital_Geology_Idaho/Module1/metamorphic_complex_lrg.gif"
+    },
+    {
+      "place_id": "97",
+      "name": "Rock Electric Avenue",
+      "location": "Recife",
+      "rating": 3.4,
+      "likes": 773,
+      "image": "https://cdn.music.smcloud.net/t/covers/Rock-Down-to-Electric-Avenue_so-JR3n-aHVT-J2vN_cover.jpg"
+    },
+    {
+      "place_id": "96",
+      "name": "Rock Rebellion",
+      "location": "Marabá",
       "rating": 4.4,
-      "likes": 82,
-      "image": "https://www.mixonline.com/wp-content/uploads/2020/10/ellis2-scaled.jpg"
+      "likes": 261,
+      "image": "https://hmrock.com.br/wp-content/uploads/2016/07/cd-rebellion-born-a-rebel-uwe-lulis-novo-guitar-do-accept-821201-MLB20281097588_042015-F.jpg"
     },
     {
-      "place_id": "140",
-      "name": "Igreja da Esperança Renovada",
+      "place_id": "95",
+      "name": "Rock The Rockers",
       "location": "Brasília",
-      "rating": 4.0,
-      "likes": 453,
+      "rating": 4.3,
+      "likes": 981,
+      "image": "http://www.influx.co.uk/wordpress/wp-content/uploads/2010/03/1-.jpg"
+    },
+    {
+      "place_id": "100",
+      "name": "Rock Alternative Alley",
+      "location": "Joinville",
+      "rating": 4.6,
+      "likes": 520,
+      "image": "https://static1.pocketlintimages.com/wordpress/wp-content/uploads/wm/2023/06/asus-rog-ally-review-steam.JPG"
+    },
+    {
+      "place_id": "93",
+      "name": "Rock Rockabilly Joint",
+      "location": "Florianópolis",
+      "rating": 3.2,
+      "likes": 393,
+      "image": "https://documents-public.yumpu.news/g6gyttrdzvfsaj55mbir4b4gy0vnccaf/24b3e5d6b2905d4bb418193906e6f2f8/5a4371613977342f756163704571463131636b4a4f413d3d/6763454f73637368666c54744f386d514b4664696b413d3d.jpg"
+    },
+    {
+      "place_id": "99",
+      "name": "Rock Punk Paradise",
+      "location": "Canoas",
+      "rating": 3.4,
+      "likes": 533,
+      "image": "https://www.aperodujeudi.com/wp-content/uploads/2019/08/95651.jpg"
+    },
+    {
+      "place_id": "102",
+      "name": "Rock Grungy Garage",
+      "location": "Sorocaba",
+      "rating": 4.3,
+      "likes": 227,
+      "image": "https://imgmusic.com/uploads/album/cover/139/SB-072_Garage_Rock_Vol_2_NL.jpg"
+    },
+    {
+      "place_id": "101",
+      "name": "Rock Rock Riot",
+      "location": "Rondonópolis",
+      "rating": 3.8,
+      "likes": 775,
+      "image": "https://d30womf5coomej.cloudfront.net/c/23/b5dd1aae-4c64-44c3-a9ce-2433107c8100.png"
+    },
+    {
+      "place_id": "103",
+      "name": "Rock Funkadelic Fort",
+      "location": "Marabá",
+      "rating": 3.7,
+      "likes": 232,
+      "image": "https://assets.mmsrg.com/isr/166325/c1/-/pixelboxx-mss-71690657/fee_786_587_png"
+    },
+    {
+      "place_id": "104",
+      "name": "Rock Soulful Stage",
+      "location": "Vila Velha",
+      "rating": 4.6,
+      "likes": 884,
+      "image": "https://thumbs.dreamstime.com/z/soulful-guitarist-green-light-stage-rock-concert-maelstrom-sound-emotion-surrounds-rock-guitarist-stage-287728479.jpg"
+    },
+    {
+      "place_id": "105",
+      "name": "Rock Hard Rock Haven",
+      "location": "Divinópolis",
+      "rating": 3.6,
+      "likes": 638,
+      "image": "https://www.new-video.de/co/rockhaven10.jpg"
+    },
+    {
+      "place_id": "106",
+      "name": "Rock Thrash Thrive",
+      "location": "Palmas",
+      "rating": 3.2,
+      "likes": 893,
+      "image": "https://i.pinimg.com/originals/89/a1/68/89a16851ecd88318a05f89851bee4f5c.jpg"
+    },
+    {
+      "place_id": "108",
+      "name": "Rock Indie Inn",
+      "location": "Indaiatuba",
+      "rating": 3.6,
+      "likes": 959,
+      "image": "https://i1.wp.com/indieshortfest.com/wp-content/uploads/2023/05/Rock-Inn.jpg?ssl=1"
+    },
+    {
+      "place_id": "107",
+      "name": "Rock Psychedelic Pitstop",
+      "location": "Vila Velha",
+      "rating": 4.3,
+      "likes": 244,
+      "image": "https://images.freeimages.com/365/images/previews/7b7/psychedelic-rock-star-poster-vector-4791.jpg"
+    },
+    {
+      "place_id": "109",
+      "name": "Rock Bluesy Boulevard",
+      "location": "Aracaju",
+      "rating": 4.8,
+      "likes": 192,
+      "image": "https://i.ytimg.com/vi/3V5tZjq72-s/maxresdefault.jpg"
+    },
+    {
+      "place_id": "110",
+      "name": "Rock Riff Rendezvous",
+      "location": "Itaquaquecetuba",
+      "rating": 4.3,
+      "likes": 276,
+      "image": "https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX9155818.jpg"
+    },
+    {
+      "place_id": "113",
+      "name": "Rock Metal Mayhem",
+      "location": "São Gonçalo",
+      "rating": 3.5,
+      "likes": 124,
+      "image": "https://thedarkmelody.com/wp-content/uploads/2021/02/WhatsApp-Image-2021-02-17-at-9.20.46-AM.jpeg"
+    },
+    {
+      "place_id": "115",
+      "name": "Igreja da Esperança Renovada",
+      "location": "Sorocaba",
+      "rating": 3.6,
+      "likes": 761,
       "image": "https://yt3.googleusercontent.com/ytc/AMLnZu-4r96rC6xErgN1MU65DqXVkRltkwlLvyBTPmdb6Q=s900-c-k-c0x00ffffff-no-rj"
     },
     {
-      "place_id": "139",
-      "name": "Igreja da Graça Divina",
-      "location": "Canoas",
-      "rating": 4.6,
-      "likes": 378,
-      "image": "https://4.bp.blogspot.com/-UTGaStsyx0I/Ttf5er14nqI/AAAAAAAATBU/JSIsI6IU-RY/s1600/Igreja+de+Nossa+Senhora+da+Gra%25C3%25A7a+-+Padroeira+da+Parna%25C3%25ADba.jpg"
-    },
-    {
-      "place_id": "138",
-      "name": "Headbanger Haven",
-      "location": "Santa Maria",
-      "rating": 4.6,
-      "likes": 945,
-      "image": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100066315741054"
-    },
-    {
-      "place_id": "141",
-      "name": "Igreja do Sagrado Coração",
-      "location": "Teófilo Otoni",
-      "rating": 4.5,
-      "likes": 911,
-      "image": "http://www.pliniocorreadeoliveira.info/igreja_sgdo_coracaodeJesus_000_externo.JPG"
-    },
-    {
-      "place_id": "143",
-      "name": "Igreja da Nova Aliança",
-      "location": "Anápolis",
-      "rating": 3.1,
-      "likes": 429,
-      "image": "https://www.inabrasil.org/site2020/wp-content/uploads/2016/03/sp3.jpg"
-    },
-    {
-      "place_id": "142",
+      "place_id": "117",
       "name": "Igreja da Comunhão Fraternal",
-      "location": "Itabuna",
-      "rating": 4.4,
-      "likes": 408,
+      "location": "Ibirité",
+      "rating": 3.7,
+      "likes": 829,
       "image": "https://www.paatc.org/wp-content/uploads/2020/11/How-to-Choose-a-Rehab-Program-for-Yourself.jpeg"
     },
     {
-      "place_id": "144",
-      "name": "Igreja da Renovação Espiritual",
-      "location": "Itabuna",
-      "rating": 3.4,
-      "likes": 686,
-      "image": "https://static.jotiva.com.br/avec/static/noticias/14ffc27fd0b62f5ab77bc795e57b9f6b/foto.jpg"
+      "place_id": "118",
+      "name": "Igreja da Nova Aliança",
+      "location": "Barueri",
+      "rating": 3.0,
+      "likes": 947,
+      "image": "https://www.inabrasil.org/site2020/wp-content/uploads/2016/03/sp3.jpg"
     },
     {
-      "place_id": "145",
-      "name": "Igreja do Evangelho Eterno",
-      "location": "Criciúma",
-      "rating": 4.1,
-      "likes": 191,
-      "image": "https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/43/d1/8d/43d18d0b-f745-08db-8fce-661f6e5e4725/5e4a0d54-1c1e-4c69-a679-4dbcdbf3068a_5.5-Inch-3.png/750x750bb.jpeg"
-    },
-    {
-      "place_id": "146",
-      "name": "Igreja do Amor Infinito",
+      "place_id": "116",
+      "name": "Igreja do Sagrado Coração",
       "location": "Londrina",
-      "rating": 3.7,
-      "likes": 951,
+      "rating": 3.5,
+      "likes": 485,
+      "image": "http://www.pliniocorreadeoliveira.info/igreja_sgdo_coracaodeJesus_000_externo.JPG"
+    },
+    {
+      "place_id": "114",
+      "name": "Igreja da Graça Divina",
+      "location": "Piracicaba",
+      "rating": 3.6,
+      "likes": 241,
+      "image": "http://4.bp.blogspot.com/-UTGaStsyx0I/Ttf5er14nqI/AAAAAAAATBU/JSIsI6IU-RY/s1600/Igreja+de+Nossa+Senhora+da+Gra%25C3%25A7a+-+Padroeira+da+Parna%25C3%25ADba.jpg"
+    },
+    {
+      "place_id": "111",
+      "name": "Rock Jamming Junction",
+      "location": "Santa Maria",
+      "rating": 4.1,
+      "likes": 361,
+      "image": "https://images.squarespace-cdn.com/content/v1/58977341414fb5309fc954e6/1571671798988-ERNQYK85PAA8MFRQXF9D/L1002420_F.jpg"
+    },
+    {
+      "place_id": "112",
+      "name": "Rock Rock Reservoir",
+      "location": "Duque de Caxias",
+      "rating": 4.6,
+      "likes": 403,
+      "image": "http://1.bp.blogspot.com/-UZLATvAptcM/VXFXtKDqfkI/AAAAAAAAAl4/_GJZksCu9qI/s1600/f1big.png"
+    },
+    {
+      "place_id": "121",
+      "name": "Igreja do Amor Infinito",
+      "location": "Ponta Grossa",
+      "rating": 3.3,
+      "likes": 573,
       "image": "https://imagens.ne10.uol.com.br/img/imagens/2018/10/11/f249fe9423_whatsapp-image-20181011-at-02.jpg"
     },
     {
-      "place_id": "147",
-      "name": "Igreja do Caminho Verdadeiro",
-      "location": "Vitória",
-      "rating": 4.5,
-      "likes": 98,
-      "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/29/26/11/29261178-0f68-515d-b918-362afaf344f5/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg"
+      "place_id": "119",
+      "name": "Igreja da Renovação Espiritual",
+      "location": "Mauá",
+      "rating": 4.2,
+      "likes": 212,
+      "image": "https://static.jotiva.com.br/avec/static/noticias/14ffc27fd0b62f5ab77bc795e57b9f6b/foto.jpg"
     },
     {
-      "place_id": "148",
+      "place_id": "123",
       "name": "Igreja do Divino Salvador",
-      "location": "Fortaleza",
-      "rating": 4.2,
-      "likes": 452,
+      "location": "Uberlândia",
+      "rating": 3.0,
+      "likes": 394,
       "image": "https://cms.infoportugal.info/media/fotos/final/Viana/VCT2_9070.jpg"
     },
     {
-      "place_id": "149",
+      "place_id": "122",
+      "name": "Igreja do Caminho Verdadeiro",
+      "location": "Duque de Caxias",
+      "rating": 4.9,
+      "likes": 755,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/29/26/11/29261178-0f68-515d-b918-362afaf344f5/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg"
+    },
+    {
+      "place_id": "120",
+      "name": "Igreja do Evangelho Eterno",
+      "location": "Porto Alegre",
+      "rating": 3.7,
+      "likes": 588,
+      "image": "https://is4-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/43/d1/8d/43d18d0b-f745-08db-8fce-661f6e5e4725/5e4a0d54-1c1e-4c69-a679-4dbcdbf3068a_5.5-Inch-3.png/750x750bb.jpeg"
+    },
+    {
+      "place_id": "124",
       "name": "Igreja do Amor Fraternal",
-      "location": "Betim",
-      "rating": 3.4,
-      "likes": 961,
+      "location": "Aparecida de Goiânia",
+      "rating": 4.1,
+      "likes": 731,
       "image": "https://lh3.googleusercontent.com/CcYwNPREIRejyZbtmQB39PB7QU_bbwqE5OZLYJK_h96f4qUq16l6OU6bpqjptQN20g"
     },
     {
-      "place_id": "152",
-      "name": "Igreja da Salvação Eterna",
-      "location": "Porto Velho",
-      "rating": 3.7,
-      "likes": 711,
-      "image": "https://1.bp.blogspot.com/-INlBqbCvNzI/U7Flfq1XIvI/AAAAAAAABWo/4G-ul6j_gtc/s1600/Igreja_Matriz_de+Nossa_Senhora_do_Porto_da_Eterna_Salva%25C3%25A7%25C3%25A3o_em_Andrel%25C3%25A2ndia_mg_01.JPG"
-    },
-    {
-      "place_id": "151",
+      "place_id": "126",
       "name": "Igreja da Fé Inabalável",
-      "location": "Duque de Caxias",
-      "rating": 3.8,
-      "likes": 471,
+      "location": "São Gonçalo",
+      "rating": 3.4,
+      "likes": 681,
       "image": "https://ipguarabira.org.br/wp-content/uploads/2020/08/116728241_3136537579773250_8170158970710734705_o-1.jpg"
     },
     {
-      "place_id": "150",
+      "place_id": "125",
       "name": "Igreja do Perdão Divino",
-      "location": "Boa Vista",
-      "rating": 3.8,
-      "likes": 793,
+      "location": "Rio de Janeiro",
+      "rating": 3.1,
+      "likes": 694,
       "image": "https://encontrocomcristo.com.br/wp-content/uploads/2015/10/perdão-1024x576.jpg"
     },
     {
-      "place_id": "153",
+      "place_id": "127",
+      "name": "Igreja da Salvação Eterna",
+      "location": "São Bernardo do Campo",
+      "rating": 4.0,
+      "likes": 429,
+      "image": "https://1.bp.blogspot.com/-INlBqbCvNzI/U7Flfq1XIvI/AAAAAAAABWo/4G-ul6j_gtc/s1600/Igreja_Matriz_de+Nossa_Senhora_do_Porto_da_Eterna_Salva%25C3%25A7%25C3%25A3o_em_Andrel%25C3%25A2ndia_mg_01.JPG"
+    },
+    {
+      "place_id": "128",
       "name": "Igreja da Luz Celestial",
-      "location": "Itaquaquecetuba",
-      "rating": 3.4,
-      "likes": 402,
+      "location": "Nova Iguaçu",
+      "rating": 3.7,
+      "likes": 80,
       "image": "https://i.pinimg.com/originals/23/db/e6/23dbe6700ac25fae2883f078f71daa50.jpg"
+    },
+    {
+      "place_id": "131",
+      "name": "Galeria dos Artistas",
+      "location": "Maceió",
+      "rating": 4.9,
+      "likes": 214,
+      "image": "https://www.escueladesarts.com/wp-content/uploads/galerias-de-arte-980x588.jpg"
+    },
+    {
+      "place_id": "132",
+      "name": "Galeria Vanguarda",
+      "location": "Santos",
+      "rating": 3.7,
+      "likes": 661,
+      "image": "https://images.squarespace-cdn.com/content/v1/55f338d1e4b07856e0038f2c/1514243364828-KPUIVENC61MZ396PZKNS/1.jpg"
+    },
+    {
+      "place_id": "129",
+      "name": "Galeria do Rock",
+      "location": "Rio de Janeiro",
+      "rating": 4.3,
+      "likes": 966,
+      "image": "https://www.gpsmycity.com/img/gd_sight/18100.jpg"
+    },
+    {
+      "place_id": "130",
+      "name": "Galeria de Arte Moderna",
+      "location": "Guarulhos",
+      "rating": 3.5,
+      "likes": 275,
+      "image": "https://cdn.forbes.com.mx/2017/04/1_.jpg"
+    },
+    {
+      "place_id": "134",
+      "name": "Galeria Expressão",
+      "location": "Indaiatuba",
+      "rating": 3.9,
+      "likes": 864,
+      "image": "https://1.bp.blogspot.com/-UTQyvQQHhW4/UGsj1HhYgvI/AAAAAAAAADU/-EdaePOIOa8/s1600/Slide5.JPG"
+    },
+    {
+      "place_id": "133",
+      "name": "Galeria Contemporânea",
+      "location": "Brasília",
+      "rating": 4.9,
+      "likes": 887,
+      "image": "https://dasartes.com.br/dasartes.com.br/wp-content/uploads/2022/08/Darcilio-de-Paula-Lima_Figura_1987_acrilico-sobre-tela_65X80_Oskar-Sjostedt.jpg"
+    },
+    {
+      "place_id": "136",
+      "name": "Galeria das Cores",
+      "location": "Taboão da Serra",
+      "rating": 3.6,
+      "likes": 832,
+      "image": "https://donatoviagens.com.br/wp-content/uploads/2021/11/galeria-cores-peru-donato-viagens.png"
+    },
+    {
+      "place_id": "139",
+      "name": "Galeria Cultural",
+      "location": "Boa Vista",
+      "rating": 4.9,
+      "likes": 879,
+      "image": "https://www.escueladesarts.com/wp-content/uploads/galerias-de-arte-980x588.jpg"
+    },
+    {
+      "place_id": "138",
+      "name": "Galeria Arte Viva",
+      "location": "Nova Iguaçu",
+      "rating": 3.7,
+      "likes": 708,
+      "image": "https://www.sjc.sp.gov.br/media/17855/arte_viva.png?anchor=center&mode=crop&width=940&height=627&rnd=133486816710000000"
+    },
+    {
+      "place_id": "137",
+      "name": "Galeria Urbana",
+      "location": "Limeira",
+      "rating": 3.5,
+      "likes": 268,
+      "image": "https://cd1.asturiasprestosa.com/wp-content/uploads/2017/06/08155233/diosa.jpg"
+    },
+    {
+      "place_id": "135",
+      "name": "Galeria da Criatividade",
+      "location": "Franca",
+      "rating": 3.8,
+      "likes": 963,
+      "image": "https://s2.glbimg.com/7dcM___s-eDg-wmVioElmfZcrVo=/512x320/top/e.glbimg.com/og/ed/f/original/2017/01/30/cv378-antena-shopping-18.jpg"
+    },
+    {
+      "place_id": "141",
+      "name": "Galeria da Inovação",
+      "location": "São Vicente",
+      "rating": 3.9,
+      "likes": 797,
+      "image": "https://images.adsttc.com/media/images/6046/4d8d/f91c/8187/f100/0055/slideshow/04-Cassina-Credits_Joana_França.jpg?1615220100"
+    },
+    {
+      "place_id": "140",
+      "name": "Galeria da Vanguarda",
+      "location": "Belém",
+      "rating": 3.7,
+      "likes": 187,
+      "image": "https://images.squarespace-cdn.com/content/v1/55f338d1e4b07856e0038f2c/1514243364828-KPUIVENC61MZ396PZKNS/1.jpg"
+    },
+    {
+      "place_id": "143",
+      "name": "Galeria dos Sonhos",
+      "location": "Montes Claros",
+      "rating": 4.9,
+      "likes": 140,
+      "image": "https://www.festainfantil.pt/images/servicos/galeria_dos_sonhos_1.jpeg"
+    },
+    {
+      "place_id": "144",
+      "name": "Galeria dos Mestres",
+      "location": "Rondonópolis",
+      "rating": 4.2,
+      "likes": 529,
+      "image": "https://thumbs.dreamstime.com/z/galeria-dos-antigos-mestres-em-dresden-alemanha-99805456.jpg"
+    },
+    {
+      "place_id": "142",
+      "name": "Galeria das Ideias",
+      "location": "Salvador",
+      "rating": 4.4,
+      "likes": 217,
+      "image": "https://images.squarespace-cdn.com/content/v1/603fd5bb781b6d223ba9dbe5/1614893928708-URSQP7LTTC8OYP7YKRS2/Solomum+1335.jpg"
+    },
+    {
+      "place_id": "145",
+      "name": "Galeria da Alma",
+      "location": "Governador Valadares",
+      "rating": 4.7,
+      "likes": 507,
+      "image": "https://www.sobrevivaemsaopaulo.com.br/wp-content/uploads/2023/08/Galeria-Alma-da-Rua-Alemao-obra-930x445.jpg"
+    },
+    {
+      "place_id": "146",
+      "name": "Galeria da Luz",
+      "location": "Macapá",
+      "rating": 4.4,
+      "likes": 356,
+      "image": "https://2.bp.blogspot.com/-Lexa_Y9dZ3M/UM8l_LtHoHI/AAAAAAAAMLY/LiA6bxLuMPI/s1600/Galeria+de+Luz+na+Rua+Xv+de+Novembro+foto+de+DiegoPisante-0759.jpg"
+    },
+    {
+      "place_id": "147",
+      "name": "Galeria dos Ventos",
+      "location": "São Luís",
+      "rating": 4.3,
+      "likes": 229,
+      "image": "https://cms.infoportugal.info/media/fotos/final/Maia/MAI393.jpg"
+    },
+    {
+      "place_id": "148",
+      "name": "Galeria dos Sentidos",
+      "location": "Aracaju",
+      "rating": 4.1,
+      "likes": 685,
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/mT8mfFQSmuxc73r4Lq8DBQ/o.jpg"
+    },
+    {
+      "place_id": "149",
+      "name": "Galeria do Olhar",
+      "location": "Governador Valadares",
+      "rating": 3.7,
+      "likes": 82,
+      "image": "https://tourb.com.br/img/lugares/sao-paulo/galeria-do-rock-1.jpg"
+    },
+    {
+      "place_id": "155",
+      "name": "Academia PowerHouse",
+      "location": "Franca",
+      "rating": 4.0,
+      "likes": 557,
+      "image": "https://d3c1e34umh9o6d.cloudfront.net/image/partners/15adce93-a0e5-4549-a317-00858302406e/x_lg_34a2c17b-1f4f-4ff9-af27-b1a16e5caf21_FAACD78EB67E4E71A103B2F11F9C655B.jpeg"
+    },
+    {
+      "place_id": "151",
+      "name": "Galeria da Inspiração",
+      "location": "Marabá",
+      "rating": 3.0,
+      "likes": 468,
+      "image": "https://ffw.uol.com.br/app/uploads/noticias/2012/08/IMG_1447.jpg"
+    },
+    {
+      "place_id": "153",
+      "name": "Galeria da Harmonia",
+      "location": "Ponta Grossa",
+      "rating": 3.2,
+      "likes": 432,
+      "image": "https://www.coimbra.pt/wp-content/uploads/2022/06/1-9-scaled.jpg"
+    },
+    {
+      "place_id": "154",
+      "name": "Academia BodyFit",
+      "location": "Porto Velho",
+      "rating": 4.1,
+      "likes": 149,
+      "image": "https://d1a3v8txm37nbo.cloudfront.net/image/filename/4493640/x_lg_7YQRnhbEiup83yOLBtbkfhfGgSCa-jFO.png"
+    },
+    {
+      "place_id": "150",
+      "name": "Galeria das Estrelas",
+      "location": "Piracicaba",
+      "rating": 4.2,
+      "likes": 235,
+      "image": "https://img.wook.pt/images/a-minha-galeria-estrelas-para-colorir-e-autocolantes/MXwxNDk0NDE3OHwxMDQyODQ1OHwxMzgzNTkwMzMyMDAw/550x"
+    },
+    {
+      "place_id": "152",
+      "name": "Galeria dos Momentos",
+      "location": "Rio de Janeiro",
+      "rating": 4.7,
+      "likes": 947,
+      "image": "https://br.web.img3.acsta.net/pictures/20/06/23/09/53/2039855.jpg"
+    },
+    {
+      "place_id": "156",
+      "name": "Academia IronWorks",
+      "location": "Uberlândia",
+      "rating": 4.3,
+      "likes": 541,
+      "image": "https://www.ironworksprime.com.br/wp-content/uploads/2020/04/WhatsApp-Image-2020-04-13-at-15.22.18-1.jpeg"
+    },
+    {
+      "place_id": "157",
+      "name": "Academia FitZone",
+      "location": "Santa Maria",
+      "rating": 3.3,
+      "likes": 735,
+      "image": "https://holdfit.com.br/wp-content/uploads/2022/05/musculacao-holdfit.jpg"
+    },
+    {
+      "place_id": "160",
+      "name": "Academia BodyStrong",
+      "location": "Taboão da Serra",
+      "rating": 3.1,
+      "likes": 660,
+      "image": "https://yt3.googleusercontent.com/ytc/AOPolaTGEeuNdDSTqtk6ClsW7UYqmYejTx42JbW_HJz7=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "place_id": "159",
+      "name": "Academia ShapeUp",
+      "location": "Rio Branco",
+      "rating": 4.5,
+      "likes": 511,
+      "image": "https://www.shapeup-training.de/wp-content/uploads/2021/11/Ergoraum-Hirschau-1.jpg"
+    },
+    {
+      "place_id": "158",
+      "name": "Academia Fitness Plus",
+      "location": "Sinop",
+      "rating": 3.3,
+      "likes": 420,
+      "image": "https://fitnessplus.gr/wp-content/uploads/2021/07/fitnessplus-5_Large-710x375.jpg"
+    },
+    {
+      "place_id": "161",
+      "name": "Academia MuscleMax",
+      "location": "Cascavel",
+      "rating": 4.2,
+      "likes": 260,
+      "image": "https://912a45f74f.cbaul-cdnwnd.com/fdd6f9f5c66f84561aafb32b64ef396b/system_preview_detail_200000443-d1bcbd2b52/p_oxitoland.jpg"
+    },
+    {
+      "place_id": "162",
+      "name": "Academia EliteFit",
+      "location": "Pelotas",
+      "rating": 4.3,
+      "likes": 213,
+      "image": "https://holdfit.com.br/wp-content/uploads/2022/05/cardio-holdfit.jpg"
+    },
+    {
+      "place_id": "165",
+      "name": "Academia FitPro",
+      "location": "Uberlândia",
+      "rating": 3.3,
+      "likes": 937,
+      "image": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/9f816272013179.5bd8e0a936cb5.jpg"
+    },
+    {
+      "place_id": "163",
+      "name": "Academia PowerFlex",
+      "location": "São Vicente",
+      "rating": 4.6,
+      "likes": 71,
+      "image": "https://www.reylenferna.com/wp-content/uploads/2019/05/Powerflex-523-1024x1024.jpg"
+    },
+    {
+      "place_id": "164",
+      "name": "Academia IronGym",
+      "location": "Indaiatuba",
+      "rating": 3.9,
+      "likes": 321,
+      "image": "https://d1a3v8txm37nbo.cloudfront.net/image/partners/917cd2bd-668b-46a6-83f5-e133d4d72114/x_lg_e088b938-4aaf-4bc9-8841-070594f6e312_6999A5FDA6A0479BBC1A0C0ED49610F9.jpeg"
+    },
+    {
+      "place_id": "167",
+      "name": "Academia MuscleMania",
+      "location": "Uberlândia",
+      "rating": 4.6,
+      "likes": 608,
+      "image": "https://lh5.googleusercontent.com/p/AF1QipPqEr1xJOkMcHbj2_wslx86qQyg_0SsxBDH3Wuk=w187-h250-k-no"
+    },
+    {
+      "place_id": "168",
+      "name": "Academia CoreZone",
+      "location": "Rondonópolis",
+      "rating": 4.8,
+      "likes": 205,
+      "image": "https://i1.sndcdn.com/avatars-NoakeKktAMbsyGrx-xYLgPw-t500x500.jpg"
+    },
+    {
+      "place_id": "170",
+      "name": "Academia FlexFit",
+      "location": "Florianópolis",
+      "rating": 3.0,
+      "likes": 927,
+      "image": "http://urbanno.com.br/cdn/shop/files/Bolsas-de-Academia-Urbanno-FlexFit-One-017.jpg?v=1697222075"
+    },
+    {
+      "place_id": "169",
+      "name": "Academia FitnessFusion",
+      "location": "Palmas",
+      "rating": 4.3,
+      "likes": 532,
+      "image": "https://holdfit.com.br/wp-content/uploads/2022/05/musculacao-holdfit.jpg"
+    },
+    {
+      "place_id": "171",
+      "name": "Academia StrengthCamp",
+      "location": "Piracicaba",
+      "rating": 3.8,
+      "likes": 336,
+      "image": "https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto/isnurgy0ag5qw4rymgzq.jpg"
+    },
+    {
+      "place_id": "172",
+      "name": "Academia BodyTech",
+      "location": "Campina Grande",
+      "rating": 4.4,
+      "likes": 294,
+      "image": "https://editalconcursosbrasil.com.br/wp-content/uploads/2019/05/vagas-bodytech.jpg"
+    },
+    {
+      "place_id": "166",
+      "name": "Academia BodyPump",
+      "location": "Uberlândia",
+      "rating": 3.8,
+      "likes": 957,
+      "image": "https://www.vidaacademia.com.br/wp-content/uploads/2018/02/body-pump-les-mills-academia-vida.jpg"
+    },
+    {
+      "place_id": "173",
+      "name": "Academia PowerLift",
+      "location": "Ipatinga",
+      "rating": 3.1,
+      "likes": 310,
+      "image": "https://ergolife.com.br/wp-content/uploads/2017/09/academia-bonita-bem-montada.jpg"
+    },
+    {
+      "place_id": "175",
+      "name": "Academia FitForce",
+      "location": "Palmas",
+      "rating": 4.0,
+      "likes": 851,
+      "image": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5cb407160071123.63ac5294ea788.png"
+    },
+    {
+      "place_id": "174",
+      "name": "Academia IronClad",
+      "location": "Limeira",
+      "rating": 4.5,
+      "likes": 96,
+      "image": "https://infocontratos.es/wp-content/uploads/2022/09/mE17yEo_kys.jpg"
+    },
+    {
+      "place_id": "176",
+      "name": "Academia BodyBlast",
+      "location": "Marília",
+      "rating": 4.4,
+      "likes": 947,
+      "image": "https://i.ytimg.com/vi/mc5bpEO4ldw/maxresdefault.jpg"
+    },
+    {
+      "place_id": "177",
+      "name": "Academia MuscleFactory",
+      "location": "Limeira",
+      "rating": 4.0,
+      "likes": 858,
+      "image": "https://musclefactory.cl/wp-content/uploads/2022/07/ISO-WHEY-ZERO.jpg"
+    },
+    {
+      "place_id": "178",
+      "name": "Academia FlexGym",
+      "location": "Teresina",
+      "rating": 4.9,
+      "likes": 264,
+      "image": "https://sportsjob.com.br/wp-content/uploads/2018/07/flexgym.png"
+    },
+    {
+      "place_id": "179",
+      "name": "Zoológico WildLife",
+      "location": "Cuiabá",
+      "rating": 4.7,
+      "likes": 675,
+      "image": "https://www.salutilescanaries.com/sites/default/files/styles/16_9_desktop/public/resources/header_images/Lajita-Oasis-Park_5-cab-D.jpg?itok=poq5TvV3"
+    },
+    {
+      "place_id": "180",
+      "name": "Zoológico JungleLand",
+      "location": "Santo André",
+      "rating": 4.5,
+      "likes": 798,
+      "image": "https://laverdadnoticias.com/__export/1620086621318/sites/laverdad/img/2021/05/03/zoo.jpg_2039590105.jpg"
+    },
+    {
+      "place_id": "181",
+      "name": "Zoológico SafariWorld",
+      "location": "Feira de Santana",
+      "rating": 3.0,
+      "likes": 437,
+      "image": "https://www.mundukos.com/wp-content/uploads/2023/04/zoologico-de-chapultepec.jpg"
+    },
+    {
+      "place_id": "182",
+      "name": "Zoológico NaturePark",
+      "location": "Manaus",
+      "rating": 3.4,
+      "likes": 623,
+      "image": "https://www.notigape.com/thumburl/thumbnail/900x506/outbound/uploads/photos/7qzDezuGeYTHjQnawnCV.jpeg"
+    },
+    {
+      "place_id": "183",
+      "name": "Zoológico Animalia",
+      "location": "Sete Lagoas",
+      "rating": 3.1,
+      "likes": 180,
+      "image": "https://saopauloparacriancas.com.br/wp-content/uploads/2021/06/SP_Criancas_Animalia_Park_Cotia_Credito_Lucas_Ferraza_ZiX_Entretenimento_9.jpg"
+    },
+    {
+      "place_id": "184",
+      "name": "Zoológico ZooHaven",
+      "location": "Ipatinga",
+      "rating": 3.3,
+      "likes": 199,
+      "image": "https://www.manilazoo.ph/static/media/8.6932e600.jpg"
+    },
+    {
+      "place_id": "185",
+      "name": "Zoológico FaunaPark",
+      "location": "Recife",
+      "rating": 3.5,
+      "likes": 815,
+      "image": "https://es-academic.com/pictures/eswiki/66/Barcelona.Zoologico.Tigre.jpg"
+    },
+    {
+      "place_id": "186",
+      "name": "Zoológico SafariZone",
+      "location": "Ponta Grossa",
+      "rating": 3.9,
+      "likes": 325,
+      "image": "https://texashillcountry.com/wp-content/uploads/SA-Zoo.jpg"
+    },
+    {
+      "place_id": "187",
+      "name": "Zoológico WildlifeReserve",
+      "location": "Criciúma",
+      "rating": 4.7,
+      "likes": 888,
+      "image": "http://www.parkgrandkensington.co.uk/blog/wp-content/uploads/2016/05/254980465.jpg"
+    },
+    {
+      "place_id": "188",
+      "name": "Zoológico ZooQuest",
+      "location": "Sinop",
+      "rating": 3.6,
+      "likes": 442,
+      "image": "https://www.hostalsoldechosica.com/wp-content/uploads/2021/09/parque-zoologico-huachipa.jpg"
+    },
+    {
+      "place_id": "190",
+      "name": "Zoológico SafariScape",
+      "location": "Colombo",
+      "rating": 4.0,
+      "likes": 394,
+      "image": "https://www.kooliner.com/blog/wp-content/uploads/2022/05/17015830_10154515632888931_1877145227028070565_o.jpg"
+    },
+    {
+      "place_id": "191",
+      "name": "Zoológico NatureReserve",
+      "location": "Caxias do Sul",
+      "rating": 3.4,
+      "likes": 255,
+      "image": "https://www.cmzoo.org/wp-content/uploads/lionPridepic-1024x767.png"
+    },
+    {
+      "place_id": "189",
+      "name": "Zoológico WildKingdom",
+      "location": "Florianópolis",
+      "rating": 3.5,
+      "likes": 390,
+      "image": "https://www.trbimg.com/img-5ad63630/turbine/ct-trav-20-things-disney-animal-kingdom-0429"
+    },
+    {
+      "place_id": "192",
+      "name": "Zoológico ZooVista",
+      "location": "São Luís",
+      "rating": 4.3,
+      "likes": 139,
+      "image": "https://www.hostalsoldechosica.com/wp-content/uploads/2021/09/parque-zoologico-huachipa.jpg"
+    },
+    {
+      "place_id": "194",
+      "name": "Metal Forge",
+      "location": "Belém",
+      "rating": 3.4,
+      "likes": 980,
+      "image": "https://cros.land/wp-content/uploads/2021/06/forge-of-spells-green-min-scaled.jpg"
+    },
+    {
+      "place_id": "193",
+      "name": "Zoológico FaunaValley",
+      "location": "Colombo",
+      "rating": 4.3,
+      "likes": 581,
+      "image": "https://www.frontalnoticias.com/wp-content/uploads/2020/03/Zoologico-La-Aurora-885x500-859x447-1.jpg"
+    },
+    {
+      "place_id": "196",
+      "name": "Metallica Haven",
+      "location": "João Pessoa",
+      "rating": 4.4,
+      "likes": 247,
+      "image": "https://preview.redd.it/metallica-havent-put-out-anything-good-since-afja-v0-klaci6i5arkc1.jpeg?width=1080&crop=smart&auto=webp&s=a4da90ac46d7e0389d3fbdb3069d98db0575a3a8"
+    },
+    {
+      "place_id": "195",
+      "name": "Metal Mania",
+      "location": "Pelotas",
+      "rating": 3.8,
+      "likes": 856,
+      "image": "https://www.metalexpressradio.com/wp-content/uploads/2015/09/VH1-Classic-Metal-Mania-Stripped-Vol.-2-The-Anthems.jpg"
+    },
+    {
+      "place_id": "197",
+      "name": "Metal Masters",
+      "location": "Campos dos Goytacazes",
+      "rating": 4.3,
+      "likes": 742,
+      "image": "https://www.tvguide.com/a/img/catalog/provider/1/1/1-11727791280.jpg"
+    },
+    {
+      "place_id": "198",
+      "name": "Metal Mayhem",
+      "location": "Campinas",
+      "rating": 3.4,
+      "likes": 486,
+      "image": "https://i.ytimg.com/vi/LFBRuymyGV8/maxresdefault.jpg"
+    },
+    {
+      "place_id": "200",
+      "name": "Metal Militia",
+      "location": "Salvador",
+      "rating": 4.9,
+      "likes": 335,
+      "image": "https://logodix.com/logo/852702.jpg"
+    },
+    {
+      "place_id": "199",
+      "name": "Metal Kingdom",
+      "location": "Suzano",
+      "rating": 3.0,
+      "likes": 566,
+      "image": "http://metalogy.de/wp-content/uploads/2020/01/MG_M_C_3000x3000.jpg"
+    },
+    {
+      "place_id": "201",
+      "name": "Metal Works",
+      "location": "Campo Grande",
+      "rating": 4.8,
+      "likes": 410,
+      "image": "http://www.cnmetalworks.co.uk/wp-content/uploads/2017/03/Precision-Metalworks-Manufacturing-1.jpg"
+    },
+    {
+      "place_id": "203",
+      "name": "Metal Madness",
+      "location": "Barueri",
+      "rating": 4.8,
+      "likes": 410,
+      "image": "https://pre00.deviantart.net/f945/th/pre/f/2013/216/2/5/metal_madness_v2_by_chaosx97-d6gn4qp.jpg"
+    },
+    {
+      "place_id": "202",
+      "name": "Metal Meltdown",
+      "location": "Natal",
+      "rating": 3.6,
+      "likes": 201,
+      "image": "https://4.bp.blogspot.com/-PZPuKUSITW0/XImFMgZ-tKI/AAAAAAAAXqc/CM3XgzmafEcSTu7WLpIm0iGYt_F3T7Y4wCEwYBhgL/s1600/IMG_E7377.JPG"
+    },
+    {
+      "place_id": "204",
+      "name": "Metal Empire",
+      "location": "Joinville",
+      "rating": 3.9,
+      "likes": 680,
+      "image": "https://i.ytimg.com/vi/Hmbu_r2f6BM/maxresdefault.jpg"
+    },
+    {
+      "place_id": "205",
+      "name": "Metallica Frontier",
+      "location": "São Bernardo do Campo",
+      "rating": 3.2,
+      "likes": 357,
+      "image": "https://i.ytimg.com/vi/YEiQf_eHruY/maxresdefault.jpg"
+    },
+    {
+      "place_id": "207",
+      "name": "Metal Mashup",
+      "location": "Pelotas",
+      "rating": 3.4,
+      "likes": 831,
+      "image": "https://i.ytimg.com/vi/0skkV29gsWo/maxresdefault.jpg"
+    },
+    {
+      "place_id": "206",
+      "name": "Metal Mountain",
+      "location": "Guarulhos",
+      "rating": 3.3,
+      "likes": 419,
+      "image": "https://img00.deviantart.net/f350/i/2013/035/8/9/metal_mountain_by_rendever-d5tw7wy.jpg"
+    },
+    {
+      "place_id": "209",
+      "name": "Parque da Floresta",
+      "location": "Feira de Santana",
+      "rating": 4.4,
+      "likes": 167,
+      "image": "https://www.sucesosmetropolitanos.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-23-at-8.02.48-AM.jpeg"
+    },
+    {
+      "place_id": "208",
+      "name": "Metal Madness",
+      "location": "Governador Valadares",
+      "rating": 3.2,
+      "likes": 145,
+      "image": "https://pre00.deviantart.net/f945/th/pre/f/2013/216/2/5/metal_madness_v2_by_chaosx97-d6gn4qp.jpg"
+    },
+    {
+      "place_id": "212",
+      "name": "Parque da Aventura",
+      "location": "Maringá",
+      "rating": 3.7,
+      "likes": 81,
+      "image": "https://turistik.com/wp-content/uploads/2022/01/3.png"
+    },
+    {
+      "place_id": "210",
+      "name": "Parque das Águas",
+      "location": "Campo Grande",
+      "rating": 4.1,
+      "likes": 884,
+      "image": "https://www.anapolis.go.gov.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-16-at-13.25.46.jpeg"
+    },
+    {
+      "place_id": "211",
+      "name": "Parque da Cidade",
+      "location": "Taboão da Serra",
+      "rating": 3.8,
+      "likes": 107,
+      "image": "https://tvtecjundiai.com.br/news/wp-content/uploads/sites/2/2022/04/parque-da-cidade-1280x853-2.jpg"
+    },
+    {
+      "place_id": "213",
+      "name": "Parque da Vida",
+      "location": "Goiânia",
+      "rating": 3.4,
+      "likes": 213,
+      "image": "https://www.santiagoregion.com/uploads/fotos/foto_1414_c.JPG"
+    },
+    {
+      "place_id": "214",
+      "name": "Parque das Rosas",
+      "location": "Campo Grande",
+      "rating": 3.5,
+      "likes": 424,
+      "image": "https://s3.amazonaws.com/entrekidscl/vich_files/actividadfoto/5bbbec1654855261026770.png"
+    },
+    {
+      "place_id": "215",
+      "name": "Parque da Paz",
+      "location": "Natal",
+      "rating": 4.4,
+      "likes": 168,
+      "image": "https://1.bp.blogspot.com/-SmDWD_wMjCY/XdAv_lKrzeI/AAAAAAAA2XQ/3Vnavu8wUh0dTCNAudjGbbPqT7_pyxrdACLcBGAsYHQ/s1600/P1190645.JPG"
+    },
+    {
+      "place_id": "216",
+      "name": "Parque da Diversão",
+      "location": "Curitiba",
+      "rating": 4.4,
+      "likes": 884,
+      "image": "https://reservecaldasturismo.com.br/reservecaldas/img/reserve-caldas-turismo-rede-social-parque-de-diversao-em-caldas-novas-629e6bd1037a3_0.jpg"
+    },
+    {
+      "place_id": "217",
+      "name": "Parque das Estrelas",
+      "location": "Limeira",
+      "rating": 3.1,
+      "likes": 441,
+      "image": "https://4.bp.blogspot.com/-mv82nfHiAq4/W3sQzhpAOYI/AAAAAAAB56c/e5GMXJTkIjoSBoITWYwXVEkZJHrRv1fFgCLcBGAs/s640/IMG_8561.JPG"
+    },
+    {
+      "place_id": "219",
+      "name": "Parque da Serenidade",
+      "location": "João Pessoa",
+      "rating": 4.8,
+      "likes": 199,
+      "image": "https://japanspecialist.com/o/adaptive-media/image/471345/large/c338a718-6831-c505-92a3-a521a8a27de4?t=1635537092768"
+    },
+    {
+      "place_id": "220",
+      "name": "Parque da Juventude",
+      "location": "Pelotas",
+      "rating": 3.7,
+      "likes": 814,
+      "image": "https://vejasp.abril.com.br/wp-content/uploads/2016/12/ccj_leo-feltran.jpg"
+    },
+    {
+      "place_id": "218",
+      "name": "Parque dos Sonhos",
+      "location": "Hortolândia",
+      "rating": 3.5,
+      "likes": 614,
+      "image": "http://www.oficialhostgeek.com.br/wp-content/uploads/2019/03/p-parque-dos-sonhos_banner.jpg"
+    },
+    {
+      "place_id": "221",
+      "name": "Parque da Imaginação",
+      "location": "Osasco",
+      "rating": 3.7,
+      "likes": 543,
+      "image": "https://images.adsttc.com/media/images/61c0/9c5b/1c01/5967/e3b1/9351/slideshow/capa-figura-01.jpg?1640012908"
+    },
+    {
+      "place_id": "223",
+      "name": "Parque da Harmonia",
+      "location": "Cuiabá",
+      "rating": 4.4,
+      "likes": 170,
+      "image": "https://guaiba.com.br/wp-content/uploads/2020/11/TRECHO-1-DA-ORLA-JEFF-2048x1152.jpg"
+    },
+    {
+      "place_id": "222",
+      "name": "Parque das Cores",
+      "location": "Franca",
+      "rating": 4.7,
+      "likes": 495,
+      "image": "https://arquivos.sistemasupremo.com.br/17/empreendimentos/3431/2990/g_p1g1gbg8r01bfd19hq1hnc1hdptv8k.jpg"
+    },
+    {
+      "place_id": "224",
+      "name": "Parque da Liberdade",
+      "location": "Pelotas",
+      "rating": 4.5,
+      "likes": 315,
+      "image": "https://www.weheartlisbon.com/wp-content/uploads/2018/03/Parque-da-Liberdade-Sintra-overzicht--1024x768.jpg"
+    },
+    {
+      "place_id": "227",
+      "name": "Parque da Amizade",
+      "location": "Ipatinga",
+      "rating": 4.2,
+      "likes": 860,
+      "image": "https://www.campinasnaplanta.com.br/wp-content/uploads/parque-amizade-planta-sumare-feat-2.jpg"
+    },
+    {
+      "place_id": "225",
+      "name": "Parque da Felicidade",
+      "location": "Teófilo Otoni",
+      "rating": 3.6,
+      "likes": 333,
+      "image": "http://photos.wikimapia.org/p/00/02/54/09/31_big.jpg"
+    },
+    {
+      "place_id": "226",
+      "name": "Parque das Maravilhas",
+      "location": "Diadema",
+      "rating": 3.0,
+      "likes": 153,
+      "image": "https://static.wikia.nocookie.net/vozesportuguesas/images/a/a7/Parque_das_Maravilhas.jpg/revision/latest?cb=20201212215430&path-prefix=pt"
+    },
+    {
+      "place_id": "230",
+      "name": "Parque da Sabedoria",
+      "location": "Hortolândia",
+      "rating": 4.1,
+      "likes": 588,
+      "image": "https://images.unsplash.com/opengraph/1x1.png?auto=format&fit=crop&q=60&blend=https:%2F%2Fimages.unsplash.com%2Fphoto-1528183429752-a97d0bf99b5a%3Fauto%3Dformat%26fit%3Dmax%26q%3D80%26blend%3D000000%26blend-alpha%3D10%26blend-mode%3Dnormal%26crop%3Dfaces%252Cedges%26h%3D630%26mark%3Dhttps%253A%252F%252Fimages.unsplash.com%252Fopengraph%252Fsearch-input.png%253Fauto%253Dformat%2526fit%253Dcrop%2526q%253D60%2526h%253D84%2526txt%253DParque%252Bda%252BSabedoria%2526txt-align%253Dmiddle%25252Cleft%2526txt-clip%253Dellipsis%2526txt-color%253D000000%2526txt-pad%253D80%2526txt-size%253D40%2526txt-width%253D660%2526w%253D750%26mark-align%3Dmiddle%252Ccenter%26mark-w%3D750%26w%3D1200%26cs%3Dtinysrgb%26fm%3Djpg%26ixid%3DM3wxMjA3fDB8MXxzZWFyY2h8Nnx8cGFycXVlJTIwZGElMjBzYWJlZG9yaWF8cHR8MHx8fHwxNjk3ODMxODQ3fDA%26ixlib%3Drb-4.0.3&blend-w=1&h=630&mark=https:%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&mark-align=top%2Cleft&mark-pad=50&mark-w=64&w=1200"
+    },
+    {
+      "place_id": "229",
+      "name": "Parque da Beleza",
+      "location": "Bauru",
+      "rating": 4.2,
+      "likes": 764,
+      "image": "https://img.freepik.com/fotos-gratis/parque-de-beleza_1127-2277.jpg?w=1380&t=st=1678124052~exp=1678124652~hmac=33125f69172bd92117cd16af06505e606258309c759d0f2fa5932686f8395579"
+    },
+    {
+      "place_id": "228",
+      "name": "Parque das Crianças",
+      "location": "Vitória da Conquista",
+      "rating": 3.2,
+      "likes": 924,
+      "image": "https://static.vecteezy.com/ti/vetor-gratis/p3/2822911-criancas-brincando-no-parque-vetor.jpg"
+    },
+    {
+      "place_id": "231",
+      "name": "Parque da Fantasia",
+      "location": "Campinas",
+      "rating": 4.8,
+      "likes": 994,
+      "image": "https://2.bp.blogspot.com/-MueBcNwtHoo/TkP7EVIXeOI/AAAAAAAAAQw/VVaPWTnk4R4/s1600/parque+da+fantasia+amadora.jpg"
+    },
+    {
+      "place_id": "233",
+      "name": "Parque da Diversidade",
+      "location": "Caruaru",
+      "rating": 3.4,
+      "likes": 377,
+      "image": "https://img.freepik.com/fotos-premium/parque-criancas-parque-diversidade-crianca-multiethnic_53876-23638.jpg?w=2000"
+    },
+    {
+      "place_id": "232",
+      "name": "Parque da Seriedade",
+      "location": "Betim",
+      "rating": 4.0,
+      "likes": 409,
+      "image": "https://floripamanha.org/wp-content/uploads/2019/06/parque-beira-mar.jpg"
     }
   ]
 }
