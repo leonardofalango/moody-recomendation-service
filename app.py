@@ -17,23 +17,16 @@ logging.basicConfig(
 )
 
 app = FastAPI()
-db_controller = DevDatabaseController()
-recommendation_model = CustomRecommendationModel(db_controller)
-
-origins = [
-    "http://localhost",
-    "http://localhost:8000",
-    "https://moody-prot.vercel.app/",
-]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["https://moody-prot.vercel.app", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
+db_controller = DevDatabaseController()
+recommendation_model = CustomRecommendationModel(db_controller)
 
 @app.get("/v1/status")
 async def status():
