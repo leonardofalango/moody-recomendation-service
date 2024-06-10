@@ -36,13 +36,6 @@ class DevDatabaseController(Repository):
         for i in range(population):
             self.user_data.append(self.__generate_fake_data(i))
 
-        with open("f.txt", "w") as f:
-            for user in self.user_data[:10]:
-                f.write(f"\n\nUser :{user.user_id}-{user.age}")
-                for m in user.metrics:
-                    p = self.get_place_by_id(m.place_id)
-                    f.write(f"\n\t{p.name}, {m.interactions}")
-
         logger.info("Loaded database with %s data", population)
 
     def __populate_places(self, places: list[object]) -> list[Place]:
