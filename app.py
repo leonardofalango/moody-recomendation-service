@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from model.types.basic_types import User, RatePlace
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 logging.getLogger("app_logger")
