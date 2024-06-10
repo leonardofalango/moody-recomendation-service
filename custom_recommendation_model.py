@@ -20,7 +20,6 @@ class CustomRecommendationModel:
 
         logger.info("Loaded %s users", len(self.user_data))
         logger.info("Similarity threshold: %s", self.similarity_min)
-        logger.debug("User data: %s", self.user_data)
         logger.info("Recommendation model initialized")
 
     def recommend(
@@ -31,6 +30,13 @@ class CustomRecommendationModel:
         if not user_info:
             logger.info("User not found")
             return []
+
+        if len(user_info.metrics) == 0:
+            return sorted(
+                self.db_controller.get_all_places(),
+                key=lambda place: place["likes"],
+                reverse=True,
+            )[:n_recommendations]
 
         user_interactions = set(metric.place_id for metric in user_info.metrics)
 
@@ -60,8 +66,6 @@ class CustomRecommendationModel:
                 similarity = self.calculate_similarity(user_info, data)
                 if similarity > self.similarity_min:
                     similar_users.append((data, similarity))
-
-        logger.debug("Found %s similar users", len(similar_users))
 
         similar_users.sort(key=lambda x: x[1], reverse=True)
         return [user for user, _ in similar_users[:k]]
