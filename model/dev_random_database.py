@@ -14,6 +14,7 @@ load_dotenv()
 
 class DevDatabaseController(Repository):
     def __init__(self) -> None:
+
         logger.info("Database initiating")
 
         population = int(os.environ.get("POPULATION", 15_000))
@@ -25,10 +26,12 @@ class DevDatabaseController(Repository):
             self.genres = json.load(f)["genres"]
         with open(path / "model" / "data" / "places.json", encoding="utf-8") as f:
             places: list[object] = json.load(f)["places"]
-        self.places = self.__populate_places(places)
+        with open(path / "model" / "data" / "labels.json", encoding="utf-8") as f:
+            self.labels: list[object] = json.load(f)["labels"]
 
-        self.max_places = int(len(self.places) / 2)
-        self.max_interactions = int(self.max_places / 4)
+        self.places = self.__populate_places(places)
+        self.n_places = 25
+        self.max_interactions = 5
 
         for i in range(population):
             self.user_data.append(self.__generate_fake_data(i))
@@ -50,22 +53,60 @@ class DevDatabaseController(Repository):
             )
         return place_list
 
-    def __generate_fake_data(self, user_id):
+    def __generate_fake_data(self, user_id: str):
         age = random.randint(18, 19)
-        music_genre = random.choice(self.genres)
+        metrics = self.__generate_metrics(user_id)
         return User(
             user_id=str(user_id),
             age=age,
-            music_genre=music_genre,
-            metrics=[
+            music_genre=self.__get_music_genre(metrics),
+            perfil=self.__get_perfil(metrics),
+            metrics=metrics,
+        )
+
+    def __generate_metrics(self, user_id: str) -> list[Metrics]:
+        first_place = random.choice(self.places)
+        k = first_place.name.split(" ")[0]
+        ms = []
+
+        for _ in range(self.n_places + random.randint(-2, 2)):
+            ms.append(
+                Metrics(
+                    place_id=random.choice(
+                        [place for place in self.places if k in place.name]
+                    ).place_id,
+                    user_id=str(user_id),
+                    interactions=random.randint(0, self.max_interactions),
+                )
+            )
+        for _ in range(self.n_places + random.randint(-3, 3)):
+            ms.append(
                 Metrics(
                     place_id=random.choice(self.places).place_id,
                     user_id=str(user_id),
                     interactions=random.randint(0, self.max_interactions),
                 )
-                for _ in range(random.randint(0, self.max_places))
-            ],
-        )
+            )
+
+        return ms
+
+    def __get_perfil(self, metrics: list[Metrics]) -> str:
+        m = max(metrics, key=lambda x: x.interactions)
+        for desc in self.labels:
+            for k, v in desc.items():
+                if k in self.get_place_by_id(m.place_id).name:
+                    return v
+
+        return "Formando perfil"
+
+    def __get_music_genre(self, metrics: list[Metrics]) -> str:
+        m = max(metrics, key=lambda x: x.interactions)
+        for desc in self.genres:
+            for k, v in desc.items():
+                if k in self.get_place_by_id(m.place_id).name:
+                    return v
+
+        return "Eclético"
 
     def get_all(self) -> Iterable[User]:
         logger.info("Getting all users")
@@ -104,6 +145,8 @@ class DevDatabaseController(Repository):
                 interactions=rate_place.interactions,
             )
         )
+
+        user_data.perfil = self.__get_perfil(user_data.metrics)
 
     def get_all_places(self) -> Iterable[Place]:
         return self.places

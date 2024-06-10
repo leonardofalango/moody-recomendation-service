@@ -3,8 +3,8 @@ import logging
 import numpy as np
 from typing import List
 from collections import defaultdict
-from model.types.basic_types import User
 from model.types.repository import Repository
+from model.types.basic_types import User, Place
 
 logger = logging.getLogger("app_logger")
 
@@ -24,7 +24,7 @@ class CustomRecommendationModel:
 
     def recommend(
         self, user_id: str, n_recommendations: int = 20, k_neighboors: int = 5
-    ) -> List[str]:
+    ) -> List[Place]:
         logger.info("Recommending to user %s", user_id)
         user_info = self.db_controller.get_by_id(user_id)
         if not user_info:

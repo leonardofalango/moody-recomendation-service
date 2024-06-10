@@ -21,6 +21,7 @@ class User(BaseModel):
     user_id: str
     age: int
     music_genre: str
+    perfil: str
     metrics: list[Metrics] | None
 
 
