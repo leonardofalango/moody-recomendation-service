@@ -6,7 +6,7 @@ import pathlib
 from typing import Iterable
 from dotenv import load_dotenv
 from model.types.repository import Repository
-from model.types.basic_types import User, RatePlace, Metrics
+from model.types.basic_types import User, RatePlace, Metrics, Place
 
 logger = logging.getLogger("app_logger")
 load_dotenv()
@@ -63,9 +63,7 @@ class DevDatabaseController(Repository):
 
     def update(self, user_id: str, data: User) -> None:
         logger.info("Updating user data")
-        for user in self.user_data:
-            if user.user_id == user_id:
-                return user
+        self.user_data[user_id] = data
 
     def create(self, data: User) -> None:
         logger.info("Creating user data")
@@ -91,7 +89,7 @@ class DevDatabaseController(Repository):
             )
         )
 
-    def get_all_places(self):
+    def get_all_places(self) -> Iterable[Place]:
         return self.places
 
     def get_place_by_id(self, place_id):
