@@ -17,16 +17,23 @@ logging.basicConfig(
 )
 
 app = FastAPI()
+db_controller = DevDatabaseController()
+recommendation_model = CustomRecommendationModel(db_controller)
+
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "https://moody-prot.vercel.app/",
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://moody-prot.vercel.app", "http://localhost:5173"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-db_controller = DevDatabaseController()
-recommendation_model = CustomRecommendationModel(db_controller)
+
 
 @app.get("/v1/status")
 async def status():
@@ -36,12 +43,17 @@ async def status():
     return {"message": "running"}
 
 
-@app.post("/v1/local/{place_id}/like")
-async def like_place(place_id: str = Path(..., description="The ID of the place")):
+@app.post("/v1/local/{place_id}/like/{user_id}")
+async def like_place(
+    place_id: str = Path(..., description="The ID of the place"), user_id: str = None
+):
     """
     Like a place.
     """
     db_controller.like_place(place_id=place_id)
+    await rate_place(
+        rate_place=RatePlace(user_id=user_id, place_id=place_id, interactions=1)
+    )
     return {"message": "success"}
 
 

@@ -24,7 +24,8 @@ class DevDatabaseController(Repository):
         with open(path / "model" / "data" / "genres.json") as f:
             self.genres = json.load(f)["genres"]
         with open(path / "model" / "data" / "places.json", encoding="utf-8") as f:
-            self.places = json.load(f)["places"]
+            places: list[object] = json.load(f)["places"]
+        self.places = self.__populate_places(places)
 
         self.max_places = int(len(self.places) / 2)
         self.max_interactions = int(self.max_places / 4)
@@ -33,6 +34,21 @@ class DevDatabaseController(Repository):
             self.user_data.append(self.__generate_fake_data(i))
 
         logger.info("Loaded database with %s data", population)
+
+    def __populate_places(self, places: list[object]) -> list[Place]:
+        place_list = []
+        for place in places:
+            place_list.append(
+                Place(
+                    place_id=place["place_id"],
+                    name=place["name"],
+                    location=place["location"],
+                    rating=place["rating"],
+                    likes=place["likes"],
+                    image=place["image"],
+                )
+            )
+        return place_list
 
     def __generate_fake_data(self, user_id):
         age = random.randint(18, 19)
@@ -43,7 +59,7 @@ class DevDatabaseController(Repository):
             music_genre=music_genre,
             metrics=[
                 Metrics(
-                    place_id=random.choice(self.places)["place_id"],
+                    place_id=random.choice(self.places).place_id,
                     user_id=str(user_id),
                     interactions=random.randint(0, self.max_interactions),
                 )
@@ -92,13 +108,13 @@ class DevDatabaseController(Repository):
     def get_all_places(self) -> Iterable[Place]:
         return self.places
 
-    def get_place_by_id(self, place_id):
+    def get_place_by_id(self, place_id) -> Place:
         for place in self.places:
-            if place["place_id"] == place_id:
+            if place.place_id == place_id:
                 return place
         return None
 
     def like_place(self, place_id):
         place = self.get_place_by_id(place_id)
-        place["likes"] += 1
+        place.likes += 1
         return place
