@@ -33,6 +33,10 @@ class DevDatabaseController(Repository):
         self.n_places = 20
         self.max_interactions = 2
 
+        self.raw_places = json.load(
+            open("model/data/generate/raw_places.json", encoding="utf-8")
+        )
+
         for i in range(population):
             self.user_data.append(self.__generate_fake_data(i))
 
@@ -66,7 +70,12 @@ class DevDatabaseController(Repository):
 
     def __generate_metrics(self, user_id: str) -> list[Metrics]:
         first_place = random.choice(self.places)
-        k = first_place.name.split(" ")[0]
+
+        for key, lst in self.raw_places.items():
+            if first_place.name in lst:
+                k = key
+                break
+
         ms = [
             Metrics(
                 place_id=first_place.place_id,
@@ -75,7 +84,9 @@ class DevDatabaseController(Repository):
             )
         ]
 
-        similiar_places = [place for place in self.places if k in place.name]
+        similiar_places = [
+            place for place in self.places if place in self.raw_places[k]
+        ]
         for _ in range(
             random.randint(int(len(similiar_places) / 3), len(similiar_places))
         ):
