@@ -17,6 +17,8 @@ logging.basicConfig(
 )
 
 app = FastAPI()
+app.config["TIMEOUT"] = 600
+
 
 app.add_middleware(
     CORSMiddleware,
