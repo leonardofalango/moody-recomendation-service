@@ -7,6 +7,9 @@ from model.types.basic_types import User, RatePlace
 from model.dev_random_database import DevDatabaseController
 from custom_recommendation_model import CustomRecommendationModel
 from fastapi.middleware.cors import CORSMiddleware
+from uvicorn.config import Config
+from uvicorn.main import Server
+
 
 load_dotenv()
 logging.getLogger("app_logger")
@@ -17,8 +20,9 @@ logging.basicConfig(
 )
 
 app = FastAPI()
-app.config["TIMEOUT"] = 600
 
+config = Config(app, loop="asyncio", timeout_keep_alive=600)
+server = Server(config=config)
 
 app.add_middleware(
     CORSMiddleware,
