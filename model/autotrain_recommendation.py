@@ -117,3 +117,7 @@ class AutoTrainedCustomRecommendation(CustomRecommendationModel):
                 )
 
         return overrall_similarity
+
+
+if __name__ == "__main__":
+    print("alo")
