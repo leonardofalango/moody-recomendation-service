@@ -44,6 +44,7 @@ fastapi run
 
 ## Example Routes:
 - **GET /docs for documentation
+
 - **GET /v1/status**: Returns the server status.
 - **GET /v1/get_all**: Returns all data from the database.
 - **GET /v1/user/{user_id}**: Returns user data with the provided ID.
