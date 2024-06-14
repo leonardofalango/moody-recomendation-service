@@ -13,8 +13,9 @@
     }
   ],
   "functions": {
-    "app/api/**/*": {
-      "maxDuration": 120
+    "api/*": {
+      "memory": 512,
+      "maxDuration": 600
     }
   }
 }
