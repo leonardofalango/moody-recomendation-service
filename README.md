@@ -46,8 +46,14 @@ fastapi run
 - **GET /docs for documentation
 
 - **GET /v1/status**: Returns the server status.
+
 - **GET /v1/get_all**: Returns all data from the database.
+
 - **GET /v1/user/{user_id}**: Returns user data with the provided ID.
+
 - **GET /v1/recommend/{user_id}**: Returns recommendations for the user with the provided ID.
+
 - **GET /v1/recommend/{user_id}/{n_recommendations}/{k_neighboors}**: Returns recommendations for the user with the provided ID, specifying the desired number of recommendations and the number of neighbors to consider.
+
 - **GET /v1/recommend/{user_id}/places={n_recommendations}**: Returns recommendations for the user with the provided ID, specifying only the desired number of recommendations.
+
