@@ -14,7 +14,7 @@
   ],
   "functions": {
     "app/api/**/*": {
-      "maxDuration": 120 // All functions can run for a maximum of 5 seconds
+      "maxDuration": 120
     }
   }
 }
