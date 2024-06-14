@@ -9,13 +9,12 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py",
-      "max_duration": 120
+      "dest": "app.py"
     }
   ],
   "functions": {
     "app/api/**/*": {
-      "max_duration": 120
+      "maxDuration": 120
     }
   }
 }
