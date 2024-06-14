@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 from model.types.repository import Repository
 from model.types.basic_types import User, RatePlace, Metrics, Place
 
+# Moody
+
 logger = logging.getLogger("app_logger")
 load_dotenv()
 
