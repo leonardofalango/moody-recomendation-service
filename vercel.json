@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "functions": {
-    "api/app.py": {
-      "maxDuration": 60
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "app.py"
     }
-  ]
+  ],
+  "timeout": 60
 }
