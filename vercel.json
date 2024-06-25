@@ -1,6 +1,6 @@
 {
   "functions": {
-    "app.py": {
+    "api/app": {
       "maxDuration": 60
     }
   }
