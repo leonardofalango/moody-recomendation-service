@@ -9,13 +9,8 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
-    }
-  ],
-  "functions": {
-    "generate_data": {
-      "src": "app.py",
+      "dest": "app.py",
       "timeout": 60
     }
-  }
+  ]
 }
