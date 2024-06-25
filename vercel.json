@@ -14,7 +14,7 @@
   ],
   "functions": {
     "generate_data": {
-      "handler": "app.py",
+      "src": "app.py",
       "timeout": 60
     }
   }
