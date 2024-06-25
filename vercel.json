@@ -12,5 +12,10 @@
       "dest": "app.py"
     }
   ],
-  "timeout": 60
+  "functions": {
+    "generate_data": {
+      "handler": "app.py",
+      "timeout": 60
+    }
+  }
 }
