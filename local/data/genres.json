@@ -1,0 +1,13 @@
+{ "genres" : [
+    { "Observatório": "Jazz" },
+    { "Galeria": "Classical" },
+    { "Festa": "Pop" },
+    { "Academias": "EDM" },
+    { "Parque": "Indie" },
+    { "Rock": "Rock" },
+    { "Headbang": "Metal" },
+    { "Shopping": "Disco" },
+    { "Café": "Blues" },
+    { "Zoo": "Reggae" },
+    { "Museu": "Alternative" }
+] }

@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, Path, Query
 from fastapi.middleware.cors import CORSMiddleware
 from model.types.basic_types import User, RatePlace
-from model.dev_random_database import DevDatabaseController
-from custom_recommendation_model import CustomRecommendationModel
+from src.controllers.sqldb import SqliteController
+from src.models.custom_recommendation_model import CustomRecommendationModel
 from fastapi.middleware.cors import CORSMiddleware
 from uvicorn.config import Config
 from uvicorn.main import Server
@@ -31,7 +31,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-db_controller = DevDatabaseController()
+db_controller = SqliteController()
 recommendation_model = CustomRecommendationModel(db_controller)
 
 

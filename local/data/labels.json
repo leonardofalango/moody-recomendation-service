@@ -1,0 +1,51 @@
+{ "labels" : [
+    {
+        "label": "Galeria",
+        "description": "Culto"
+    },
+    {
+        "label": "Festa",
+        "description": "Festeiro"
+    },
+    {
+        "label": "Academias",
+        "description": "Fit"
+    },
+    {
+        "label": "Parque",
+        "description": "Amante da Natureza"
+    },
+    {
+        "label": "Rock",
+        "description": "Rockeiro"
+    },
+    {
+        "label": "Headbang",
+        "description": "Rocker"
+    },
+    {
+        "label": "Shopping",
+        "description": "Comprador"
+    },
+    {
+        "label": "Café",
+        "description": "Amante de café"
+    },
+    {
+        "label": "Observatório",
+        "description": "Observador"
+    },
+    {
+        "label": "Zoologico",
+        "description": "Amante de animais"
+    },
+    {
+        "label": "Museu",
+        "description": "Apreciador da arte"
+    },
+    {
+        "label": "Igreja",
+        "description": "Gosta de Igrejas"
+    }
+]
+}
