@@ -1,13 +1,9 @@
 import sqlite3
-import os
-import json
-import random
 import logging
-import pathlib
 from typing import Iterable
 from dotenv import load_dotenv
-from model.types.repository import Repository
-from model.types.basic_types import User, RatePlace, Metrics, Place, Label
+from src.types.repository import Repository
+from src.types.basic_types import User, RatePlace, Metrics, Place, Label
 
 # Moody
 

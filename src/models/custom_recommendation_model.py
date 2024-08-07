@@ -3,8 +3,8 @@ import logging
 import numpy as np
 from typing import List
 from collections import defaultdict
-from model.types.repository import Repository
-from model.types.basic_types import User, Place
+from src.types.repository import Repository
+from src.types.basic_types import User, Place
 
 logger = logging.getLogger("app_logger")
 

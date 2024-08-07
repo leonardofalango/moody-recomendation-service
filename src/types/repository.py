@@ -1,5 +1,5 @@
 from typing import Iterable
-from model.types.basic_types import User, Place
+from src.types.basic_types import User, Place
 
 
 class Repository:

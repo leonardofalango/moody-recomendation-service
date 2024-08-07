@@ -3,7 +3,7 @@ import logging
 from dotenv import load_dotenv
 from fastapi import FastAPI, Path, Query
 from fastapi.middleware.cors import CORSMiddleware
-from model.types.basic_types import User, RatePlace
+from src.types.basic_types import User, RatePlace
 from src.controllers.sqldb import SqliteController
 from src.models.custom_recommendation_model import CustomRecommendationModel
 from fastapi.middleware.cors import CORSMiddleware
