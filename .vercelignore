@@ -1,7 +1,1 @@
 local/
-venv/
-.env
-
-LICENSE
-README.md
-app.log
