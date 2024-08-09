@@ -1,59 +1,124 @@
-# Personalized Recommendation Project
+# 🌟 **Moody API** 🚀
 
-🎉 This is a personalized recommendation project that utilizes a custom recommendation model to provide recommendations of places for users based on their profiles and preferences.
+Bem-vindo à **Moody API**, um serviço backend inovador de recomendação personalizada! 🌈✨
 
-## Base API Link
+## 💡 **Sobre o Projeto**
 
-🌐 The API is hosted at: https://moody-recomendation-service.vercel.app
-📚 You can find the API documentation here.
+**Moody** é uma API projetada para oferecer recomendações personalizadas com base em interações do usuário e preferências. Nosso objetivo é fornecer uma plataforma flexível e eficiente para gerenciar usuários, lugares e labels, e, assim, criar experiências mais ricas e adaptadas às necessidades de cada usuário.
 
+---
 
-## Instalação
+## 🌐 **Base API Link**
 
-1. Clone this repository to your local environment::
+- **The API is hosted at**: [https://moody-recomendation-service.vercel.app](https://moody-recomendation-service.vercel.app)
+- **You can find the API documentation here**: [https://moody-recomendation-service.vercel.app/docs](https://moody-recomendation-service.vercel.app/docs)
 
-```bash
-git clone https://github.com/leonardofalango/moody-recomendation-service/
-```
+---
 
-2. Navigate to the project directory:
+## 📦 **Endpoints**
 
-```bash
-cd moody-recomendation-service
-```
+### 🏠 **Root**
+- **GET /**: Read Root
 
-3. Install the necessary dependencies using pip:
+### 📊 **Status**
+- **GET /v1/status**: Status do sistema
 
-```bash
-pip install -r requirements.txt
-```
+---
 
-## Usage
+## 👤 **Usuários**
 
-🚀🚀 To start the server and access the API routes, run the following command:
-```bash
-uvicorn app:app --reload
-```
-🚀 Usage of any commands below will work samely:
-````
-python ./app.py
-fastapi run
-```
+### 📄 **Consultar Usuários**
+- **GET /user/get_page/{pagination}**: Obtenha todos os usuários com paginação
 
-🔍 This will start the FastAPI server locally. You can then access the API documentation at http://localhost:8000/docs in your browser to see all available routes and test them interactively.
+### ✏️ **Criar Usuário**
+- **POST /user/create**: Crie um novo usuário
 
-## Example Routes:
-- **GET /docs for documentation
+### 🔍 **Buscar Usuário**
+- **GET /user/get/{user_id}**: Obtenha um usuário pelo ID
 
-- **GET /v1/status**: Returns the server status.
+### ✏️ **Atualizar Usuário**
+- **PATCH /user/update/{user_id}**: Atualize informações de um usuário
 
-- **GET /v1/get_all**: Returns all data from the database.
+### 🗑️ **Excluir Usuário**
+- **DELETE /user/delete/{user_id}**: Exclua um usuário pelo ID
 
-- **GET /v1/user/{user_id}**: Returns user data with the provided ID.
+---
 
-- **GET /v1/recommend/{user_id}**: Returns recommendations for the user with the provided ID.
+## 🌍 **Lugares**
 
-- **GET /v1/recommend/{user_id}/{n_recommendations}/{k_neighboors}**: Returns recommendations for the user with the provided ID, specifying the desired number of recommendations and the number of neighbors to consider.
+### 🤝 **Interagir com Lugar**
+- **POST /place/interact/**: Interaja com um lugar
 
-- **GET /v1/recommend/{user_id}/places={n_recommendations}**: Returns recommendations for the user with the provided ID, specifying only the desired number of recommendations.
+### ❤️ **Curtir Lugar**
+- **POST /place/like/{user_id}/{place_id}**: Curta um lugar
 
+### 📋 **Consultar Todos os Lugares**
+- **GET /place/get/all**: Obtenha todos os lugares
+
+### ✏️ **Criar Lugar**
+- **POST /place/create**: Crie um novo lugar
+
+### 🔍 **Buscar Lugar**
+- **GET /place/get/{place_id}**: Obtenha um lugar pelo ID
+
+### ✏️ **Atualizar Lugar**
+- **PATCH /place/update/{place_id}**: Atualize informações de um lugar
+
+### 🗑️ **Excluir Lugar**
+- **DELETE /place/delete/{place_id}**: Exclua um lugar pelo ID
+
+---
+
+## 🏷️ **Labels**
+
+### 📋 **Consultar Todos os Labels**
+- **GET /label/get/all**: Obtenha todos os labels
+
+### ✏️ **Criar Label**
+- **POST /label/create**: Crie um novo label
+
+### 🔍 **Buscar Label**
+- **GET /label/get/{label_id}**: Obtenha um label pelo ID
+
+### ✏️ **Atualizar Label**
+- **PATCH /label/update/{label_id}**: Atualize informações de um label
+
+### 🗑️ **Excluir Label**
+- **DELETE /label/delete/{label_id}**: Exclua um label pelo ID
+
+---
+
+## 🎯 **Recomendações**
+
+### 🔍 **Obter Parâmetros de Recomendação**
+- **GET /recommendation/{user_id}**: Obtenha parâmetros de recomendação para um usuário
+
+### 🗑️ **Limpar Cache de Recomendação**
+- **DELETE /recommendation/clear_cache/**: Limpe o cache de recomendações
+
+---
+
+## 📜 **Schemas**
+
+Aqui estão alguns dos schemas utilizados na API:
+
+- **Interaction**
+- **Label**
+- **Metrics**
+- **Place**
+- **User**
+- **ValidationError**
+
+---
+
+## 🚀 **Como Começar**
+
+1. **Configuração**: Clone este repositório e instale as dependências com `pip install -r requirements.txt`.
+2. **Executar**: Inicie o servidor com `uvicorn main:app --reload`.
+3. **Explorar**: Navegue até [https://moody-recomendation-service.vercel.app/docs](https://moody-recomendation-service.vercel.app/docs) para acessar a documentação interativa e começar a fazer chamadas à API!
+
+---
+
+**Moody** está aqui para transformar dados em recomendações significativas e ajudar você a criar experiências personalizadas incríveis. Se precisar de suporte ou tiver sugestões, não hesite em nos contatar! 🎉💬
+
+**Happy Coding!** 🌟
