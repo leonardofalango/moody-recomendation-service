@@ -3,7 +3,7 @@ import logging
 from typing import Iterable
 from dotenv import load_dotenv
 from src.types.repository import Repository
-from src.types.basic_types import User, RatePlace, Metrics, Place, Label
+from src.types.basic_types import User, Interaction, Metrics, Place, Label
 
 # Moody
 
@@ -15,20 +15,20 @@ class SqliteController(Repository):
     def __init__(self, db_name: str = "database.db") -> None:
         logger.info("Database initiating")
         self.db_name = db_name
-        self.connect()
+        self._connect()
         self.__generate_tables()
 
         logger.info("Database initiated")
-        logger.info("Database loaded with %s data", len(self.get_all()))
+        logger.info("Database loaded with %s data", len(self.get_all_users()))
 
     def __del__(self):
-        self.disconnect()
+        self._disconnect()
 
-    def connect(self):
-        self.conn = sqlite3.connect(self.db_name)
+    def _connect(self):
+        self.conn = sqlite3.connect(self.db_name, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
-    def disconnect(self):
+    def _disconnect(self):
         self.conn.close()
 
     def __generate_tables(self):
@@ -83,7 +83,8 @@ class SqliteController(Repository):
 
         return "Formando perfil"
 
-    def get_all(self) -> Iterable[User]:
+    #! USERS
+    def get_all_users(self) -> Iterable[User]:
         logger.info("Getting all users")
         users_data = self.cursor.execute("SELECT * FROM usuarios")
         users_data = self.cursor.fetchall()
@@ -115,6 +116,7 @@ class SqliteController(Repository):
         users_data = self.cursor.execute(
             "SELECT * FROM usuarios LIMIT ? OFFSET ?", (quantity, off_set)
         )
+        users_data = self.cursor.fetchall()
         users = []
         for data in users_data:
             user_id, age, music_genre, perfil = data
@@ -135,7 +137,24 @@ class SqliteController(Repository):
             )
         return users
 
-    def get_by_id(self, user_id: str) -> User:
+    def create_user(self, data: User) -> None:
+        logger.info("Creating user data")
+        self.cursor.execute(
+            """
+            INSERT OR IGNORE INTO usuarios (user_id, age, music_genre, perfil) VALUES (?, ?, ?, ?)
+        """,
+            (data.user_id, data.age, data.music_genre, data.perfil),
+        )
+        for metric in data.metrics:
+            self.cursor.execute(
+                """
+                INSERT OR REPLACE INTO metrics (user_id, place_id, interactions) VALUES (?, ?, ?)
+            """,
+                (metric.user_id, metric.place_id, metric.interactions),
+            )
+        self.conn.commit()
+
+    def get_user_by_id(self, user_id: str) -> User:
         logger.info("Getting user from database")
         self.cursor.execute("SELECT * FROM usuarios WHERE user_id = ?", (user_id,))
         user_data = self.cursor.fetchone()
@@ -157,7 +176,7 @@ class SqliteController(Repository):
             return user
         return None
 
-    def update(self, user_id: str, data: User) -> None:
+    def update_user(self, user_id: str, data: User) -> None:
         logger.info("Updating user data")
         self.cursor.execute(
             """
@@ -175,22 +194,28 @@ class SqliteController(Repository):
             )
         self.conn.commit()
 
-    def create(self, data: User) -> None:
-        logger.info("Creating user data")
-        self.cursor.execute(
-            """
-            INSERT OR IGNORE INTO usuarios (user_id, age, music_genre, perfil) VALUES (?, ?, ?, ?)
-        """,
-            (data.user_id, data.age, data.music_genre, data.perfil),
-        )
-        for metric in data.metrics:
-            self.cursor.execute(
-                """
-                INSERT OR REPLACE INTO metrics (user_id, place_id, interactions) VALUES (?, ?, ?)
-            """,
-                (metric.user_id, metric.place_id, metric.interactions),
-            )
+    def delete_user(self, user_id: str) -> None:
+        logger.info("Deleting user data")
+        self.cursor.execute("DELETE FROM usuarios WHERE user_id = ?", (user_id,))
+        self.cursor.execute("DELETE FROM metrics WHERE user_id = ?", (user_id,))
         self.conn.commit()
+
+    #! PLACES
+    def get_all_places(self) -> Iterable[Place]:
+        self.cursor.execute("SELECT * FROM places")
+        places_data = self.cursor.fetchall()
+        places = [
+            Place(
+                place_id=row[0],
+                name=row[1],
+                location=row[2],
+                rating=row[3],
+                likes=row[4],
+                image=row[5],
+            )
+            for row in places_data
+        ]
+        return places
 
     def create_place(self, place: Place) -> None:
         logger.info("Creating place data")
@@ -209,32 +234,46 @@ class SqliteController(Repository):
         )
         self.conn.commit()
 
-    def create_label(self, label: dict[str, str]) -> None:
-        logger.info("Creating label data")
+    def get_place_by_id(self, place_id) -> Place:
+        self.cursor.execute("SELECT * FROM places WHERE place_id = ?", (place_id,))
+        place_data = self.cursor.fetchone()
+        if place_data:
+            place = Place(
+                place_id=place_data[0],
+                name=place_data[1],
+                location=place_data[2],
+                rating=place_data[3],
+                likes=place_data[4],
+                image=place_data[5],
+            )
+            return place
+        return None
+
+    def update_place(self, place_id: str, place: Place) -> None:
+        logger.info("Updating place data")
         self.cursor.execute(
             """
-            INSERT OR IGNORE INTO labels (label, description) VALUES (?, ?)
+            UPDATE places SET name = ?, location = ?, rating = ?, likes = ?, image = ? WHERE place_id = ?
         """,
-            (label["label"], label["description"]),
+            (
+                place.name,
+                place.location,
+                place.rating,
+                place.likes,
+                place.image,
+                place_id,
+            ),
         )
         self.conn.commit()
 
-    def get_labels(self) -> list[Label]:
-        logger.info("Getting labels")
-        self.cursor.execute("SELECT * FROM labels")
-        labels_data = self.cursor.fetchall()
-        labels = [Label(label=row[0], description=row[1]) for row in labels_data]
-        return labels
-
-    def delete(self, user_id: str) -> None:
-        logger.info("Deleting user data")
-        self.cursor.execute("DELETE FROM usuarios WHERE user_id = ?", (user_id,))
-        self.cursor.execute("DELETE FROM metrics WHERE user_id = ?", (user_id,))
+    def delete_place(self, place_id: str) -> None:
+        logger.info("Deleting place data")
+        self.cursor.execute("DELETE FROM places WHERE place_id = ?", (place_id,))
         self.conn.commit()
 
-    def rate_place(self, rate_place: RatePlace) -> None:
+    def interact(self, rate_place: Interaction) -> None:
         logger.info("Interaction with a place")
-        user = self.get_by_id(rate_place.user_id)
+        user = self.get_user_by_id(rate_place.user_id)
         if user:
             for metric in user.metrics:
                 if metric.place_id == rate_place.place_id:
@@ -251,37 +290,6 @@ class SqliteController(Repository):
             user.perfil = self.__get_perfil(user.metrics)
             self.update(rate_place.user_id, user)
 
-    def get_all_places(self) -> Iterable[Place]:
-        self.cursor.execute("SELECT * FROM places")
-        places_data = self.cursor.fetchall()
-        places = [
-            Place(
-                place_id=row[0],
-                name=row[1],
-                location=row[2],
-                rating=row[3],
-                likes=row[4],
-                image=row[5],
-            )
-            for row in places_data
-        ]
-        return places
-
-    def get_place_by_id(self, place_id) -> Place:
-        self.cursor.execute("SELECT * FROM places WHERE place_id = ?", (place_id,))
-        place_data = self.cursor.fetchone()
-        if place_data:
-            place = Place(
-                place_id=place_data[0],
-                name=place_data[1],
-                location=place_data[2],
-                rating=place_data[3],
-                likes=place_data[4],
-                image=place_data[5],
-            )
-            return place
-        return None
-
     def like_place(self, place_id):
         place = self.get_place_by_id(place_id)
         if place:
@@ -291,4 +299,46 @@ class SqliteController(Repository):
                 (place.likes, place_id),
             )
             self.conn.commit()
+
         return place
+
+    #! LABELS
+    def get_all_labels(self) -> list[Label]:
+        logger.info("Getting labels")
+        self.cursor.execute("SELECT * FROM labels")
+        labels_data = self.cursor.fetchall()
+        labels = [Label(label=row[0], description=row[1]) for row in labels_data]
+        return labels
+
+    def create_label(self, label: dict[str, str]) -> None:
+        logger.info("Creating label data")
+        self.cursor.execute(
+            """
+            INSERT OR IGNORE INTO labels (label, description) VALUES (?, ?)
+        """,
+            (label["label"], label["description"]),
+        )
+        self.conn.commit()
+
+    def get_label_by_id(self, label_id: str) -> Label:
+        logger.info("Getting label data")
+        self.cursor.execute("SELECT * FROM labels WHERE label = ?", (label_id,))
+        label_data = self.cursor.fetchone()
+        if label_data:
+            return Label(label=label_data[0], description=label_data[1])
+        return None
+
+    def update_label(self, label: str, data: Label) -> None:
+        logger.info("Updating label data")
+        self.cursor.execute(
+            """
+            UPDATE labels SET description = ? WHERE label = ?
+        """,
+            (data.description, label),
+        )
+        self.conn.commit()
+
+    def delete_label(self, label: str) -> None:
+        logger.info("Deleting label data")
+        self.cursor.execute("DELETE FROM labels WHERE label = ?", (label,))
+        self.conn.commit()

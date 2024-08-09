@@ -25,7 +25,7 @@ class User(BaseModel):
     metrics: list[Metrics] | None
 
 
-class RatePlace(BaseModel):
+class Interaction(BaseModel):
     user_id: str
     place_id: str
     interactions: int
