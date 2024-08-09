@@ -26,8 +26,8 @@ class CustomRecommendationModel:
         self, user_id: str, n_recommendations: int = 20, k_neighboors: int = 5
     ) -> List[Place]:
         logger.info("Recommending to user %s", user_id)
-        user_info = self.db_controller.get_by_id(user_id)
-        logger.debug("Recommending to user %s", user_info)
+        user_info = self.db_controller.get_user_by_id(user_id)
+
         if not user_info:
             logger.info("User not found")
             return []
@@ -64,7 +64,6 @@ class CustomRecommendationModel:
 
         similar_users = []
         for user_id, data in self.user_data.items():
-            logger.debug("Comparing user %s", user_id)
             if user_id != user_info.user_id:
                 similarity = self.calculate_similarity(user_info, data)
                 if similarity > self.similarity_min:
@@ -132,7 +131,7 @@ class CustomRecommendationModel:
     def _load_user_data(self) -> dict[str, User]:
         logger.info("Loading user data")
         user_data = {}
-        for user in self.db_controller.get_all():
+        for user in self.db_controller.get_all_users():
             try:
                 user_data[user.user_id] = user
             except Exception as e:
@@ -143,11 +142,11 @@ class CustomRecommendationModel:
 if __name__ == "__main__":
     import sys
     from dotenv import load_dotenv
-    from model.dev_random_database import DevDatabaseController
+    from src.controllers.sqldb import SqliteController
 
     load_dotenv()
 
-    db_controller = DevDatabaseController()
+    db_controller = SqliteController()
     recommendation_model = CustomRecommendationModel(db_controller)
     user_id = sys.argv[1]
     recommendations = recommendation_model.recommend(user_id)
