@@ -20,7 +20,7 @@ from uvicorn.main import Server
 load_dotenv()
 logging.getLogger("app_logger")
 logging.basicConfig(
-    filename=os.environ.get("LOGGER_PATH", ""),
+    filename=os.getenv("LOGGER_PATH") if os.getenv("LOGGER_PATH") else None,
     datefmt="%Y-%m-%d | %H:%M:%S |",
     level=logging.DEBUG,
 )
