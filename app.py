@@ -11,6 +11,7 @@ from src.routes import (
     place_router,
     recommendation_router,
     default_router,
+    api_key,
 )
 
 from uvicorn.config import Config
@@ -37,8 +38,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(default_router.router, tags=["default"])
+app.middleware("http")(api_key.api_key_middleware)
 
+app.include_router(default_router.router, tags=["default"])
 app.include_router(user_router.router, prefix="/user", tags=["user"])
 app.include_router(place_router.router, prefix="/place", tags=["place"])
 app.include_router(label_router.router, prefix="/label", tags=["label"])
