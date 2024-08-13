@@ -6,12 +6,12 @@ logger = logging.getLogger("app_logger")
 
 
 db_controller = SqliteController()
+logger.info("Connection opened.")
 
 
 def get_db_controller() -> Generator[SqliteController, None, None]:
-    logger.info("Connection opened.")
     try:
-        logger.info("Returning db_controller.")
+        logger.debug("Returning db_controller.")
         yield db_controller
 
     except Exception as e:

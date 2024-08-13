@@ -1,5 +1,6 @@
 import os
 import logging
+import threading
 import numpy as np
 from typing import List
 from collections import defaultdict
@@ -29,7 +30,7 @@ class CustomRecommendationModel:
         user_info = self.db_controller.get_user_by_id(user_id)
 
         if not user_info:
-            logger.info("User not found")
+            logger.warning("User not found")
             return []
 
         if len(user_info.metrics) == 0:
@@ -60,7 +61,7 @@ class CustomRecommendationModel:
         return recommendations[:n_recommendations]
 
     def find_similar_users(self, user_info: User, k: int = 10) -> List[User]:
-        logger.info("Finding similar users")
+        logger.debug("Finding similar users")
 
         similar_users = []
         for user_id, data in self.user_data.items():
@@ -107,7 +108,7 @@ class CustomRecommendationModel:
     def aggregate_recommendations(
         self, similar_users: List[User], n: int = 5
     ) -> List[str]:
-        logger.info("Aggregating recommendations")
+        logger.debug("Aggregating recommendations")
         recommendations = defaultdict(int)
         for user in similar_users:
             for metric in user.metrics:
@@ -118,7 +119,7 @@ class CustomRecommendationModel:
         sorted_recommendations = sorted(
             recommendations, key=recommendations.get, reverse=True
         )
-        logger.info("Found %s recommendations", len(sorted_recommendations))
+        logger.debug("Found %s recommendations", len(sorted_recommendations))
         return sorted_recommendations[:n]
 
     def clear_cache(self, user_id: str | None = None):
@@ -129,7 +130,7 @@ class CustomRecommendationModel:
             del self.user_cache[user_id]
 
     def _load_user_data(self) -> dict[str, User]:
-        logger.info("Loading user data")
+        logger.debug("Loading user data")
         user_data = {}
         for user in self.db_controller.get_all_users():
             try:
@@ -137,6 +138,17 @@ class CustomRecommendationModel:
             except Exception as e:
                 logger.error("Error loading user data: %s", str(user))
         return user_data
+
+    def recommend_all_users(self):
+        logger.info("Recommending to all users in background")
+        background_thread = threading.Thread(
+            target=self._recommend_all_users_in_background
+        )
+        background_thread.start()
+
+    def _recommend_all_users_in_background(self):
+        for user in self.db_controller.get_all_users():
+            self.recommend(user.user_id)
 
 
 if __name__ == "__main__":

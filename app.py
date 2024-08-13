@@ -2,6 +2,7 @@ import os
 import logging
 from fastapi import FastAPI
 from dotenv import load_dotenv
+from jobs import start_scheduler
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.routes import (
@@ -46,6 +47,7 @@ app.include_router(
     recommendation_router.router, prefix="/recommendation", tags=["recommendation"]
 )
 
+start_scheduler(app)
 
 if __name__ == "__main__":
     import uvicorn
