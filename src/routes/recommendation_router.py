@@ -8,7 +8,7 @@ router = APIRouter()
 async def get_recommendation_params(
     user_id: str = Path(..., description="The ID of the user"),
     page: int = Path(..., description="Page number"),
-    items_per_page: int = Query(5, description="Number of items per page"),
+    items_per_page: int = Query(10, description="Number of items per page"),
     k_neighboors: int = Query(default=7, description="Number of neighbors to consider"),
     recommendation_model=Depends(get_recommendation_model),
 ):
