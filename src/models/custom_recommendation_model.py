@@ -53,7 +53,7 @@ class CustomRecommendationModel:
         else:
             similar_users = self.user_cache[user_id]
 
-        recommendations = self.aggregate_recommendations(similar_users, n=30 + 1)
+        recommendations = self.aggregate_recommendations(similar_users)
 
         # recommendations = [
         #     self.db_controller.get_place_by_id(item)
@@ -108,9 +108,7 @@ class CustomRecommendationModel:
 
         return overall_similarity
 
-    def aggregate_recommendations(
-        self, similar_users: List[User], n: int = 5
-    ) -> List[str]:
+    def aggregate_recommendations(self, similar_users: List[User]) -> List[str]:
         logger.debug("Aggregating recommendations")
         recommendations = defaultdict(int)
         for user in similar_users:
@@ -123,7 +121,7 @@ class CustomRecommendationModel:
             recommendations, key=recommendations.get, reverse=True
         )
         logger.debug("Found %s recommendations", len(sorted_recommendations))
-        return sorted_recommendations[:n]
+        return sorted_recommendations
 
     def clear_cache(self, user_id: str | None = None):
         logger.info("Clearing cache")
