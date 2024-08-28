@@ -52,11 +52,12 @@ class CustomRecommendationModel:
         recommendations = self.aggregate_recommendations(
             similar_users, n=n_recommendations + 1
         )
-        recommendations = [
-            self.db_controller.get_place_by_id(item)
-            for item in recommendations
-            if item not in user_interactions
-        ]
+
+        # recommendations = [
+        #     self.db_controller.get_place_by_id(item)
+        #     for item in recommendations
+        #     if item not in user_interactions
+        # ]
 
         return recommendations[:n_recommendations]
 
