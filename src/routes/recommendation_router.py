@@ -4,10 +4,11 @@ from src.dependencies.model import get_recommendation_model
 router = APIRouter()
 
 
-@router.get("/{user_id}")
+@router.get("/{user_id}/{page}/")
 async def get_recommendation_params(
     user_id: str = Path(..., description="The ID of the user"),
-    n_recommendations: int = Query(default=10, description="Number of recommendations"),
+    page: int = Path(..., description="Page number"),
+    items_per_page: int = Query(10, description="Number of items per page"),
     k_neighboors: int = Query(default=7, description="Number of neighbors to consider"),
     recommendation_model=Depends(get_recommendation_model),
 ):
@@ -15,7 +16,10 @@ async def get_recommendation_params(
     Get recommendations for a user with specified parameters.
     """
     return recommendation_model.recommend(
-        user_id=user_id, n_recommendations=n_recommendations, k_neighboors=k_neighboors
+        user_id=user_id,
+        k_neighboors=k_neighboors,
+        page=page,
+        items_per_page=items_per_page,
     )
 
 

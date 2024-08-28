@@ -24,7 +24,11 @@ class CustomRecommendationModel:
         logger.info("Recommendation model initialized")
 
     def recommend(
-        self, user_id: str, n_recommendations: int = 20, k_neighboors: int = 5
+        self,
+        user_id: str,
+        page: int = 0,
+        items_per_page: int = 5,
+        k_neighboors: int = 5,
     ) -> List[Place]:
         logger.info("Recommending to user %s", user_id)
         user_info = self.db_controller.get_user_by_id(user_id)
@@ -39,7 +43,7 @@ class CustomRecommendationModel:
                 self.db_controller.get_all_places(),
                 key=lambda place: place.likes,
                 reverse=True,
-            )[:n_recommendations]
+            )[page * items_per_page : (page + 1) * items_per_page]
 
         user_interactions = set(metric.place_id for metric in user_info.metrics)
 
@@ -49,9 +53,7 @@ class CustomRecommendationModel:
         else:
             similar_users = self.user_cache[user_id]
 
-        recommendations = self.aggregate_recommendations(
-            similar_users, n=n_recommendations + 1
-        )
+        recommendations = self.aggregate_recommendations(similar_users, n=30 + 1)
 
         # recommendations = [
         #     self.db_controller.get_place_by_id(item)
@@ -59,7 +61,7 @@ class CustomRecommendationModel:
         #     if item not in user_interactions
         # ]
 
-        return recommendations[:n_recommendations]
+        return recommendations[page * items_per_page : (page + 1) * items_per_page]
 
     def find_similar_users(self, user_info: User, k: int = 10) -> List[User]:
         logger.debug("Finding similar users")
