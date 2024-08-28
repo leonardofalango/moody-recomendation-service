@@ -4,11 +4,7 @@ from typing import Protocol, Iterable
 
 class Place(BaseModel):
     place_id: str
-    name: str
-    location: str
-    rating: float
     likes: int
-    image: str
 
 
 class Metrics(BaseModel):
@@ -19,9 +15,11 @@ class Metrics(BaseModel):
 
 class User(BaseModel):
     user_id: str
+    name: str
     age: int
+    gender: str
     music_genre: str
-    perfil: str
+    perfil: str = "Formando perfil..."
     metrics: list[Metrics] | None
 
 
