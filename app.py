@@ -32,7 +32,7 @@ server = Server(config=config)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://moody-prot.vercel.app", "http://localhost:5173"],
+    allow_origins=["https://exploremoody.app", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
