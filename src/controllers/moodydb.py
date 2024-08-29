@@ -81,7 +81,6 @@ class PostgressController:
     def get_all_places(self) -> list[Place]:
         self.cursor.execute(f"""SELECT {self.place_props} FROM locals l""")
         all_places = self.cursor.fetchall()
-        logger.warning(all_places)
         return [
             Place(
                 place_id=place[0],

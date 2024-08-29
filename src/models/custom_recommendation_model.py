@@ -9,6 +9,9 @@ from src.types.basic_types import User, Place
 
 logger = logging.getLogger("app_logger")
 
+similarities = defaultdict()
+weights = {"metrics": 0.7, "age": 0.1, "music_genre": 0.1, "gender": 0.1}
+
 
 class CustomRecommendationModel:
     def __init__(self, db_controller: Repository):
@@ -53,15 +56,19 @@ class CustomRecommendationModel:
         else:
             similar_users = self.user_cache[user_id]
 
-        recommendations = self.aggregate_recommendations(similar_users)
+        recommnedations_for_user = self.aggregate_recommendations(similar_users)
 
-        # recommendations = [
-        #     self.db_controller.get_place_by_id(item)
-        #     for item in recommendations
-        #     if item not in user_interactions
-        # ]
+        if len(recommnedations_for_user) < items_per_page:
+            recommnedations_for_user += sorted(
+                self.db_controller.get_all_places(),
+                key=lambda place: place.likes,
+                reverse=True,
+            )[
+                page * items_per_page
+                - len(recommnedations_for_user) : (page + 1) * items_per_page
+            ]
 
-        return recommendations[page * items_per_page : (page + 1) * items_per_page]
+        return recommnedations_for_user
 
     def find_similar_users(self, user_info: User, k: int = 10) -> List[User]:
         logger.debug("Finding similar users")
@@ -92,20 +99,17 @@ class CustomRecommendationModel:
 
         max_age_difference = 100
         age_difference = abs(user1.age - user2.age)
-        age_similarity = 1 - (age_difference / max_age_difference)
 
-        genre_similarity = 1.0 if user1.music_genre == user2.music_genre else 0.0
-
-        weight_metrics = 0.8
-        weight_age = 0.1
-        weight_genre = 0.1
-
-        overall_similarity = (
-            weight_metrics * metrics_similarity
-            + weight_age * age_similarity
-            + weight_genre * genre_similarity
+        similarities["age"] = 1 - (age_difference / max_age_difference)
+        similarities["music_genre"] = (
+            1.0 if user1.music_genre == user2.music_genre else 0.0
         )
+        similarities["gender"] = 1.0 if user1.gender == user2.gender else 0.0
+        similarities["metrics"] = metrics_similarity
 
+        overall_similarity = sum(
+            similarities[key] * weights[key] for key in similarities.keys()
+        )
         return overall_similarity
 
     def aggregate_recommendations(self, similar_users: List[User]) -> List[str]:
