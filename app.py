@@ -23,6 +23,8 @@ logging.getLogger("app_logger")
 logging.basicConfig(
     datefmt="%Y-%m-%d | %H:%M:%S |",
     level=logging.DEBUG,
+    filename="app.log",
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
 
 app = FastAPI()
