@@ -20,7 +20,7 @@ class CustomRecommendationModel:
         self.user_data = self._load_user_data()
         self.user_cache = {}
 
-        self.similarity_min = float(os.environ.get("SIMILARITY", 0.8))
+        self.similarity_min = float(os.environ.get("SIMILARITY", 0.1))
 
         logger.info("Loaded %s users", len(self.user_data))
         logger.info("Similarity threshold: %s", self.similarity_min)
