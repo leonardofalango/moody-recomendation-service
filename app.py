@@ -20,12 +20,7 @@ from uvicorn.main import Server
 
 load_dotenv()
 logging.getLogger("app_logger")
-logging.basicConfig(
-    datefmt="%Y-%m-%d | %H:%M:%S |",
-    level=logging.DEBUG,
-    filename="app.log",
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-)
+logging.basicConfig(datefmt="%Y-%m-%d | %H:%M:%S |", level=logging.DEBUG)
 
 app = FastAPI()
 
