@@ -75,6 +75,7 @@ class PostgressController:
                 place_id=metric[2],
                 user_id=metric[1],
                 interactions=metric[4],
+                interest=metric[5],
             )
             for metric in user_metrics
         ]
@@ -83,8 +84,6 @@ class PostgressController:
     def get_all_places(self) -> list[Place]:
         self.cursor.execute(f"""SELECT {self.place_props} FROM locals l""")
         all_places = self.cursor.fetchall()
-        logger.debug(f"Places: {all_places}")
-        logger.info(f"Places: {all_places}")
         return [
             Place(
                 place_id=place[0],
@@ -93,9 +92,24 @@ class PostgressController:
             for place in all_places
         ]
 
+    def get_top_places(self, start: int, limit: int) -> list[Place]:
+        self.cursor.execute(
+            f"""SELECT {self.place_props} FROM locals l ORDER BY l.rating DESC LIMIT %s OFFSET %s""",
+            (limit, start),
+        )
+        top_places = self.cursor.fetchall()
+        return [
+            Place(
+                place_id=place[0],
+                likes=self.get_place_likes(place[0]),
+            )
+            for place in top_places
+        ]
+
     def get_place_by_id(self, place_id: str) -> Place:
-        logger.debug(f"Query: SELECT {self.place_props} FROM locals l WHERE l.id = %s")
-        logger.debug(f"Parameters: {place_id}")
+        logger.debug(
+            "Query: SELECT %s FROM locals l WHERE l.id = %s", self.place_props, place_id
+        )
         self.cursor.execute(
             f"""SELECT {self.place_props} FROM locals l WHERE l.id = %s""",
             (place_id,),

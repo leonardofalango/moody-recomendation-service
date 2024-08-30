@@ -7,10 +7,16 @@ class Place(BaseModel):
     likes: int
 
 
+class PlaceDTO(BaseModel):
+    place_id: str
+    score: float | None = 0.0
+
+
 class Metrics(BaseModel):
     place_id: str
     user_id: str
     interactions: int
+    interest: str | None
 
 
 class User(BaseModel):

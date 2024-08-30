@@ -14,6 +14,7 @@ def get_all_users_recommendation():
     db_controller = next(get_db_controller())
     try:
         recommendation_model = CustomRecommendationModel(db_controller=db_controller)
+        recommendation_model.clear_cache()
         recommendation_model.recommend_all_users()
     finally:
         del recommendation_model
@@ -24,7 +25,7 @@ def start_scheduler(app: FastAPI):
     scheduler.add_job(
         get_all_users_recommendation,
         "interval",
-        hours=8,
+        minutes=10,
         next_run_time=datetime.now(),
     )
     scheduler.start()
