@@ -61,27 +61,32 @@ class PostgressController:
     def get_user_metrics(self, user_id: str) -> list[Metrics]:
         self.cursor.execute(
             f"""
-            SELECT um.id, um."userId", um."tagsId", um.interest, t.label
+            SELECT um.id, um."userId", til."local_id", um."tagsId", um.interest, t.label
             FROM user_metrics um
             INNER JOIN tags t ON um."tagsId" = t.id
+            INNER JOIN tags_in_locals til ON t.id = til."tag_id"
             WHERE um."userId" = %s
             """,
             (user_id,),
         )
         user_metrics = self.cursor.fetchall()
-        return [
+        logger.warning(f"User metrics: {user_metrics}")
+
+        m = [
             Metrics(
                 place_id=metric[2],
                 user_id=metric[1],
-                interactions=metric[3],
+                interactions=metric[4],
             )
             for metric in user_metrics
         ]
+        return m
 
     def get_all_places(self) -> list[Place]:
         self.cursor.execute(f"""SELECT {self.place_props} FROM locals l""")
         all_places = self.cursor.fetchall()
-        logger.warning(all_places)
+        logger.debug(f"Places: {all_places}")
+        logger.info(f"Places: {all_places}")
         return [
             Place(
                 place_id=place[0],
