@@ -36,6 +36,9 @@ class CustomRecommendationModel:
         logger.info("Recommending to user %s", user_id)
         user_info = self.db_controller.get_user_by_id(user_id)
 
+        start_index = page * items_per_page
+        end_index = (page + 1) * items_per_page
+
         if not user_info:
             logger.warning("User not found")
             return []
@@ -46,7 +49,7 @@ class CustomRecommendationModel:
                 self.db_controller.get_all_places(),
                 key=lambda place: place.likes,
                 reverse=True,
-            )[page * items_per_page : (page + 1) * items_per_page]
+            )[start_index:end_index]
 
         user_interactions = set(metric.place_id for metric in user_info.metrics)
 
@@ -63,12 +66,9 @@ class CustomRecommendationModel:
                 self.db_controller.get_all_places(),
                 key=lambda place: place.likes,
                 reverse=True,
-            )[
-                page * items_per_page
-                - len(recommnedations_for_user) : (page + 1) * items_per_page
-            ]
+            )
 
-        return recommnedations_for_user
+        return recommnedations_for_user[start_index:end_index]
 
     def find_similar_users(self, user_info: User, k: int = 10) -> List[User]:
         logger.debug("Finding similar users")

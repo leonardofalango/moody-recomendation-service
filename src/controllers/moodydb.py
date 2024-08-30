@@ -70,8 +70,6 @@ class PostgressController:
             (user_id,),
         )
         user_metrics = self.cursor.fetchall()
-        logger.warning(f"User metrics: {user_metrics}")
-
         m = [
             Metrics(
                 place_id=metric[2],
