@@ -5,7 +5,7 @@ import numpy as np
 from typing import List, Dict, Optional
 from collections import defaultdict
 from src.types.repository import Repository
-from src.types.basic_types import User, Place, PlaceDTO
+from src.types.basic_types import User, PlaceDTO
 
 logger = logging.getLogger("app_logger")
 
@@ -51,7 +51,7 @@ class CustomRecommendationModel:
 
         if len(user_info.metrics) == 0:
             logger.info("User has no interactions, recommending top places")
-            return self._get_top_places(start_index, items_per_page)
+            return self._get_top_places(start_index, items_per_page, user_info)
 
         similar_users = self.user_cache.get(user_id)
         if not similar_users:
@@ -63,14 +63,20 @@ class CustomRecommendationModel:
             recommendations = self.aggregate_recommendations(similar_users)
             self.recommendation_cache[user_id] = recommendations
 
-        recommendations_slice = [
-            PlaceDTO(place_id=place_id)
-            for place_id in recommendations[start_index:end_index]
-        ]
+        recommendations_slice = []
+
+        for place_id in recommendations[start_index:end_index]:
+            place = self.db_controller.get_place_by_id(place_id)
+            if not place:
+                logger.warning("Place not found: %s", place_id)
+                continue
+            recommendations_slice.append(
+                PlaceDTO(place_id=place.place_id, slug=place.slug)
+            )
 
         if len(recommendations_slice) < items_per_page:
             top_places = self._get_top_places(
-                0, items_per_page - len(recommendations_slice)
+                0, items_per_page - len(recommendations_slice), user_info
             )
             recommendations_slice.extend(top_places)
 
@@ -159,10 +165,22 @@ class CustomRecommendationModel:
                 logger.error("Error loading user data: %s", str(user))
         return user_data
 
-    def _get_top_places(self, start: int, limit: int) -> List[PlaceDTO]:
+    def _get_top_places(self, start: int, limit: int, user: User) -> List[PlaceDTO]:
         logger.debug("Getting top places")
         places = self.db_controller.get_top_places(start=start, limit=limit)
-        return [PlaceDTO(place_id=place.place_id) for place in places]
+        places.sort(key=lambda x: x.likes, reverse=True)
+        # sort by user interest
+        user_metrics = {metric.place_id: metric.interactions for metric in user.metrics}
+        sorted_places = sorted(
+            places,
+            key=lambda x: user_metrics.get(x.place_id, 0),
+            reverse=True,
+        )
+
+        return [
+            PlaceDTO(place_id=place.place_id, slug=place.slug)
+            for place in sorted_places
+        ]
 
     def _calculate_average_similarity(
         self,

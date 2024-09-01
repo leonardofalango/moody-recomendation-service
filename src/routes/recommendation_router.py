@@ -15,6 +15,9 @@ async def get_recommendation_params(
     """
     Get recommendations for a user with specified parameters.
     """
+    # Clearing cachen because vercel has limits
+    recommendation_model.clear_cache(user_id=user_id)
+
     return recommendation_model.recommend(
         user_id=user_id,
         k_neighboors=k_neighboors,

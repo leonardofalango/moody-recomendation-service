@@ -4,12 +4,14 @@ from typing import Protocol, Iterable
 
 class Place(BaseModel):
     place_id: str
+    slug: str
     likes: int
 
 
 class PlaceDTO(BaseModel):
     place_id: str
-    score: float | None = 0.0
+    score: float | None = (0.0,)
+    slug: str | None = None
 
 
 class Metrics(BaseModel):

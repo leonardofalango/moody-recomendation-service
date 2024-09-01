@@ -25,7 +25,7 @@ def start_scheduler(app: FastAPI):
     scheduler.add_job(
         get_all_users_recommendation,
         "interval",
-        minutes=10,
+        hours=4,
         next_run_time=datetime.now(),
     )
-    scheduler.start()
+    # scheduler.start()

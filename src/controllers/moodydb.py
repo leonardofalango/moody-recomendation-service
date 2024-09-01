@@ -88,6 +88,7 @@ class PostgressController:
             Place(
                 place_id=place[0],
                 likes=self.get_place_likes(place[0]),
+                slug=place[1],
             )
             for place in all_places
         ]
@@ -102,14 +103,12 @@ class PostgressController:
             Place(
                 place_id=place[0],
                 likes=self.get_place_likes(place[0]),
+                slug=place[1],
             )
             for place in top_places
         ]
 
     def get_place_by_id(self, place_id: str) -> Place:
-        logger.debug(
-            "Query: SELECT %s FROM locals l WHERE l.id = %s", self.place_props, place_id
-        )
         self.cursor.execute(
             f"""SELECT {self.place_props} FROM locals l WHERE l.id = %s""",
             (place_id,),
@@ -121,8 +120,7 @@ class PostgressController:
             return None
 
         return Place(
-            place_id=place[0],
-            likes=self.get_place_likes(place[0]),
+            place_id=place[0], likes=self.get_place_likes(place[0]), slug=place[1]
         )
 
     def get_place_likes(self, place_id: str) -> int:
