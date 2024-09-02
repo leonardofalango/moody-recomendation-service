@@ -75,9 +75,8 @@ class CustomRecommendationModel:
             )
 
         if len(recommendations_slice) < items_per_page:
-            top_places = self._get_top_places(
-                0, items_per_page - len(recommendations_slice), user_info
-            )
+            remaining_items = items_per_page - len(recommendations_slice)
+            top_places = self._get_top_places(start_index, remaining_items, user_info)
             recommendations_slice.extend(top_places)
 
         for place in recommendations_slice:
