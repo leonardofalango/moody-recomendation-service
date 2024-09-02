@@ -63,29 +63,31 @@ class CustomRecommendationModel:
             recommendations = self.aggregate_recommendations(similar_users)
             self.recommendation_cache[user_id] = recommendations
 
-        recommendations_slice = []
+        recommendations_slice = recommendations[start_index:end_index]
+        recommendations_slice_result = []
 
-        for place_id in recommendations[start_index:end_index]:
+        for place_id in recommendations_slice:
             place = self.db_controller.get_place_by_id(place_id)
             if not place:
                 logger.warning("Place not found: %s", place_id)
                 continue
-            recommendations_slice.append(
+            recommendations_slice_result.append(
                 PlaceDTO(place_id=place.place_id, slug=place.slug)
             )
 
-        if len(recommendations_slice) < items_per_page:
-            top_places = self._get_top_places(
-                0, items_per_page - len(recommendations_slice), user_info
-            )
-            recommendations_slice.extend(top_places)
+        # fill the remaining items with top places
+        if len(recommendations_slice_result) < items_per_page:
+            remaining_items = items_per_page - len(recommendations_slice_result)
+            offset = start_index + len(recommendations_slice_result)
+            additional_places = self._get_top_places(offset, remaining_items, user_info)
+            recommendations_slice_result.extend(additional_places)
 
-        for place in recommendations_slice:
+        for place in recommendations_slice_result:
             place.score = self._calculate_average_similarity(
                 user_info, similar_users, k_neighboors, place.place_id
             )
 
-        return recommendations_slice
+        return recommendations_slice_result
 
     def find_similar_users(self, user_info: User, k: int = 10) -> List[User]:
         logger.debug("Finding similar users")
