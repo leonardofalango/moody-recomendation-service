@@ -49,11 +49,8 @@ class CustomRecommendationModel:
         start_index = page * items_per_page
         end_index = start_index + items_per_page
 
-        if len(user_info.metrics) == 0:
-            logger.info("User has no interactions, recommending top places")
-            return self._get_top_places(start_index, items_per_page, user_info)
-
         similar_users = self.user_cache.get(user_id)
+
         if not similar_users:
             similar_users = self.find_similar_users(user_info, k_neighboors)
             self.user_cache[user_id] = similar_users
@@ -80,6 +77,11 @@ class CustomRecommendationModel:
             remaining_items = items_per_page - len(recommendations_slice_result)
             offset = start_index + len(recommendations_slice_result)
             additional_places = self._get_top_places(offset, remaining_items, user_info)
+            logger.warning(
+                "Filling recommendations with top places, params, %s, %s",
+                offset,
+                remaining_items,
+            )
             recommendations_slice_result.extend(additional_places)
 
         for place in recommendations_slice_result:
