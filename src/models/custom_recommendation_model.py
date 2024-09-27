@@ -186,28 +186,41 @@ class CustomRecommendationModel:
             for place in sorted_places
         ]
 
-    def _calculate_average_similarity(
-        self,
-        user_info: User,
-        similar_users: List[User],
-        k_neighboors: int,
-        place_id: str,
-    ) -> float:
-        total_similarity = 0.0
-        total_weight = 0.0
+    def calculate_similarity(self, user1: User, user2: User) -> float:
+        metrics1 = {metric.place_id: metric.interactions for metric in user1.metrics}
+        metrics2 = {metric.place_id: metric.interactions for metric in user2.metrics}
 
-        for user, similarity in similar_users:
-            user_metrics = {
-                metric.place_id: metric.interactions for metric in user.metrics
-            }
-            if place_id in user_metrics:
-                interaction_weight = user_metrics[place_id]
-                total_similarity += similarity * interaction_weight
-                total_weight += interaction_weight
+        common_metrics = set(metrics1.keys()).intersection(metrics2.keys())
 
-        if total_weight == 0:
-            return 0.0
-        return total_similarity / total_weight
+        if common_metrics:
+            vec1 = np.array([metrics1[metric] for metric in common_metrics])
+            vec2 = np.array([metrics2[metric] for metric in common_metrics])
+
+            numerator = np.dot(vec1, vec2)  
+            denominator = np.linalg.norm(vec1) * np.linalg.norm(vec2)  
+
+            metrics_similarity = numerator / denominator if denominator != 0 else 0.0
+        else:
+            metrics_similarity = 0.0
+
+        max_age_difference = 100
+        age_similarity = 1 - abs(user1.age - user2.age) / max_age_difference
+
+        gender_similarity = 1.0 if user1.gender == user2.gender else 0.0
+
+        music_genre_similarity = 1.0 if user1.music_genre == user2.music_genre else 0.0
+
+        tags_similarity = self._calculate_tag_similarity(user1, user2)
+
+        overall_similarity = np.mean([
+            metrics_similarity,
+            age_similarity,
+            gender_similarity,
+            music_genre_similarity,
+            tags_similarity,
+        ])
+
+        return overall_similarity
 
     def _calculate_tag_similarity(self, user1: User, user2: User) -> float:
         tags1 = {metric.interest for metric in user1.metrics}
