@@ -5,12 +5,12 @@ from src.dependencies.db import get_db_controller
 router = APIRouter()
 
 
-@router.get("/get_page/{pagination}")
-async def get_all_users(pagination: int = 0, db_controller=Depends(get_db_controller)):
+@router.get("/get_page/{page}")
+async def get_all_users(page: int = 0, db_controller=Depends(get_db_controller)):
     """
-    Get all users. Pagination is set to 30 and offset is set to 0 by default.
+    Get all users. Pagination is set to 10 and offset is set to 0 by default.
     """
-    return {"data": db_controller.get_page(quantity=30, off_set=pagination)}
+    return {"data": db_controller.get_user_page(items_per_page=10, page=page)}
 
 
 @router.post("/create")

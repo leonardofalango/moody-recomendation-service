@@ -1,7 +1,7 @@
 import psycopg2
 from dotenv import load_dotenv
 import os
-from src.types.basic_types import User, Place, Metrics
+from src.types.basic_types import User, Place, Metrics, FavoritePlaces
 import logging
 
 logger = logging.getLogger("app_logger")
@@ -39,6 +39,7 @@ class PostgressController:
                 music_genre=user[5],
                 gender=user[6],
                 metrics=self.get_user_metrics(user[0]),
+                favorite_places=self.get_user_favorite_places(user[0]),
             )
             for user in all_users
         ]
@@ -49,6 +50,11 @@ class PostgressController:
             (user_id,),
         )
         user = self.cursor.fetchone()
+
+        if not user:
+            logger.warning("User not found.")
+            return None
+
         return User(
             user_id=user[0],
             name=user[1],
@@ -56,6 +62,7 @@ class PostgressController:
             age=user[4],
             music_genre=user[5],
             gender=user[6],
+            favorite_places=self.get_user_favorite_places(user[0]),
         )
 
     def get_user_metrics(self, user_id: str) -> list[Metrics]:
@@ -80,6 +87,22 @@ class PostgressController:
             for metric in user_metrics
         ]
         return m
+
+    def get_user_favorite_places(self, user_id: str) -> list[FavoritePlaces]:
+        self.cursor.execute(
+            """
+            SELECT local_id, user_id
+            FROM locals_favorites 
+            WHERE user_id = %s
+            """,
+            (user_id,),
+        )
+        favorites = self.cursor.fetchall()
+
+        return [
+            FavoritePlaces(place_id=favorite[0], user_id=favorite[1])
+            for favorite in favorites
+        ]
 
     def get_all_places(self) -> list[Place]:
         self.cursor.execute(f"""SELECT {self.place_props} FROM locals l""")
@@ -134,6 +157,25 @@ class PostgressController:
         self.cursor.close()
         self.connection.close()
         logger.info("Database connection closed.")
+
+    def get_user_page(self, page: int, items_per_page: int) -> list[User]:
+        self.cursor.execute(
+            f"""SELECT {self.user_props} FROM users u LIMIT %s OFFSET %s""",
+            (items_per_page, page),
+        )
+        users = self.cursor.fetchall()
+        return [
+            User(
+                user_id=user[0],
+                name=user[1],
+                age=user[4],
+                music_genre=user[5],
+                gender=user[6],
+                metrics=self.get_user_metrics(user[0]),
+                favorite_places=self.get_user_favorite_places(user[0]),
+            )
+            for user in users
+        ]
 
 
 if __name__ == "__main__":

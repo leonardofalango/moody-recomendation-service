@@ -21,6 +21,11 @@ class Metrics(BaseModel):
     interest: str | None
 
 
+class FavoritePlaces(BaseModel):
+    user_id: str
+    place_id: str
+
+
 class User(BaseModel):
     user_id: str
     name: str
@@ -29,6 +34,7 @@ class User(BaseModel):
     music_genre: str
     perfil: str = "Formando perfil..."
     metrics: list[Metrics] | None
+    favorite_places: list[FavoritePlaces] | None
 
 
 class Interaction(BaseModel):
