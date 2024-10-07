@@ -1,5 +1,7 @@
-from fastapi import APIRouter, Path, Query, Depends
+from fastapi import APIRouter, Path, Query, Depends, HTTPException
 from src.dependencies.model import get_recommendation_model
+
+from src.exceptions.httpExceptions import NotFoundException
 
 router = APIRouter()
 
@@ -15,15 +17,22 @@ async def get_recommendation_params(
     """
     Get recommendations for a user with specified parameters.
     """
-    # Clearing cachen because vercel has limits
-    recommendation_model.clear_cache(user_id=user_id)
 
-    return recommendation_model.recommend(
-        user_id=user_id,
-        k_neighboors=k_neighboors,
-        page=page,
-        items_per_page=items_per_page,
-    )
+    try:
+        recommendation_model.clear_cache(user_id=user_id)
+
+        return recommendation_model.recommend(
+            user_id=user_id,
+            k_neighboors=k_neighboors,
+            page=page,
+            items_per_page=items_per_page,
+        )
+
+    except NotFoundException as e:
+        return HTTPException(status_code=404, detail=str(e))
+
+    except Exception as e:
+        return {"message": str(e)}
 
 
 @router.delete("/clear_cache/")
