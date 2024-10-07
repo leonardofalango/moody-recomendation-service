@@ -1,3 +1,5 @@
+from collections import defaultdict
+from typing import Dict
 import psycopg2
 from dotenv import load_dotenv
 import os
@@ -31,6 +33,12 @@ class PostgressController:
         self.cursor.execute(f"""SELECT {self.user_props} FROM users u""")
         all_users = self.cursor.fetchall()
 
+        user_ids = [user[0] for user in all_users]
+
+        # Lazy loading
+        metrics = self.get_all_metrics(user_ids)
+        favorites = self.get_all_favorites(user_ids)
+
         return [
             User(
                 user_id=user[0],
@@ -38,11 +46,54 @@ class PostgressController:
                 age=user[4],
                 music_genre=user[5],
                 gender=user[6],
-                metrics=self.get_user_metrics(user[0]),
-                favorite_places=self.get_user_favorite_places(user[0]),
+                metrics=metrics.get(user[0], []),
+                favorite_places=favorites.get(user[0], []),
             )
             for user in all_users
         ]
+
+    def get_all_metrics(self, user_ids: list[str]) -> Dict[str, list[Metrics]]:
+        self.cursor.execute(
+            f"""
+            SELECT um.id, um."userId", til."local_id", um."tagsId", um.interest, t.label
+            FROM user_metrics um
+            INNER JOIN tags t ON um."tagsId" = t.id
+            INNER JOIN tags_in_locals til ON t.id = til."tag_id"
+            WHERE um."userId" = ANY(%s)
+            """,
+            (user_ids,),
+        )
+        metrics = self.cursor.fetchall()
+
+        metrics_by_user = defaultdict(list)
+        for metric in metrics:
+            metrics_by_user[metric[1]].append(
+                Metrics(
+                    place_id=metric[2],
+                    user_id=metric[1],
+                    interactions=metric[4],
+                    interest=metric[5],
+                )
+            )
+        return metrics_by_user
+
+    def get_all_favorites(self, user_ids: list[str]) -> Dict[str, list[FavoritePlaces]]:
+        self.cursor.execute(
+            """
+            SELECT local_id, user_id
+            FROM locals_favorites 
+            WHERE user_id = ANY(%s)
+            """,
+            (user_ids,),
+        )
+        favorites = self.cursor.fetchall()
+
+        favorites_by_user = defaultdict(list)
+        for favorite in favorites:
+            favorites_by_user[favorite[1]].append(
+                FavoritePlaces(place_id=favorite[0], user_id=favorite[1])
+            )
+        return favorites_by_user
 
     def get_user_by_id(self, user_id: str) -> User:
         self.cursor.execute(
