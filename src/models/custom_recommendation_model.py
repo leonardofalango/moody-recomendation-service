@@ -7,6 +7,7 @@ from collections import defaultdict
 from src.types.repository import Repository
 from src.types.basic_types import User, PlaceDTO
 from src.exceptions.httpExceptions import NotFoundException
+from src.controllers.cache import CacheWithTTL
 
 logger = logging.getLogger("app_logger")
 
@@ -16,8 +17,8 @@ class CustomRecommendationModel:
         logger.info("Initializing recommendation model")
         self.db_controller = db_controller
         self.user_data = self._load_user_data()
-        self.user_cache = {}
-        self.recommendation_cache = {}
+        self.similarity_cache = CacheWithTTL(ttl=300)
+        self.recommendation_cache = CacheWithTTL(ttl=300)
 
         self.similarity_min = float(os.environ.get("SIMILARITY2", 0.1))
 
@@ -42,11 +43,11 @@ class CustomRecommendationModel:
         start_index = page * items_per_page
         end_index = start_index + items_per_page
 
-        similar_users = self.user_cache.get(user_id)
+        similar_users = self.similarity_cache.get(user_id)
 
         if not similar_users:
             similar_users = self.find_similar_users(user_info, k_neighboors)
-            self.user_cache[user_id] = similar_users
+            self.similarity_cache[user_id] = similar_users
 
         recommendations = self.recommendation_cache.get(user_id)
         if not recommendations:
@@ -85,7 +86,10 @@ class CustomRecommendationModel:
         return recommendations_slice_result
 
     def find_similar_users(self, user_info: User, k: int = 10) -> List[User]:
-        logger.debug("Finding similar users")
+        cache_key = f"similar_users_{user_info.user_id}"
+        if cache_key in self.similarity_cache.keys():
+            return self.similarity_cache[cache_key]
+
         similar_users = [
             (data, self.calculate_similarity(user_info, data))
             for user_id, data in self.user_data.items()
@@ -94,9 +98,7 @@ class CustomRecommendationModel:
         similar_users = [u for u in similar_users if u[1] > self.similarity_min]
         similar_users.sort(key=lambda x: x[1], reverse=True)
 
-        logger.debug(
-            "Found %s similar users for user %s", len(similar_users), user_info.user_id
-        )
+        self.similarity_cache[cache_key] = similar_users[:k]
         return similar_users[:k]
 
     def calculate_similarity(self, user1: User, user2: User) -> float:
@@ -164,11 +166,11 @@ class CustomRecommendationModel:
     def clear_cache(self, user_id: Optional[str] = None):
         logger.info("Clearing cache")
         if user_id is None:
-            self.user_cache.clear()
+            self.similarity_cache.clear()
             self.recommendation_cache.clear()
         else:
-            self.user_cache.pop(user_id, None)
-            self.recommendation_cache.pop(user_id, None)
+            self.similarity_cache.clear(user_id)
+            self.recommendation_cache.clear(user_id)
 
     def _load_user_data(self) -> Dict[str, User]:
         logger.debug("Loading user data")
