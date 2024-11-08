@@ -76,7 +76,10 @@ class CustomRecommendationModel:
                 offset,
                 remaining_items,
             )
-            recommendations_slice_result.extend(additional_places)
+            top_places = self._get_top_places(offset, remaining_items, user_info)
+
+            top_places_filtered = self.filter_by_user_preferences(user_info, top_places)
+            recommendations_slice_result.extend(top_places_filtered[:remaining_items])
 
         for place in recommendations_slice_result:
             place.score = self._calculate_average_similarity(
@@ -181,6 +184,17 @@ class CustomRecommendationModel:
             except Exception as e:
                 logger.error("Error loading user data: %s", str(user))
         return user_data
+
+    def filter_by_user_preferences(
+        self, user: User, recommendations: List[PlaceDTO]
+    ) -> List[PlaceDTO]:
+        preferred_tags = {metric.interest for metric in user.metrics}
+        filtered_recommendations = [
+            place
+            for place in recommendations
+            if place.tags.intersection(preferred_tags)
+        ]
+        return filtered_recommendations if filtered_recommendations else recommendations
 
     def _get_top_places(self, start: int, limit: int, user: User) -> List[PlaceDTO]:
         logger.debug("Getting top places")

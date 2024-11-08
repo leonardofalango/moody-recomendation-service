@@ -231,6 +231,7 @@ class PostgressController:
 
 if __name__ == "__main__":
     db = PostgressController()
-    print(db.get_all_users())
-    print(db.get_all_places())
+    users = db.get_all_users()
+    for i in users:
+        print(i)
     db.close_connection()
